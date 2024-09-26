@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/FoodRegisterationToolSub1.props" />
+</Project>
