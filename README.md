@@ -1,28 +1,49 @@
 # Food Nutrition
 
+## Overview
+The **Food Nutrition** application is designed to facilitate the management and tracking of food and nutritional data. Users have various roles, each with specific permissions to manage meals and nutrition records. This README provides an overview of the model architecture and datasets integrated into the system.
+
 ## Models
 
-### Models Architecture 
+### Model Architecture
 
+The application supports three types of users, each with distinct roles and permissions:
 
-The models conatins three user type : 
-1. NormalUser : has a minimal access to the application, can add new meals, edit the meals. Request new Food and Nutriation.
-2. SuperUser : are the employess of the system who suport user in basic requset to add new Food and nutriation. SuperUser has permission on NormalUser registeret information and can update FirstName and LastName after UserRequest.
-3. AdminUser : Are the owner for the system, have a full access to the system functionality and configuration. Can delete, remove user after NormalUser && SuperUser request. Manage the block and span on user after abuse case. Can manage dataset and add new dataset to the system
+- **NormalUser**
+  - Basic access to the application.
+  - Can add and edit new meals.
+  - Can request new food items and nutrition data to be added to the system.
 
+- **SuperUser**
+  - System employees who support NormalUser requests to add new food items and nutrition data.
+  - Can access and update certain NormalUser details (e.g., first name and last name) following a UserRequest.
 
-### Datasets
+- **AdminUser**
+  - System owners with full access to all functionalities and configurations.
+  - Can manage user data, including deleting or removing users after requests from NormalUsers or SuperUsers.
+  - Has authority to manage user blocking and suspension in cases of misuse or abuse.
+  - Oversees dataset management and can add new datasets to the system.
 
-The dataset use with the application are from : 
+## Datasets
 
+The datasets used in the application are sourced from:
+[USDA FoodData Central](https://fdc.nal.usda.gov/download-datasets.html)
 
-[https://fdc.nal.usda.gov/download-datasets.html]
+This dataset includes essential food items and nutrition values. The following models are implemented in the system in alignment with these datasets:
 
-This dataset contain a light food with nutriation value. Part of the dataset are implemented in the system : 
+- **Food**
+- **Nutrition**
+- **FoodNutrition** (linking foods with their nutritional values)
+- **FoodCategory**
 
-Food, Nutriation, FoodNutriation, FoodCategory. Database models being defined respectfull to this models.
+### Purpose of the Datasets
 
-#### Purpose of the datasets
-The purpose for implementing dataset in the system relay on : 
-1. Support NormalUser when adding new meals in the system, as the food and nutriation are predefined.
-2. NormalUser can request new Food they create to add to the system, which will help other user to add their meals. 
+The integration of datasets serves the following purposes:
+
+1. **User Support**: 
+   - Predefined food and nutrition data assist NormalUsers when adding new meals.
+   
+2. **Requesting New Foods**: 
+   - NormalUsers can request new foods they create to be added to the system, making them available for other users as well.
+
+This setup provides a structured, user-friendly approach to managing and accessing food and nutrition data within the application.
