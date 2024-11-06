@@ -15,7 +15,7 @@ namespace FoodRegisterationToolSub1.Models.users.User;
 /// user on the system function. Admin and SuperUser with help of this models gets the sepration of duty. 
 /// </remarks>
 public abstract class User { 
-
+    [Key]
     public int UserId {get; private set;}
 
     [Required]
