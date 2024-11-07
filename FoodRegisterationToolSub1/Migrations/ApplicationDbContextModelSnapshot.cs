@@ -159,12 +159,12 @@ namespace FoodRegisterationToolSub1.Migrations
                         .HasColumnType("character varying(255)")
                         .HasColumnName("description");
 
-                    b.Property<int>("FoodCategoryId")
+                    b.Property<int?>("FoodCategoryId")
                         .HasColumnType("integer")
                         .HasColumnName("food_category_id");
 
-                    b.Property<DateTime>("PublicationDate")
-                        .HasColumnType("timestamp with time zone")
+                    b.Property<string>("PublicationDate")
+                        .HasColumnType("text")
                         .HasColumnName("publication_date");
 
                     b.HasKey("FoodId");
@@ -183,12 +183,12 @@ namespace FoodRegisterationToolSub1.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DataPoint")
-                        .HasColumnType("integer")
+                    b.Property<string>("DataPoint")
+                        .HasColumnType("text")
                         .HasColumnName("data_points");
 
-                    b.Property<int>("DerivationId")
-                        .HasColumnType("integer")
+                    b.Property<string>("DerivationId")
+                        .HasColumnType("text")
                         .HasColumnName("derivation_id");
 
                     b.Property<int>("FdcId")
@@ -212,8 +212,8 @@ namespace FoodRegisterationToolSub1.Migrations
                         .HasColumnType("real")
                         .HasColumnName("min");
 
-                    b.Property<int?>("MinYearAcquired")
-                        .HasColumnType("integer")
+                    b.Property<string>("MinYearAcquired")
+                        .HasColumnType("text")
                         .HasColumnName("min_year_acquired");
 
                     b.Property<int>("NutrientId")
@@ -232,29 +232,28 @@ namespace FoodRegisterationToolSub1.Migrations
             modelBuilder.Entity("FoodRegistrationToolSub1.Models.datasets.Nutrient", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("name");
 
-                    b.Property<int>("NutrientNbr")
-                        .HasColumnType("integer")
+                    b.Property<string>("NutrientNbr")
+                        .HasColumnType("text")
                         .HasColumnName("nutrient_nbr");
 
-                    b.Property<int>("Rank")
-                        .HasColumnType("integer")
+                    b.Property<string>("Rank")
+                        .HasColumnType("text")
                         .HasColumnName("rank");
 
                     b.Property<string>("UnitName")
                         .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("character varying(10)")
+                        .HasColumnName("unit_name");
 
                     b.HasKey("Id");
 
@@ -276,9 +275,7 @@ namespace FoodRegisterationToolSub1.Migrations
                 {
                     b.HasOne("FoodRegisterationToolSub1.Models.datasets.FoodCategory", "FoodCategory")
                         .WithMany("Foods")
-                        .HasForeignKey("FoodCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FoodCategoryId");
 
                     b.Navigation("FoodCategory");
                 });

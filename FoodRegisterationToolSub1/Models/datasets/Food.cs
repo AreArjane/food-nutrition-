@@ -24,13 +24,13 @@ public class Food {
     public required string Description {get; set;}
 
     [Column("food_category_id")]
-    public int FoodCategoryId {get; set;}
+    public int? FoodCategoryId {get; set;}
 
     [ForeignKey("FoodCategoryId")]
-    public required FoodCategory FoodCategory {get; set;}
+    public FoodCategory? FoodCategory {get; set;}
 
     [Column("publication_date")]
-    public DateTime PublicationDate {get; set;}
+    public string? PublicationDate {get; set;}
 
     public List<FoodNutrient> FoodNutrients {get; set;} = new List<FoodNutrient>();
 

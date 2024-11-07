@@ -17,16 +17,18 @@ public class Nutrient {
 
     [StringLength(100)]
     [Required]
-    public required string Name {get; set;}
+    [Column("name")]
+    public string? Name {get; set;}
 
     [StringLength(10)]
     [Required]
-    public required string UnitName {get; set;}
+    [Column("unit_name")]
+    public string? UnitName {get; set;}
 
     [Column("nutrient_nbr")]
-    public int NutrientNbr {get; set;}
+    public string? NutrientNbr {get; set;}
     [Column("rank")]
-    public int Rank {get; set;}
+    public string? Rank {get; set;}
 
     public List<FoodNutrient> FoodNutrients { get; set; } = new List<FoodNutrient>();
 
