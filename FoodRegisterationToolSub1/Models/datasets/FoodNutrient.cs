@@ -41,6 +41,9 @@ public class FoodNutrient {
     [Column("min_year_acquired")]
     public string? MinYearAcquired {get; set;}
 
+    [Column("amount")]
+    public long? Amount {get; set;}
+
     [Column("ntrient_id")]
     public int NutrientId {get; set;}
 
