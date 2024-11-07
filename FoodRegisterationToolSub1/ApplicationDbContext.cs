@@ -3,7 +3,8 @@ using FoodRegistrationToolSub1.Models.datasets;
 using FoodRegisterationToolSub1.Models.permissions;
 using FoodRegisterationToolSub1.Models.users.User;
 using FoodRegisterationToolSub1.Models.datasets;
-
+using FoodRegistrationToolSub1.Models;
+using FoodRegisterationToolSub1.Models.meals;
 public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -17,6 +18,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<NormalUser> NormalUsers { get; set; }
     public DbSet<SuperUser> SuperUsers { get; set; }
     public DbSet<AdminUser> AdminUser { get; set; }
+    public DbSet<Meal> Meal {get; set;}
+    public DbSet<MealFood> MealFood {get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

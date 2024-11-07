@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace FoodRegistrationToolSub1.Models.datasets;
+namespace FoodRegistrationToolSub1.Models.datasets {
 
 
 [Table("FoodNutrient")]
@@ -85,4 +85,5 @@ public class FoodNutrient {
     }
 
 
+}
 }

@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using FoodRegistrationToolSub1.Models.datasets;
 
 
-namespace FoodRegisterationToolSub1.Models { 
-
+namespace FoodRegisterationToolSub1.Models.meals {
     public class MealFood { 
 
         [Key]

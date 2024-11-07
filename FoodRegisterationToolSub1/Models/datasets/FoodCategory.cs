@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using FoodRegistrationToolSub1.Models.datasets;
 
 
-namespace FoodRegisterationToolSub1.Models.datasets;
+namespace FoodRegisterationToolSub1.Models.datasets {
 
 [Table("FoodCategories")]
 
@@ -60,4 +60,5 @@ public class FoodCategory {
         return HashCode.Combine(Code, Description);
     }
 
+}
 }

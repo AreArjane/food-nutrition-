@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FoodRegisterationToolSub1.Models { 
+
+namespace FoodRegisterationToolSub1.Models.meals {
     public class Meal  { 
 
         [Key]
