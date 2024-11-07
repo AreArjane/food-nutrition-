@@ -13,7 +13,7 @@ namespace FoodRegisterationToolSub1.Models.users.User;
 public class SuperUser : User { 
 
     
-    [StringLength(6)]
+    [StringLength(10)]
     public required string DateOfBirth {get; set;}
  
 

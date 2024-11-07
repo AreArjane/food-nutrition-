@@ -6,11 +6,28 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FoodRegisterationToolSub1.Migrations
 {
     /// <inheritdoc />
-    public partial class new_Database : Migration
+    public partial class hellow : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AdminUser",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    NationalIdenityNumber = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
+                    OfficeAddress = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: true),
+                    WorkPhoneNr = table.Column<string>(type: "text", nullable: true),
+                    FirstName = table.Column<string>(type: "character varying(60)", maxLength: 60, nullable: false),
+                    PhoneNr = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdminUser", x => x.UserId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "FoodCategories",
                 columns: table => new
@@ -34,7 +51,7 @@ namespace FoodRegisterationToolSub1.Migrations
                     LastName = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: true),
                     Email = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     HomeAddress = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: true),
-                    PostalCode = table.Column<string>(type: "character varying(4)", maxLength: 4, nullable: true),
+                    PostalCode = table.Column<string>(type: "character varying(8)", maxLength: 8, nullable: true),
                     FirstName = table.Column<string>(type: "character varying(60)", maxLength: 60, nullable: false),
                     PhoneNr = table.Column<string>(type: "text", nullable: false)
                 },
@@ -64,7 +81,7 @@ namespace FoodRegisterationToolSub1.Migrations
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    DateOfBirth = table.Column<string>(type: "character varying(6)", maxLength: 6, nullable: false),
+                    DateOfBirth = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
                     FirstName = table.Column<string>(type: "character varying(60)", maxLength: 60, nullable: false),
                     PhoneNr = table.Column<string>(type: "text", nullable: false)
                 },
@@ -101,12 +118,18 @@ namespace FoodRegisterationToolSub1.Migrations
                     PermissionId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     PermissionType = table.Column<int>(type: "integer", nullable: false),
+                    AdminUserUserId = table.Column<int>(type: "integer", nullable: true),
                     NormalUserUserId = table.Column<int>(type: "integer", nullable: true),
                     SuperUserUserId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Permissions", x => x.PermissionId);
+                    table.ForeignKey(
+                        name: "FK_Permissions_AdminUser_AdminUserUserId",
+                        column: x => x.AdminUserUserId,
+                        principalTable: "AdminUser",
+                        principalColumn: "UserId");
                     table.ForeignKey(
                         name: "FK_Permissions_NormalUsers_NormalUserUserId",
                         column: x => x.NormalUserUserId,
@@ -168,6 +191,11 @@ namespace FoodRegisterationToolSub1.Migrations
                 column: "ntrient_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Permissions_AdminUserUserId",
+                table: "Permissions",
+                column: "AdminUserUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Permissions_NormalUserUserId",
                 table: "Permissions",
                 column: "NormalUserUserId");
@@ -192,6 +220,9 @@ namespace FoodRegisterationToolSub1.Migrations
 
             migrationBuilder.DropTable(
                 name: "Nutrient");
+
+            migrationBuilder.DropTable(
+                name: "AdminUser");
 
             migrationBuilder.DropTable(
                 name: "NormalUsers");

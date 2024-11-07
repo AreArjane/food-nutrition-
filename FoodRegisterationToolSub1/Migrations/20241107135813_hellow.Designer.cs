@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FoodRegisterationToolSub1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241107114734_new_Database")]
-    partial class new_Database
+    [Migration("20241107135813_hellow")]
+    partial class hellow
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,6 +58,9 @@ namespace FoodRegisterationToolSub1.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("PermissionId"));
 
+                    b.Property<int?>("AdminUserUserId")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("NormalUserUserId")
                         .HasColumnType("integer");
 
@@ -69,11 +72,47 @@ namespace FoodRegisterationToolSub1.Migrations
 
                     b.HasKey("PermissionId");
 
+                    b.HasIndex("AdminUserUserId");
+
                     b.HasIndex("NormalUserUserId");
 
                     b.HasIndex("SuperUserUserId");
 
                     b.ToTable("Permissions");
+                });
+
+            modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.User.AdminUser", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("character varying(60)");
+
+                    b.Property<string>("NationalIdenityNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("character varying(11)");
+
+                    b.Property<string>("OfficeAddress")
+                        .HasMaxLength(25)
+                        .HasColumnType("character varying(25)");
+
+                    b.Property<string>("PhoneNr")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("WorkPhoneNr")
+                        .HasColumnType("text");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("AdminUser");
                 });
 
             modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.User.NormalUser", b =>
@@ -106,8 +145,8 @@ namespace FoodRegisterationToolSub1.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("PostalCode")
-                        .HasMaxLength(4)
-                        .HasColumnType("character varying(4)");
+                        .HasMaxLength(8)
+                        .HasColumnType("character varying(8)");
 
                     b.HasKey("UserId");
 
@@ -124,8 +163,8 @@ namespace FoodRegisterationToolSub1.Migrations
 
                     b.Property<string>("DateOfBirth")
                         .IsRequired()
-                        .HasMaxLength(6)
-                        .HasColumnType("character varying(6)");
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -265,6 +304,10 @@ namespace FoodRegisterationToolSub1.Migrations
 
             modelBuilder.Entity("FoodRegisterationToolSub1.Models.permissions.Permission", b =>
                 {
+                    b.HasOne("FoodRegisterationToolSub1.Models.users.User.AdminUser", null)
+                        .WithMany("Permissions")
+                        .HasForeignKey("AdminUserUserId");
+
                     b.HasOne("FoodRegisterationToolSub1.Models.users.User.NormalUser", null)
                         .WithMany("Permissions")
                         .HasForeignKey("NormalUserUserId");
@@ -305,6 +348,11 @@ namespace FoodRegisterationToolSub1.Migrations
             modelBuilder.Entity("FoodRegisterationToolSub1.Models.datasets.FoodCategory", b =>
                 {
                     b.Navigation("Foods");
+                });
+
+            modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.User.AdminUser", b =>
+                {
+                    b.Navigation("Permissions");
                 });
 
             modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.User.NormalUser", b =>

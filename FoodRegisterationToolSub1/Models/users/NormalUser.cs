@@ -20,7 +20,7 @@ public class NormalUser : User {
     public string? Email {get; set;}
     [StringLength(25)]
     public string? HomeAddress {get; set;}
-    [StringLength(4)]
+    [StringLength(8)]
     public string? PostalCode {get; set;}
 
     public override List<Permission> Permissions => new List<Permission> { 

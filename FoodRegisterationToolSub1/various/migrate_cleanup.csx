@@ -2,13 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DotNetEnv;
-
-
 using System;
 using System.IO;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using FoodRegisterationToolSub1;
+
+
 var migrationDir = Path.Combine(Directory.GetCurrentDirectory(), "Migrations");
 var serviceCollection = new ServiceCollection();
 //Database configuration

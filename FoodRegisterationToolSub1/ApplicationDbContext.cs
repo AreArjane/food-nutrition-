@@ -16,7 +16,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Permission> Permissions { get; set; }
     public DbSet<NormalUser> NormalUsers { get; set; }
     public DbSet<SuperUser> SuperUsers { get; set; }
-    public DbSet<SuperUser> AdminUser { get; set; }
+    public DbSet<AdminUser> AdminUser { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
