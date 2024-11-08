@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using FoodRegisterationToolSub1.Models.permissions;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FoodRegisterationToolSub1.Models.users.User;
+namespace FoodRegisterationToolSub1.Models.users {
 /// <summary>
 /// AdminUser the owner of the system. Has a full functionality to the system. 
 /// Can access all models to manage, modify and delete.
@@ -16,6 +16,10 @@ public class AdminUser : User {
     [StringLength(25)]
     public string? OfficeAddress { get;  set; }
     public string? WorkPhoneNr {get; set;}
+    public AdminUser() {
+
+        UserType = UserType.AdminUser; 
+    }
 
 
     public override List<Permission> Permissions => new List<Permission> {
@@ -28,4 +32,5 @@ public class AdminUser : User {
               new Permission { PermissionType = PermissionType.RemoveSelectedUser},
 
     };
+}
 }

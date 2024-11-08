@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using FoodRegistrationToolSub1.Models.datasets;
 using FoodRegisterationToolSub1.Models.permissions;
-using FoodRegisterationToolSub1.Models.users.User;
+using FoodRegisterationToolSub1.Models.users;
 using FoodRegisterationToolSub1.Models.datasets;
 using FoodRegistrationToolSub1.Models;
 using FoodRegisterationToolSub1.Models.meals;

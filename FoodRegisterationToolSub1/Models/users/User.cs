@@ -2,8 +2,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Linq;
 using FoodRegisterationToolSub1.Models.permissions;
+using FoodRegisterationToolSub1.Models.meals;
 
-namespace FoodRegisterationToolSub1.Models.users.User;
+namespace FoodRegisterationToolSub1.Models.users {
+
+    public enum UserType {
+        NormalUser,
+        SuperUser,
+        AdminUser
+    }
 
 /// <summary>
 /// User Abstraction Class. There is three type of user on the system.
@@ -25,6 +32,8 @@ public abstract class User {
     [RegularExpression(@"^\d{14}$", ErrorMessage = "Phone number must be 10 digits.")]
     public string? PhoneNr {get; set;}
 
+    public UserType UserType {get; protected set;}
+
     public User() { 
         UserId = GenerateUserID();
     }
@@ -38,4 +47,7 @@ public abstract class User {
     public bool HasPermission(PermissionType permissionType) { 
         return Permissions.Any(p => p.PermissionType == permissionType);
     }
+
+    public ICollection<Meal> Meals {get; set;}
+}
 }

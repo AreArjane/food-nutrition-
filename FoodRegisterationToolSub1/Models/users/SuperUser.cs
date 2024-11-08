@@ -4,7 +4,7 @@ using FoodRegisterationToolSub1.Models.permissions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FoodRegisterationToolSub1.Models.users.User;
+namespace FoodRegisterationToolSub1.Models.users {
 /// <summary>
 /// SuperUser models extend the User class. SuperUser are known like employess of the system.
 /// This models registred for an aditional fields assoicated with the employess regulations. 
@@ -15,6 +15,11 @@ public class SuperUser : User {
     
     [StringLength(10)]
     public required string DateOfBirth {get; set;}
+
+    public SuperUser() {
+
+        UserType = UserType.SuperUser; 
+    }
  
 
     public override List<Permission> Permissions => new List<Permission> {
@@ -26,4 +31,4 @@ public class SuperUser : User {
 
     };
 
-}
+}}

@@ -1,17 +1,16 @@
 
 using System.ComponentModel.DataAnnotations;
 using FoodRegisterationToolSub1.Models.permissions;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FoodRegisterationToolSub1.Models.users.User;
+namespace FoodRegisterationToolSub1.Models.users {
 /// <summary>
 /// NormalUser extend the User models. The User get a basic permissions of what they own. 
 /// Byond the information they manage on the system: 
 /// 1- User private information data 
 /// 
 /// </summary>
-[Table("NormalUsers")]
+[Table("NormalUser")]
 public class NormalUser : User {
 
     [StringLength(25)]
@@ -28,4 +27,4 @@ public class NormalUser : User {
         new Permission { PermissionType = PermissionType.EditOwnData }
      
     };
-}
+}}
