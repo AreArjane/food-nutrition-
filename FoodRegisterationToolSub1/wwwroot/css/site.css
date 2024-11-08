@@ -1,8 +1,0 @@
-.background-image {
-  background-image: url('/images/search_image.png');
-  background-size: cover; /* Adjusts the image to cover the entire element */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  width: 100%; /* Adjust as needed */
-  height: 100vh; /* Adjust as needed */
-}
