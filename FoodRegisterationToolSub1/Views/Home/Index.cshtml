@@ -1,8 +1,40 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Search";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+    <h2>Search for Foods and Meals</h2>
+    <form id="searchForm" method="get" action="/api/search">
+        <input type="text" id="query" name="query" placeholder="Enter food or meal name" style="width: 300px; padding: 10px; font-size: 1rem;" />
+        <button type="submit" style="margin-top: 10px; padding: 10px 20px;">Search</button>
+    </form>
+    <div id="results" style="margin-top: 20px; width: 80%; text-align: center;"></div>
 </div>
+
+@section Scripts {
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const query = document.getElementById("query").value;
+            if (!query) return;
+
+            const response = await fetch(`/api/search?query=${encodeURIComponent(query)}`);
+            const data = await response.json();
+
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";
+
+            if (data.Foods.length || data.Meal.length) {
+                data.Foods.forEach(food => {
+                    resultsDiv.innerHTML += `<div><strong>Food:</strong> ${food.Description} (Type: ${food.DataType}, Published: ${food.PublicationDate})</div>`;
+                });
+                data.Meal.forEach(meal => {
+                    resultsDiv.innerHTML += `<div><strong>Meal:</strong> ${meal.Name}</div>`;
+                });
+            } else {
+                resultsDiv.innerHTML = "<p>No results found</p>";
+            }
+        });
+    </script>
+}

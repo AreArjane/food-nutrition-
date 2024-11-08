@@ -44,7 +44,7 @@ public class FoodNutrient {
     [Column("amount")]
     public long? Amount {get; set;}
 
-    [Column("ntrient_id")]
+    [Column("nutrient_id")]
     public int NutrientId {get; set;}
 
     [ForeignKey("NutrientId")]

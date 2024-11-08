@@ -1,7 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
 using FoodRegisterationToolSub1.Models.permissions;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoodRegisterationToolSub1.Models.users {

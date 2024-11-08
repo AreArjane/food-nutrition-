@@ -21,9 +21,7 @@
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FoodRegisterationToolSub1.props
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FoodRegisterationToolSub1.props
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/staticwebassets.pack.json
-/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/bundle/FoodRegisterationToolSub1.styles.css
-/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/FoodRegisterationToolSub1.dll
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/refint/FoodRegisterationToolSub1.dll
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/FoodRegisterationToolSub1.pdb
@@ -112,3 +110,5 @@
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/bin/Debug/net8.0/CsvHelper.dll
+/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css
