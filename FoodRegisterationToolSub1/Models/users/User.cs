@@ -35,6 +35,7 @@ public abstract class User {
     public UserType UserType {get; protected set;}
 
     public User() { 
+        
         UserId = GenerateUserID();
     }
 

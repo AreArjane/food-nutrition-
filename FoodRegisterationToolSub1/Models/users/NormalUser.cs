@@ -22,6 +22,12 @@ public class NormalUser : User {
     [StringLength(8)]
     public string? PostalCode {get; set;}
 
+
+    public NormalUser() {
+
+        UserType = UserType.NormalUser; 
+    }
+
     public override List<Permission> Permissions => new List<Permission> { 
         new Permission { PermissionType = PermissionType.ViewOwnData },
         new Permission { PermissionType = PermissionType.EditOwnData }
