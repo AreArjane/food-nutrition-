@@ -77,7 +77,7 @@ This setup provides a structured, user-friendly approach to managing and accessi
 
 ## Controller 
 
-## Controllers
+## Functional Controllers
 
 ### 1. SearchController
 
@@ -90,3 +90,14 @@ The `FoodController` provides endpoints for manipulating individual food items. 
 ### 3. MealController
 
 The `MealController` allows manipulation of individual meal records. Each meal can contain multiple food items and nutrients, and this controller provides functionality to create, read, update, and delete meal entries along with their associated food and nutrient details.
+
+
+## User Controller
+
+### NormalUserController 
+
+controller the profile of the user, user access to own data, and CRUD for Meals. Make request to oeprate new food items. 
+
+### SuperUserController
+
+### AdminUserController
