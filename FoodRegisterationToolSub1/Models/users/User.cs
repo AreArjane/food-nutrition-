@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FoodRegisterationToolSub1.Models.permissions;
 using FoodRegisterationToolSub1.Models.meals;
+using Microsoft.AspNetCore.Identity;
 
 namespace FoodRegisterationToolSub1.Models.users {
 
@@ -32,6 +33,9 @@ public abstract class User {
     [RegularExpression(@"^\d{14}$", ErrorMessage = "Phone number must be 10 digits.")]
     public string? PhoneNr {get; set;}
 
+    [Required]
+    public string Password {get; private set;}
+
     public UserType UserType {get; protected set;}
 
     public User() { 
@@ -47,6 +51,17 @@ public abstract class User {
 
     public bool HasPermission(PermissionType permissionType) { 
         return Permissions.Any(p => p.PermissionType == permissionType);
+    }
+
+    public void setPassword(string password) { 
+        var passwordHash = new PasswordHasher<User>();
+        Password = passwordHash.HashPassword(this, password);
+    }
+
+    public bool VerifyPassword(string Plainpassword) { 
+        var passwordHash = new PasswordHasher<User>();
+        var result = passwordHash.VerifyHashedPassword(this, Password,Plainpassword);
+        return result == PasswordVerificationResult.Success;
     }
 
     public ICollection<Meal> Meals {get; set;}
