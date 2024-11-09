@@ -7,3 +7,15 @@
   color: white;
 }
 
+.container {
+  max-width: 100%;
+  padding-top: 20px;
+}
+
+img.rounded-circle {
+  margin-bottom: 1.5rem;
+}
+
+h1.display-4 {
+  font-weight: bold;
+}
