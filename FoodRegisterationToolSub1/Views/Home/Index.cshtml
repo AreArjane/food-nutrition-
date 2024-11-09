@@ -2,22 +2,18 @@
     ViewData["Title"] = "MainPage";
 }
 
-<div class="full-height">
+<!-- Centered Search Section with Rounded Image -->
+<div class="search-section">
     <!-- Rounded Image -->
     <img src="@Url.Content("~/images/search_image.png")" class="rounded-image" alt="Logo" />
 
-    
-    <h2>Search Foods and Meals</h2>
+    <h1>Search Foods and Meals</h1>
+    <input type="text" id="query" class="search-input" placeholder="Enter food or meal name" aria-label="Search query" />
+    <button id="searchButton" class="search-button" type="button">Search</button>
 
-    <!-- Search Input and Button -->
-    <div class="search-container">
-        <input type="text" id="query" class="search-input" placeholder="Enter food or meal name" aria-label="Search query" />
-        <button id="searchButton" class="search-button" type="button">Search</button>
-    </div>
-
-    <!-- Results Section -->
-    <div id="results" class="results-container">
-        <!-- Dynamic search results will be injected here by search.js -->
+    <!-- "Show All" link for future development -->
+    <div class="show-all-link" style="margin-top: 20px;">
+        <a href="#" id="showAllLink">Show All</a>
     </div>
 </div>
 

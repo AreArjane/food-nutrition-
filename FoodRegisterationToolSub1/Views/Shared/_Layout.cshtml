@@ -8,20 +8,27 @@
 </head>
 <body>
 
-    <header class="navbar">
-        <a href="/" asp-area="" asp-controller="Home" asp-action="Index">FoodRegistrationToolSub1</a>
-        <nav>
-            <a href="/" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            <a href="/privacy" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </nav>
+    <!-- Header with links on the left and login on the right -->
+    <header class="header-container">
+        <div class="label-section">
+            <a href="#">Nutrient</a>
+            <a href="#">Food</a>
+            <a href="#">Meals</a>
+            <a href="#">In Norwegian</a>
+        </div>
+        <div class="login-section">
+            <a href="/login">Login</a>
+        </div>
     </header>
 
-    <main class="container">
+    <main role="main">
         @RenderBody()
     </main>
 
     <footer class="footer">
-        &copy; 2024 - FoodRegistrationToolSub1 - <a href="/privacy" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div style="padding: 20px; text-align: center; font-size: 14px;">
+            &copy; 2024 - FoodRegistrationToolSub1 - <a href="/privacy" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
     </footer>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
