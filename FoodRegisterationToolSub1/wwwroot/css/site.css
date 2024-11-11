@@ -1,22 +1,87 @@
-html {
-  font-size: 14px;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-@media (min-width: 768px) {
-  html {
+/* Header Container */
+.header-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-section, .login-section {
+    display: flex;
+    align-items: center;
+}
+
+.label-section a, .login-section a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
     font-size: 16px;
-  }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.label-section a:hover, .login-section a:hover {
+    text-decoration: underline;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* Centered Search Section */
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-body {
-  margin-bottom: 60px;
+/* Rounded Image */
+.rounded-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* "Show All" link styling */
+.show-all-link a {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.show-all-link a:hover {
+    text-decoration: underline;
 }

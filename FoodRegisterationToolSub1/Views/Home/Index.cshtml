@@ -1,8 +1,23 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "MainPage";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Centered Search Section with Rounded Image -->
+<div class="search-section">
+    <!-- Rounded Image -->
+    <img src="@Url.Content("~/images/search_image.png")" class="rounded-image" alt="Logo" />
+
+    <h1>Search Foods and Meals</h1>
+    <input type="text" id="query" class="search-input" placeholder="Enter food or meal name" aria-label="Search query" />
+    <button id="searchButton" class="search-button" type="button">Search</button>
+
+    <!-- "Show All" link for future development -->
+    <div class="show-all-link" style="margin-top: 20px;">
+        <a href="#" id="showAllLink">Show All</a>
+    </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/search.js"></script>
+}
