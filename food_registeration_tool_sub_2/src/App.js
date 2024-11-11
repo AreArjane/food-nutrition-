@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-
+import AuthForm from './components/AuthForm'; // Import AuthForm
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,6 +19,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <main>
+        <AuthForm /> {/* Legg til AuthForm her */}
+      </main>
     </div>
   );
 }
