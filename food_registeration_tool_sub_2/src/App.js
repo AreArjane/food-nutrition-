@@ -1,27 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import AuthForm from './components/AuthForm'; // Import AuthForm
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/footer/Footer';
+import AuthForm from './components/AuthForm/AuthForm';
+import Home from './pages/Home/Home';
+import Error from './pages/Error/Error';
+import Menu from './components/Menu/Menu';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import './styles/global.css';
+import './styles/variables.css';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
       <main>
-        <AuthForm /> {/* Legg til AuthForm her */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<AuthForm />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
