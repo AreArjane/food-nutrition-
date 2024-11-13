@@ -2,20 +2,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "MainPage";
 }
+<link rel="stylesheet" href="~/css/home.css">
+<div class="gif-wrapper">
+    <!-- GIF Background -->
+    <img src="~/images/index.gif" alt="Animated Design" class="animated-gif">
 
-<!-- Centered Search Section with Rounded Image -->
-<div class="search-section">
-    <!-- Rounded Image -->
-    <img src="@Url.Content("~/images/search_image.png")" class="rounded-image" alt="Logo" />
-
-    <h1>Search Foods and Meals</h1>
-    <input type="text" id="query" class="search-input" placeholder="Enter food or meal name" aria-label="Search query" />
-    <button id="searchButton" class="search-button" type="button">Search</button>
-
-    <!-- "Show All" link for future development -->
-    <div class="show-all-link" style="margin-top: 20px;">
-        <a href="#" id="showAllLink">Show All</a>
+    <!-- Overlay for Search Section in the Center of GIF -->
+    <div class="search-overlay">
+        
+        <input type="text" id="query" class="search-input" placeholder="Enter food or meal name" aria-label="Search query" />
+        <button id="searchButton" class="search-button" type="button">Search</button>
     </div>
+</div>
+
+<div id="results" class="results-section" style="overflow-x:auto;">
+    <!-- JavaScript will populate search results here -->
 </div>
 
 @section Scripts {
