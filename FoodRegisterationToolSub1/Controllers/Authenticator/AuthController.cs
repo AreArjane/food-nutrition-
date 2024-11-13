@@ -64,18 +64,12 @@ public class AuthController  : Controller  {
         
        
 
-        if(user == null) { 
-            ModelState.AddModelError("", "Invalid Email or Password");
-            return Json(new { success = false, errorMessage = "Invalid Email or Password" });
-        }
+  if (user == null || passwordVerification != PasswordVerificationResult.Success)
+{
+    ModelState.AddModelError("", "Invalid Email or Password");
+    return Json(new { success = false, errorMessage = "Invalid Email or Password" });
+}
 
-
-
-        if ( passwordVerification != PasswordVerificationResult.Success) {
-
-            ModelState.AddModelError("", "Invalid Password or Email");
-            return Json(new { success = false, errorMessage = "Invalid Password" });
-       }
 
 
 

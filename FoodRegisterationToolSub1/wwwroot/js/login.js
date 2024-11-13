@@ -1,8 +1,10 @@
 const userTypeMapping = {
     "NormalUser": 0,
     "SuperUser": 1,
-    "AdminUser": 2
+    "AdminUser": 2,
+    "PendingSuperUser": 3
 };
+
 document.addEventListener("DOMContentLoaded", function(){
 document.querySelectorAll('.user-type-button').forEach(button => { 
     button.addEventListener('click', function (event) {
@@ -16,52 +18,48 @@ document.querySelectorAll('.user-type-button').forEach(button => {
         console.log(usertype);
         const userTypeValue = userTypeMapping[usertype];
         console.log(userTypeValue);
-        //document.querySelector("#userType").value = userTypeValue;
+        document.querySelector("#userType").value = userTypeValue;
         document.querySelector("#LoginForm").style.display = 'block';
-        
-        
-
     });
 });
-
-
-
-
 });
 
 
 async function submitLoginForm() { 
-
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
-    const usertype = document.querySelector("#userType").value;
+    const userType = document.querySelector("#userType").value;
+    const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
 
-    const formData = new FormData();
+    // Create a URL-encoded string
+    const formData = new URLSearchParams();
     formData.append('email', email);
     formData.append('password', password);
-    formData.append('userType', usertype);
+    formData.append('userType', userType);
+    formData.append('__RequestVerificationToken', token);
 
     try { 
         const response = await fetch('/Auth/verify', {
             method: 'POST',
-            headers : { 
+            headers: { 
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: formData.toString()
+            body: formData.toString()  // Convert formData to a URL-encoded string
         });
 
         const data = await response.json();
 
-        if(data.seccess) { 
+        if (data.success) {  // Corrected typo from 'seccess' to 'success'
             window.location.href = data.redirectUrl;
         } else { 
             document.querySelector("#errorMessages").innerText = data.errorMessage;
             document.querySelector("#errorMessages").style.display = 'block';
         }
-    } catch(error) { 
+    } catch (error) { 
         console.error("Error: ", error);
     }
 }
+
 
 
 
