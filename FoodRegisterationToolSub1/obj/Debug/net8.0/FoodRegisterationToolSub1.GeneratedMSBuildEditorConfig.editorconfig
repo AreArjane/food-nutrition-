@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Auth/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9BY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Food/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9vZC9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,16 +50,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Login/logup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vbG9ndXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Meals/Mymeals.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVhbHMvTXltZWFscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Profile/AdmiUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZmlsZS9BZG1pVXNlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Profile/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZmlsZS9pbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Profile/NormalUser.cshtml]
@@ -69,3 +77,7 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-cz3y77z9u4
+
+[/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Shared/_LayoutProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-x1x6mauf0x

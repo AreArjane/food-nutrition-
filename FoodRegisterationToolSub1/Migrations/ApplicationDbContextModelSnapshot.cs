@@ -142,14 +142,15 @@ namespace FoodRegisterationToolSub1.Migrations
 
                     b.Property<string>("PhoneNr")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(17)
+                        .HasColumnType("character varying(17)");
 
                     b.Property<int>("UserType")
                         .HasColumnType("integer");
 
                     b.HasKey("UserId");
 
-                    b.ToTable("User");
+                    b.ToTable("Users", (string)null);
 
                     b.UseTptMappingStrategy();
                 });
@@ -157,11 +158,8 @@ namespace FoodRegisterationToolSub1.Migrations
             modelBuilder.Entity("FoodRegistrationToolSub1.Models.datasets.Food", b =>
                 {
                     b.Property<int>("FoodId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasColumnName("fdc_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("FoodId"));
 
                     b.Property<string>("DataType")
                         .IsRequired()
@@ -193,11 +191,8 @@ namespace FoodRegisterationToolSub1.Migrations
             modelBuilder.Entity("FoodRegistrationToolSub1.Models.datasets.FoodNutrient", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<long?>("Amount")
                         .HasColumnType("bigint")
@@ -216,20 +211,20 @@ namespace FoodRegisterationToolSub1.Migrations
                         .HasColumnName("fdc_id");
 
                     b.Property<string>("Footnote")
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(2555)
+                        .HasColumnType("character varying(2555)")
                         .HasColumnName("footnote");
 
-                    b.Property<float?>("Max")
-                        .HasColumnType("real")
+                    b.Property<string>("Max")
+                        .HasColumnType("text")
                         .HasColumnName("max");
 
-                    b.Property<float?>("Median")
-                        .HasColumnType("real")
+                    b.Property<string>("Median")
+                        .HasColumnType("text")
                         .HasColumnName("median");
 
-                    b.Property<float?>("Min")
-                        .HasColumnType("real")
+                    b.Property<string>("Min")
+                        .HasColumnType("text")
                         .HasColumnName("min");
 
                     b.Property<string>("MinYearAcquired")
@@ -296,7 +291,7 @@ namespace FoodRegisterationToolSub1.Migrations
                     b.Property<string>("WorkPhoneNr")
                         .HasColumnType("text");
 
-                    b.ToTable("AdminUser");
+                    b.ToTable("AdminUsers", (string)null);
                 });
 
             modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.NormalUser", b =>
@@ -304,22 +299,37 @@ namespace FoodRegisterationToolSub1.Migrations
                     b.HasBaseType("FoodRegisterationToolSub1.Models.users.User");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("text");
 
                     b.Property<string>("HomeAddress")
                         .HasMaxLength(25)
                         .HasColumnType("character varying(25)");
 
                     b.Property<string>("LastName")
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
+                        .HasColumnType("text");
 
                     b.Property<string>("PostalCode")
                         .HasMaxLength(8)
                         .HasColumnType("character varying(8)");
 
-                    b.ToTable("NormalUser");
+                    b.ToTable("NormalUsers", (string)null);
+                });
+
+            modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.PendingSuperUser", b =>
+                {
+                    b.HasBaseType("FoodRegisterationToolSub1.Models.users.User");
+
+                    b.Property<string>("DateOfBirth")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("isApproved")
+                        .HasColumnType("boolean");
+
+                    b.ToTable("PendingSuperUser", (string)null);
                 });
 
             modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.SuperUser", b =>
@@ -327,11 +337,12 @@ namespace FoodRegisterationToolSub1.Migrations
                     b.HasBaseType("FoodRegisterationToolSub1.Models.users.User");
 
                     b.Property<string>("DateOfBirth")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("text");
 
-                    b.ToTable("SuperUser");
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.ToTable("SuperUsers", (string)null);
                 });
 
             modelBuilder.Entity("FoodRegisterationToolSub1.Models.meals.Meal", b =>
@@ -409,6 +420,15 @@ namespace FoodRegisterationToolSub1.Migrations
                     b.HasOne("FoodRegisterationToolSub1.Models.users.User", null)
                         .WithOne()
                         .HasForeignKey("FoodRegisterationToolSub1.Models.users.NormalUser", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FoodRegisterationToolSub1.Models.users.PendingSuperUser", b =>
+                {
+                    b.HasOne("FoodRegisterationToolSub1.Models.users.User", null)
+                        .WithOne()
+                        .HasForeignKey("FoodRegisterationToolSub1.Models.users.PendingSuperUser", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
