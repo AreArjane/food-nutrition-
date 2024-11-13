@@ -5,12 +5,40 @@
       "PackagePath": "staticwebassets/FoodRegisterationToolSub1.bundle.scp.css"
     },
     {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/home.css",
+      "PackagePath": "staticwebassets/css/home.css"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/login.css",
+      "PackagePath": "staticwebassets/css/login.css"
+    },
+    {
       "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/style_profile.css",
+      "PackagePath": "staticwebassets/css/style_profile.css"
+    },
+    {
       "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/frez.svg",
+      "PackagePath": "staticwebassets/images/frez.svg"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/index.gif",
+      "PackagePath": "staticwebassets/images/index.gif"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/loging.svg",
+      "PackagePath": "staticwebassets/images/loging.svg"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/logupwelcome.svg",
+      "PackagePath": "staticwebassets/images/logupwelcome.svg"
     },
     {
       "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/search_image.png",
@@ -19,6 +47,26 @@
     {
       "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/search_image.svg",
       "PackagePath": "staticwebassets/images/search_image.svg"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/sigupwelcome.svg",
+      "PackagePath": "staticwebassets/images/sigupwelcome.svg"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/login.js",
+      "PackagePath": "staticwebassets/js/login.js"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/logup/logup.js",
+      "PackagePath": "staticwebassets/js/logup/logup.js"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/logup/logupmodels.js",
+      "PackagePath": "staticwebassets/js/logup/logupmodels.js"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/profile.js",
+      "PackagePath": "staticwebassets/js/profile.js"
     },
     {
       "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/search.js",

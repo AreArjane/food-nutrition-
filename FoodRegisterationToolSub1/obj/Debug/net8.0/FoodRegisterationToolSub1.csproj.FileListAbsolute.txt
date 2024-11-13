@@ -112,3 +112,6 @@
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/bin/Debug/net8.0/CsvHelper.dll
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css
+/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/Views/Shared/_LayoutProfile.cshtml.rz.scp.css
+/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/bin/Debug/net8.0/AspNetCoreRateLimit.dll
+/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/bin/Debug/net8.0/Newtonsoft.Json.dll
