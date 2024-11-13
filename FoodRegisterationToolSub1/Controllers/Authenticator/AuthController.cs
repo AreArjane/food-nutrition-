@@ -29,6 +29,39 @@ public class AuthController  : Controller  {
     public async Task<IActionResult> Login([FromForm] string email, [FromForm] string password, [FromForm] UserType userType) { 
         Console.WriteLine($"Received request with Email: {email} with password : {password} with the usertype {userType}");
     
+<<<<<<< HEAD
+
+
+
+        User user = null;
+        PasswordVerificationResult passwordVerification = PasswordVerificationResult.Failed;
+
+        switch(userType) 
+        {
+            case UserType.NormalUser:
+            
+            user = _context.NormalUsers.FirstOrDefault(nu => nu.Email == email && nu.UserType == userType);
+            
+            if(user != null) {  passwordVerification = _passwordHasher.VerifyHashedPassword((NormalUser)user, user.Password, password); }               break;
+
+            case UserType.PendingSuperUser:
+
+            user = _context.PendingSuperUser.FirstOrDefault(psu => psu.Email == email && psu.UserType == userType);
+
+            if(user != null) { passwordVerification = _passwordHasher_ps.VerifyHashedPassword((PendingSuperUser)user, user.Password, password); }       break;
+
+            case UserType.SuperUser:
+
+            user = _context.SuperUsers.FirstOrDefault(su => su.Email == email && su.UserType == userType);
+
+            if(user != null) { passwordVerification = _passwordHasher_s.VerifyHashedPassword((SuperUser)user, user.Password, password); }               break;
+
+
+            default:
+                return Json(new {success = false, errorMessage = "Unknow user type. Please check your user type and try again."});
+
+
+=======
 
 
 
@@ -64,6 +97,15 @@ public class AuthController  : Controller  {
         
        
 
+        if(user == null) { 
+            ModelState.AddModelError("", "Invalid Email or Password");
+            return Json(new { success = false, errorMessage = "Invalid Email or Password" });
+>>>>>>> 65828ed4 (Latest Update)
+        }
+        
+       
+
+<<<<<<< HEAD
   if (user == null || passwordVerification != PasswordVerificationResult.Success)
 {
     ModelState.AddModelError("", "Invalid Email or Password");
@@ -71,6 +113,16 @@ public class AuthController  : Controller  {
 }
 
 
+=======
+
+
+        if ( passwordVerification != PasswordVerificationResult.Success) {
+
+            ModelState.AddModelError("", "Invalid Password or Email");
+            return Json(new { success = false, errorMessage = "Invalid Password" });
+       }
+
+>>>>>>> 65828ed4 (Latest Update)
 
 
 
