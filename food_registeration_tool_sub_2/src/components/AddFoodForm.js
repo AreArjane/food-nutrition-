@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
 
 const AddFoodForm = ({ onSubmit }) => {
-  const [food, setFood] = useState({ name: '', calories: '' });
+  const [name, setName] = useState('');
+  const [calories, setCalories] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(food);
-    setFood({ name: '', calories: '' }); // Clear form after submit
+    if (name && calories) {
+      onSubmit({ id: Date.now(), name, calories: parseInt(calories) });
+      setName('');
+      setCalories('');
+    } else {
+      alert('Please fill out both fields!');
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4">
+    <form onSubmit={handleSubmit}>
+      <h3>Add New Food Item</h3>
       <input
         type="text"
-        placeholder="Food Name"
-        value={food.name}
-        onChange={(e) => setFood({ ...food, name: e.target.value })}
-        className="p-2 border mb-2"
+        placeholder="Food name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
       <input
         type="number"
         placeholder="Calories"
-        value={food.calories}
-        onChange={(e) => setFood({ ...food, calories: e.target.value })}
-        className="p-2 border mb-2"
+        value={calories}
+        onChange={(e) => setCalories(e.target.value)}
       />
-      <button type="submit" className="btn btn-primary">Add Food</button>
+      <button type="submit">Add Food</button>
     </form>
   );
 };
