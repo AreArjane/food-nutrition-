@@ -1,6 +1,7 @@
 // App.js
 import React from 'react';
-import './App.css'; // Ensure this file exists for styling
+import './App.css'; // Looks for App.css in the same folder as App.js
+
 import FoodList from './components/FoodList';
 
 function App() {
