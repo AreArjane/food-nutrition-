@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {}
+    "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj": {}
   },
   "projects": {
-    "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {
+    "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
+        "projectUniqueName": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj",
         "projectName": "FoodRegisterationToolSub1",
-        "projectPath": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
-        "packagesPath": "/Users/arjan/.nuget/packages/",
-        "outputPath": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/",
+        "projectPath": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj",
+        "packagesPath": "C:\\Users\\karam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/arjan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\karam\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
