@@ -1,59 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import FoodTable from './FoodTable'; // Komponent for å vise matvarer i en tabell
-import AddFoodForm from './AddFoodForm'; // Komponent for å legge til nye matvarer
-import FoodGrid from './FoodGrid'; // Komponent for å vise matvarer i et rutenett
+import AddFoodForm from './AddFoodForm';
+import FoodTable from './FoodTable';
+import FoodGrid from './FoodGrid';
 
 const FoodList = () => {
-  const [foods, setFoods] = useState([]); // State for matvarer
-  const [loading, setLoading] = useState(true); // State for loading
-  const [error, setError] = useState(null); // State for feil
-  const [view, setView] = useState('table'); // State for visningstype (tabell eller rutenett)
+  const [foods, setFoods] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [view, setView] = useState('table');
 
-  // Funksjon for å håndtere legging av ny mat
+  // Log rendering for debugging
+  console.log("Rendering FoodList component");
+
+  // Function to add new food
   const handleAddFood = (newFood) => {
     setFoods([...foods, newFood]);
   };
 
-  // Hent statisk data for debugging
+  // Simulating data fetching
   useEffect(() => {
+    console.log("Fetching data...");
     const fetchData = async () => {
-      setLoading(true);  // Sett loading til true mens data lastes
-      setError(null);  // Nullstill feilstatus ved ny lasting
+      setLoading(true);
+      setError(null);
       try {
-        // Simulerer en API-henting med statisk data
         const fetchedFoods = [
           { id: 1, name: 'Apple', calories: 95 },
           { id: 2, name: 'Banana', calories: 105 },
           { id: 3, name: 'Carrot', calories: 25 }
         ];
-        console.log(fetchedFoods);  // Logg hentet data
-        setFoods(fetchedFoods);  // Sett statisk data til foods
+        setFoods(fetchedFoods);
       } catch (err) {
-        console.error('Error fetching foods:', err);
         setError('Failed to fetch food data. Please try again later.');
       } finally {
-        setLoading(false);  // Sett loading til false når data er hentet eller feil oppstår
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, []); // Tom array sikrer at data kun hentes ved første rendering
+  }, []);
 
   return (
     <div className="container mt-4">
       <h2 className="mb-4">Food Registration</h2>
 
-      {/* Vist mens data lastes */}
+      {/* Show loading or error messages */}
       {loading ? (
-        <p>Loading...</p> // Kan også legge til en spinner her om ønskelig
+        <p className="loading">Loading...</p>
       ) : error ? (
-        <p className="text-red-500">{error}</p> // Feilmelding hvis henting mislykkes
+        <p className="error">{error}</p>
       ) : (
         <div>
-          {/* Skjema for å legge til nye matvarer */}
+          {/* Add Food Form */}
           <AddFoodForm onSubmit={handleAddFood} />
 
-          {/* Knapp for å bytte visning mellom tabell og rutenett */}
+          {/* Toggle between Table and Grid View */}
           <div className="mb-4">
             <button
               className={`btn ${view === 'table' ? 'btn-secondary' : 'btn-primary'}`}
@@ -63,12 +64,12 @@ const FoodList = () => {
             </button>
           </div>
 
-          {/* Hvis matvarer finnes, vis enten tabell eller rutenett */}
+          {/* Display food items in selected view */}
           {foods.length > 0 ? (
             view === 'table' ? (
-              <FoodTable foods={foods} /> // Vist som tabell
+              <FoodTable foods={foods} />
             ) : (
-              <FoodGrid foods={foods} /> // Vist som rutenett
+              <FoodGrid foods={foods} />
             )
           ) : (
             <p className="mt-4">No food records available. Please add some food items.</p>
@@ -80,6 +81,8 @@ const FoodList = () => {
 };
 
 export default FoodList;
+
+
 
 
 
