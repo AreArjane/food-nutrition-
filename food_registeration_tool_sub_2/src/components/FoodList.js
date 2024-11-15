@@ -28,6 +28,7 @@ const FoodList = () => {
           { id: 1, name: 'Apple', calories: 95 },
           { id: 2, name: 'Banana', calories: 105 },
           { id: 3, name: 'Carrot', calories: 25 }
+        
         ];
         setFoods(fetchedFoods);
       } catch (err) {

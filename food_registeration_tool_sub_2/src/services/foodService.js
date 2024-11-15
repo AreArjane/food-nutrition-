@@ -2,18 +2,17 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'https://your-backend-api-url/api',
+  baseURL: 'https://your-backend-api-url/api', // Ensure this is the correct URL
   headers: { 'Content-Type': 'application/json' },
 });
-// src/services/foodService.js
-export const getFoods = async () => {
-    try {
-      const response = await fetch('your-api-endpoint'); // Replace with your actual API URL
-      const data = await response.json();
-      return data; // Assuming data is an array of food items
-    } catch (error) {
-      console.error('Error fetching foods:', error);
-      return []; // Return an empty array on error
-    }
-  };
-  
+
+// Function to delete food item by ID
+export const deleteFood = async (id) => {
+  try {
+    await apiClient.delete(`/foods/${id}`); // Replace with your actual API endpoint for deleting a food item
+    console.log('Food deleted successfully');
+  } catch (error) {
+    console.error('Error deleting food:', error);
+    throw error; // Rethrow error to be handled in the component
+  }
+};
