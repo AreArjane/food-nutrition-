@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - User Profile</title>
+    <link rel="stylesheet" href="~/css/style_profile.css">
+</head>
+<body>
+    <header class="top-nav">
+        <h1>@ViewData["Title"]</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="/" id="dashboardInfo">Dashboard</a>
+                <a href="#" id="personalInfo" data-user-type="@ViewData["UserType"]">Personal Info</a>
+                <a href="#">Settings</a>
+                <a href="#">Notifications</a>
+                <a href="/Auth/Logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        @RenderBody() <!-- Content from each view goes here -->
+    </div>
+<script>
+    window.currentUserID = @Model.id;
+</script>
+
+<script src="~/js/profile.js" asp-append-version="true">
+
+</script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

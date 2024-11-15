@@ -1,0 +1,129 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Wrapper for GIF and Search Overlay */
+.gif-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Control max width for responsiveness */
+    margin: auto;
+}
+
+/* GIF Styling */
+.animated-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Centered Search Overlay Styling */
+.search-overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%; /* Adjust width for larger screens */
+    max-width: 600px;
+    color: #333;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 8px;
+}
+
+/* Search Overlay Text and Input Styling */
+
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: rgb(189, 173, 173);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.search-button:hover {
+    background-color: brown;
+}
+
+.results-section table {
+
+    width: 100%;
+    box-shadow: #ddd;
+
+}
+.results-section th {
+    height: 12%;
+    background-color: rgb(198, 181, 181);
+   
+}
+.results-section th, td {
+    padding: 15px;
+    text-align: left;
+    border-color: gray;
+}
+
+.results-section tr:nth-child(even) {background-color: #f2f2f2;}
+/* Responsive adjustments without changing position */
+@media (max-width: 768px) {
+    .search-overlay {
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 500px;
+        padding: 15px;
+    }
+
+    .search-overlay h1 {
+        font-size: 20px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .search-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-overlay {
+        width: 50%;
+        max-width: 400px;
+        padding: 10px;
+    }
+
+   
+
+    .search-input {
+        font-size: 12px;
+        padding: 6px;
+        width: 50%;
+    }
+
+    .search-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .results-section table {
+        width: 70%; /* Make table slightly smaller on mobile */
+    }
+}

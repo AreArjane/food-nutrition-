@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\47486\OneDrive\Dokumenter\GitHub\food-nutrition-\FoodRegisterationToolSub1
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Auth/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Food/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,16 +50,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Login/logup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cbG9ndXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Meals/Mymeals.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVhbHNcTXltZWFscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Profile/AdmiUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxBZG1pVXNlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Profile/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Profile/NormalUser.cshtml]
@@ -81,3 +89,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-nujx9wu0gz
+
+[C:/Users/47486/OneDrive/Dokumenter/GitHub/food-nutrition-/FoodRegisterationToolSub1/Views/Shared/_LayoutProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-2szoyfwec3

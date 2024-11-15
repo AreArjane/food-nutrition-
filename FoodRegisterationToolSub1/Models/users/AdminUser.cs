@@ -16,9 +16,9 @@ public class AdminUser : User {
     [StringLength(25)]
     public string? OfficeAddress { get;  set; }
     public string? WorkPhoneNr {get; set;}
-    public AdminUser() {
+    public AdminUser() : base(UserType.AdminUser){
 
-        UserType = UserType.AdminUser; 
+        
     }
 
 

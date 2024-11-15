@@ -11,6 +11,8 @@ import Contact from './components/Contact/Contact';
 import './styles/global.css';
 import './styles/variables.css';
 
+
+
 function App() {
   return (
     <div className="App">
@@ -26,8 +28,13 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </div>
+      </div>
+
+      
   );
 }
 
+
+
 export default App;
+

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qw/yEal28b0=",
+  "dgSpecHash": "KyY08GErhAI=",
   "success": true,
   "projectFilePath": "C:\\Users\\47486\\OneDrive\\Dokumenter\\GitHub\\food-nutrition-\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\47486\\.nuget\\packages\\aspnetcoreratelimit\\5.0.0\\aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\dotnetenv\\3.1.1\\dotnetenv.3.1.1.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -34,6 +35,7 @@
     "C:\\Users\\47486\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\47486\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.10\\npgsql.entityframeworkcore.postgresql.8.0.10.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -121,5 +123,22 @@
     "C:\\Users\\47486\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\47486\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\47486\\OneDrive\\Dokumenter\\GitHub\\food-nutrition-\\FoodRegisterationToolSub1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "FoodRegisterationToolSub1 depends on AspNetCoreRateLimit (>= 4.1.0) but AspNetCoreRateLimit 4.1.0 was not found. An approximate best match of AspNetCoreRateLimit 5.0.0 was resolved.",
+      "libraryId": "AspNetCoreRateLimit",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
