@@ -6,6 +6,15 @@ using FoodRegistrationToolSub1.Models.datasets;
 public class NutrientMap : ClassMap<Nutrient> {
 
     public NutrientMap() {
+
+
+        Map(m => m.Id).Name("id").Convert(args => {
+
+            int.TryParse(args.Row.GetField("id"), out int id);        
+            return id;
+            });
+
+
         Map(m => m.Id).Name("id");
         Map(m => m.Name).Name("name");
         Map(m => m.UnitName).Name("unit_name");

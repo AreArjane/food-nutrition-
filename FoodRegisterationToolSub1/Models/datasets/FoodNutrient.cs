@@ -22,33 +22,36 @@ public class FoodNutrient {
     [ForeignKey("FdcId")]
     public Food? Food {get; set;}
 
+    [Column("nutrient_id")]
+    public int NutrientId {get; set;}
+
+    [ForeignKey("NutrientId")]
+    public Nutrient? Nutrient {get; set;}
+    
+    [Column("amount")]
+    public long? Amount {get; set;}
+
     [Column("data_points")]
     public string? DataPoint {get; set;}
 
     [Column("derivation_id")]
     public string? DerivationId {get; set;}
     [Column("min")]
-    public float? Min {get; set;}
+    public string? Min {get; set;}
      [Column("max")]
-    public float? Max {get; set;}
+    public string? Max {get; set;}
      [Column("median")]
-    public float? Median {get; set;}
+    public string? Median {get; set;}
 
-    [StringLength(255)]
+    [StringLength(2555)]
      [Column("footnote")]
     public string? Footnote {get; set;}
     
     [Column("min_year_acquired")]
     public string? MinYearAcquired {get; set;}
 
-    [Column("amount")]
-    public long? Amount {get; set;}
+   
 
-    [Column("nutrient_id")]
-    public int NutrientId {get; set;}
-
-    [ForeignKey("NutrientId")]
-    public Nutrient? Nutrient {get; set;}
 
     /// <summary>
     /// Check if the specific object are equals to other object in the table when submitted to database. 
