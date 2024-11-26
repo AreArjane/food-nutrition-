@@ -1,0 +1,28 @@
+/* Similar styles as Login.css for uniformity */
+.logup-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.user-types {
+    margin-top: 20px;
+}
+
+.user-type-button {
+    margin: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #28a745;
+    border-radius: 5px;
+}
+
+.user-type-button:hover {
+    background-color: #218838;
+}
+
+.highlight {
+    display: block;
+    margin: 20px auto;
+    max-width: 100px;
+}

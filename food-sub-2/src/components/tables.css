@@ -1,0 +1,10 @@
+.table-container {
+    margin: 20px auto;
+    max-width: 1200px;
+}
+.loading {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #6c757d;
+}
