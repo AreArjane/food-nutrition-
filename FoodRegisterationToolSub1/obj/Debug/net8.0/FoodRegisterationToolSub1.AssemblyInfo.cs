@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FoodRegisterationToolSub1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8acd1972c30105cd4260e24c18c56d7c36b7534d")]
+<<<<<<< Updated upstream
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91f0a2769208a33145d3ebf3dffee97829a800da")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03447dc1e98401d929ebf8488c1037699631b362")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("FoodRegisterationToolSub1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodRegisterationToolSub1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
