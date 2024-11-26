@@ -17,11 +17,11 @@ document.querySelector("#searchButton").addEventListener("click", async function
         const data = await response.json();
 
         const resultsDiv = document.querySelector("#results");
-        resultsDiv.innerHTML = ""; // Clear any previous results
+        resultsDiv.innerHTML = ""; 
 
-        // Check if there are results in Foods or Meal
+        
         if (data.foods.length || data.meal.length) {
-            // Create a table structure
+            
             let tableHtml = `
             
                 <table border="1" cellpadding="5" cellspacing="0">
@@ -36,7 +36,7 @@ document.querySelector("#searchButton").addEventListener("click", async function
                     
             `;
 
-            // Add rows for each food item
+            
             data.foods.forEach(food => {
                 tableHtml += `
                     <tr>
@@ -47,7 +47,7 @@ document.querySelector("#searchButton").addEventListener("click", async function
                 `;
             });
 
-            // Add rows for each meal item
+           
             data.meal.forEach(meal => {
                 tableHtml += `
                     <tr>
@@ -63,7 +63,6 @@ document.querySelector("#searchButton").addEventListener("click", async function
                 </table>
             `;
 
-            // Insert the table into the results div
             resultsDiv.innerHTML = tableHtml;
         } else {
             resultsDiv.innerHTML = "<p>No results found</p>";

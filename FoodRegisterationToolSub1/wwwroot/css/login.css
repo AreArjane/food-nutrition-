@@ -1,4 +1,4 @@
-/* Center the login container */
+
 .login-container {
     max-width: 400px;
     margin: 50px auto;
@@ -10,14 +10,14 @@
     position: relative;
 }
 
-/* Title styling */
+
 .login-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* User type container with SVG highlight */
+
 .user-types {
     display: flex;
     justify-content: space-between;
@@ -25,7 +25,6 @@
     position: relative;
 }
 
-/* SVG Highlight Element Styling */
 .highlight {
     position: absolute;
     width: 400px; 
@@ -36,7 +35,7 @@
     transition: all 0.3s;
 }
 
-/* User type button styling */
+
 .user-type-button {
     flex: 1;
     margin: 0 5px;
@@ -49,14 +48,14 @@
     font-size: 14px;
     transition: background-color 0.3s;
     position: relative;
-    z-index: 1; /* Ensure buttons are on top of highlight */
+    z-index: 1; 
 }
 
 .user-type-button:hover {
     background-color: #2980b9;
 }
 
-/* Login form styling */
+
 #LoginForm, #LogUpForm h2 {
     display: none;
     margin-top: 20px;
@@ -119,14 +118,14 @@
     background-color: #27ae60;
 }
 
-/* Error message styling */
+
 #errorMessages {
     color: #e74c3c;
     font-size: 14px;
     margin-top: 10px;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 500px) {
     .login-container {
         padding: 15px;
@@ -138,7 +137,7 @@
     }
 
     .highlight {
-        width: 80px; /* Smaller size for smaller screens */
+        width: 80px; 
         height: 32px;
     }
 }

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<style>
+ 
+</style>
+
+</head>
+<body class="has-background-light">
+
+
+<div class="container mt-5">
+  
+        <!-- Add Icon using Ionic with Bulma styling -->
+        <!-- START NAV -->
+    <nav class="navbar is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item brand-text" href="../index.html">SuperUser</a>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="admin.html">Home</a>
+                    <a class="navbar-item" id="personalInfo">Personal Infromation
+                        <!-- Profile update form container -->
+                    </a>
+                    <a class="navbar-item" href="admin.html">Security</a>
+                    <a class="navbar-item" href="admin.html">Managment</a>
+                    <a class="navbar-item" href="admin.html">Document Order</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV -->
+    
+    <div class="container">
+        <div class="columns">
+            <!--Side bar-->
+            <div class="column is-3 ">
+                <aside class="menu is-hidden-mobile">
+                    <p class="menu-label">General</p>
+                    <div class="models-container">
+                    <ul class="menu-list models-lists">
+                        <li data-model="dashboard"><a class="is-active">Dashboard</a></li>
+                        <li data-model="customer"><a>Customers</a></li>
+                        <li data-model="foods"><a>Foods</a></li>
+                        <li data-model="foodscategories"><a>FoodsCategories</a></li>
+                        <li data-model="nutrient"><a>Nutrients</a></li>
+                        <li data-model="foodsnutrients"><a>FoodsNutrients</a></li>
+                        <li data-model="meals"><a>Meals</a></li>
+                    </ul>
+                    
+                    
+                    <p class="menu-label">Administration</p>
+                    <ul class="menu-list models-lists">
+                        <li data-model="manageuser"><a>Manage Users</a></li>
+                        <li data-model="managefoods"><a>Manage Foods</a></li>
+                        <li data-model="managemeals"><a>Manage Meals</a></li>
+                    </ul>
+                    </div>
+                </aside>
+            </div>
+            <!--End of SideBar-->
+            <div class="column is-9">
+                <!--start of the tabs-->
+                <p id="tab-lists-description"></p>
+                <div class="tabs is-centered" id="tab-lists">
+                    
+                    <ul>
+                      <li  id="tab-1"><a>Pictures</a></li>
+                      <li  id="tab-2"><a>Music</a></li>
+                      <li  id="tab-3"><a>Videos</a></li>
+                      <li  id="tab-4"><a>Documents</a></li>
+                    </ul>
+                  </div>
+                  <!--End of tabs-->
+
+                <section class="hero is-info welcome is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                Hello, Admin.
+                            </h1>
+                            <h2 class="subtitle">
+                                I hope you are having a great day!
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+                <!--Start of main content-->
+                <div class="main-content">
+                <!--static element-->
+                <section class="info-tiles" id="static-data">
+                    <div class="tile is-ancestor has-text-centered">
+                        <div class="tile is-parent static-element">
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <!--End of static element-->
+                <!--End of main content-->
+                </div>
+                <!--Start of the search pagination-->
+                <!--block box-->
+                
+                
+                
+                    
+                        <div class="block box mb-4 mt-2 mr-2 ml-2 p-5" id="pagination-container">
+
+                            <div class="field search-container has-addons is-flex-direction-row ">
+                                <p class="control is-expanded">
+                                    <input type="text" class="input" placeholder="Search...">
+                                </p>
+                                <p class="control ml-2 mt-0">
+                                    <button class="button is-primary is-rounded" id="search-button-pagination">Search</button>
+                                </p>
+                            </div>
+
+                            <div>
+                                <nav class="pagination is-small" role="navigation" aria-label="pagination">
+                                    <a id="pagination-previous" class="pagination-previous mb-2">Previous</a>
+                                    <a id="pagination-next" class="pagination-next mb-2">Next page</a>
+                                    <ul class="pagination-list">
+                                        <li><a href="#" class="pagination-link mb-2" aria-label="Goto page 1">1</a></li>
+                                        <li><span class="pagination-ellipsis mb-2">&hellip;</span></li>
+                                        <li><a href="#" class="pagination-link mb-2" aria-label="Goto page 45">45</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="box mt-2 mb-2 has-background-light" id="pagination-content"></div>
+
+                        </div>
+                    
+                
+                <!--End of Search paination-->
+                
+                
+
+                <!--start of the column columns is-variable custom-gap-->
+                <div class="columns is-4 custom-gap is-hidden" id="user-manipulation-action">
+                    <div class="column  has-background-light">By UserID</div>
+                    <div class="column  has-background-dark">By phoneNr</div>
+                    <div class="column has-background-dark">By FoodID</div>
+                </div>
+
+                 <div id="profile-content" class="is-hidden">
+                          
+                 </div>
+
+        
+    </section>
+</div>
+
+
+</body>
+<script>
+
+ 
+    
+    
+    
+    /** ******************************/
+    class superuserJS {
+    
+        #tabs;
+        #tabdescription;
+        #maincontent;
+        #paginationcontainer;
+        #usermanipulationaction;
+    
+    
+    
+        setTabs(modelsType) { 
+            switch(modelsType) {
+    
+                case 'dashboard':
+                    this.#tabs = ['static', 'search'];
+                    this.#tabdescription = "Filter by";              break;
+                case 'customer':
+                    this.#tabs = ['Name', 'PhoneNr'];
+                    this.#tabdescription = "Filter by";              break;
+                case 'foods':
+                    this.#tabs = ['Name', 'Publication Date'];
+                    this.#tabdescription = "Filter by";              break;
+                case 'foodscategories':
+                    this.#tabs = ['Name', 'Code'];  
+                    this.#tabdescription = "Filter by";              break;
+                case 'nutrient':
+                    this.#tabs = ['Name', 'Rank', 'Unit'];   
+                    this.#tabdescription = "Filter by";              break;
+                case 'foodsnutrients':
+                    this.#tabs = ['amount'];       
+                    this.#tabdescription = "Filter by";              break;
+                case 'meals':
+                    this.#tabs = ['Name', 'Date publication'];
+                    this.#tabdescription = "Filter by";              break;
+                case 'manageuser':
+                    this.#tabs = ['Update', 'Add'];       
+                    this.#tabdescription  = "Action";                 break;
+                case 'managefoods':
+                    this.#tabs = ['Create', 'Update', 'DELETE'];
+                    this.#tabdescription = "Action";                 break;
+                case 'managemeals':
+                    this.#tabs = ['Create', 'Update', 'Delete'];
+                    this.#tabdescription = "Action";                 break;
+                default:
+                    this.#tabs = [''];  
+                    this.#tabdescription = "";                       break;
+            }
+        }
+    
+        getTabedescription() {
+            return this.#tabdescription;
+        }
+    
+        setMainContent(element) {
+            this.#maincontent = element; 
+        }
+        setPaginationContainer(element) {
+            this.#paginationcontainer = element;
+        }
+    
+        updateVisibility(mode) {
+    
+            switch(mode) {
+                case 'main': 
+                this.#maincontent.classList.classList.remove('is-hidden');
+                this.#paginationcontainer.classList.add('is-hidden');               break;
+                case 'pagination':
+                    this.#maincontent.classList.add('is-hidden');
+                    this.#paginationcontainer.classList.remove('is-hidden');        break;
+                default:
+                    this.#maincontent.classList.remove('is-hidden');
+                    this.#paginationcontainer.classList.add('is-hidden'); break;
+            }
+            
+    
+        }
+    
+        updateTags(listSelector) {
+            const listTags = document.querySelector(listSelector);
+            if(!listTags) {console.error(`List container cannot be found it ${lisTags}`); return;}
+    
+            listTags.innerHTML = '';
+    
+            const ul = document.createElement('ul');
+            this.#tabs.forEach((tab, index) => {
+                const li = document.createElement('li');
+                if(index === 0) {li.classList.add('is-active');}
+    
+                li.id = `tab-${index + 1}`;
+                const a = document.createElement('a');
+                a.textContent = tab;
+    
+                a.addEventListener('click', () => {
+                    this.handleTabClick(li, tab, index);
+    
+                });
+                li.append(a);
+                ul.append(li);
+            });
+            listTags.append(ul);
+            
+        }
+    
+        handleTabClick(clickedTab, tabName, tabIndex) {
+            const allTabs = clickedTab.parentElement.querySelectorAll('li');
+            allTabs.forEach((tab) => tab.classList.remove('is-active'));
+    
+            clickedTab.classList.add('is-active');
+    
+            console.log(`tab clicked: ${tabName} Index ${tabIndex}`);
+        }
+    }
+    
+    
+    const superuser = new superuserJS();
+    
+    document.querySelector('.models-container').addEventListener('click', (event) => {
+        const tabdescription = document.querySelector("#tab-lists-description");
+        const listItems = event.target.closest('li[data-model]');
+        
+        if(listItems) {
+            const modelType = listItems.getAttribute('data-model');
+    
+            document.querySelectorAll('.models-lists li a').forEach((items) => {
+                items.classList.remove('is-active');        });
+    
+                listItems.querySelector('a').classList.add('is-active');
+    
+                superuser.setTabs(modelType);
+                tabdescription.textContent = superuser.getTabedescription();
+                superuser.updateTags('#tab-lists');
+        }
+    });
+    
+    window.addEventListener('DOMContentLoaded', () => {
+        const activeModelItem = document.querySelector('.models-lists li a.is-active');
+        const tabdescription = document.querySelector("#tab-lists-description");
+        if (activeModelItem) {
+            const modelType = activeModelItem.parentElement.getAttribute('data-model');
+            superuser.setTabs(modelType);
+            tabdescription.textContent = superuser.getTabedescription();
+            superuser.updateTags('#tab-lists');
+        }
+    });
+    
+    function AppendStatic() {
+        document.addEventListener("DOMContentLoaded", async function(event) {
+    
+            event.preventDefault();
+    
+            const staticElement = document.querySelector(".static-element");
+    
+            try {
+            const response = await fetch("http://localhost:5072/Static/StaticResult", { 
+                method: 'GET',
+                headers : {"Content-Type": 'application/json'}
+            });
+    
+            if(response.ok)  {
+    
+                const data = await response.json();
+    
+                const staticounter = data.staticCounter;
+    
+                Object.entries(staticounter).forEach(([index, static]) => {
+    
+                    const article   = document.createElement('article');
+                    const pTitle    = document.createElement('p');
+                    const pSubtitle = document.createElement('p');
+    
+                    article.className = 'tile is-child box';
+                    
+                    pTitle.className = 'title';
+                    pTitle.textContent = `${static}K`;
+    
+                    pSubtitle.className = 'subtitle';
+                    pSubtitle.textContent = `${index.charAt(0).toUpperCase() + index.slice(1)}`;
+    
+                    article.append(pTitle);
+                    article.append(pSubtitle);
+                    staticElement.append(article);
+                    
+                });
+    
+            } else { 
+    
+                console.error('Erorr : ', error);
+            }} catch(error) {
+                console.error("Error Fetching data: ", error);
+    
+            }
+        });
+    
+    }
+    
+    AppendStatic();
+    
+    const maincontent = document.querySelector('#main-content');
+    const paginationcontent = document.querySelector('#pagination-container');
+    superuser.setMainContent(maincontent);
+    superuser.setPaginationContainer(paginationcontent);
+    
+    superuser.updateVisibility('pagination');
+    
+    
+    </script>
+</html>

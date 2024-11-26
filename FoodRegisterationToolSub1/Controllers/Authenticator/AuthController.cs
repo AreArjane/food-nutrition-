@@ -6,20 +6,16 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
-/// <summary>
-/// Controller for autentisering av brukere i applikasjonen.
-/// Håndterer pålogging og brukersesjoner.
-/// </summary>
+[Route("Auth")]
+[ApiController]
 public class AuthController  : Controller  { 
 
     private readonly ApplicationDbContext _context;
     private readonly PasswordHasher<NormalUser> _passwordHasher;
+    private readonly PasswordHasher<SuperUser> _passwordHasher_s;
+     private readonly PasswordHasher<PendingSuperUser> _passwordHasher_ps;
+    
 
-   /// <summary>
-    /// Initialiserer en ny instans av <see cref="AuthController"/>-klassen.
-    /// </summary>
-    /// <param name="context">Databasekonteksten for å få tilgang til brukerinformasjon.</param>
     public AuthController(ApplicationDbContext context) { 
         _context = context;
         _passwordHasher = new PasswordHasher<NormalUser>();
@@ -28,18 +24,14 @@ public class AuthController  : Controller  {
     
     }
 
+    [HttpPost("verify")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Login([FromForm] string email, [FromForm] string password, [FromForm] UserType userType) { 
+        Console.WriteLine($"Received request with Email: {email} with password : {password} with the usertype {userType}");
+    
 
-   /// <summary>
-    /// Utfører pålogging for brukere basert på e-post, passord og brukertype.
-    /// Verifiserer brukerens legitimasjon og oppretter en sesjon ved vellykket autentisering.
-    /// </summary>
-    /// <param name="email">Brukerens e-postadresse.</param>
-    /// <param name="password">Brukerens passord.</param>
-    /// <param name="userType">Typen brukerkonto som logges inn (f.eks. NormalUser).</param>
-    /// <returns>
-    /// En <see cref="IActionResult"/> som representerer visningen av brukerens profilside
-    /// ved vellykket pålogging, eller innloggingssiden ved mislykket forsøk.
-    /// </returns>
+
+
         User user = null;
         PasswordVerificationResult passwordVerification = PasswordVerificationResult.Failed;
 
@@ -89,11 +81,11 @@ public class AuthController  : Controller  {
         
         };
         
-        // Set up identity and principal
+     
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         var principal = new ClaimsPrincipal(identity);
         
-        // Sign in the user
+      
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
         HttpContext.Session.SetInt32("UserID", user.UserId);
@@ -101,7 +93,7 @@ public class AuthController  : Controller  {
 
        if (user.UserType == UserType.NormalUser)
         {
-            redirectUrl = Url.Action("GetUserProfile", "NormalUser", new { id = user.UserId });
+            redirectUrl = Url.Action("GetUserProfileView", "NormalUser", new { id = user.UserId });
         }
         else if (user.UserType == UserType.SuperUser)
         {
@@ -121,3 +113,25 @@ public class AuthController  : Controller  {
 
 
 
+    }
+    [HttpPost("logout")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Logout() {
+
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+        HttpContext.Session.Clear();
+
+        return Json(new {success = true, redirectUrl = Url.Action("Login", "Login")});
+    }
+
+
+
+
+    [HttpGet("AccessDenied")]
+    public IActionResult AccessDenied()
+    {
+        
+        return View();
+    }
+}

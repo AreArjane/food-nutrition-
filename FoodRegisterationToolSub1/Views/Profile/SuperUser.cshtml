@@ -1,20 +1,133 @@
 @{
     Layout = "~/Views/Shared/_LayoutProfile.cshtml";
-    ViewData["Title"] = "SuperUser Profile";
 }
 
+<!-- Container for the entire layout -->
+<div class="container p-3">
+    <!-- Tabs and Welcome Section at the Top -->
+    <div>
+        <!-- Tabs -->
+        <p id="tab-lists-description"></p>
+        <div class="tabs is-centered" id="tab-lists">
+            <ul>
+                <li id="tab-1"><a>JavaScript not applied</a></li>
+            </ul>
+        </div>
 
+        <!-- Welcome Section -->
+        <section class="main-content-1 hero is-info welcome is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Hello, Admin.</h1>
+                    <h2 class="subtitle">I hope you are having a great day!</h2>
+                </div>
+            </div>
+        </section>
+    </div>
 
-<div id="main-content">
-    <h1>Welcome to the Dashboard</h1>
-    <p>This is some other content on the page.</p>
+    <!-- Main Content and Sidebar -->
+    <div class="columns">
+        <!-- Main Content on the Left -->
+        <div class="column">
+             <!-- Static Element -->
+             <div class="main-content-1">
+                <section class="info-tiles main-content-1" id="static-data">
+                    <div class="tile is-ancestor has-text-centered main-content-1">
+                        <div class="tile is-parent main-content-1 static-element">
+                            <!-- Content goes here -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="main-content">
+               
+                
+
+                <!-- User Manipulation Actions -->
+                <div class="columns is-multiline is-hidden" id="user-manipulation-action">
+                    <div class="column has-background-light">By UserID</div>
+                    <div class="column has-background-dark">By phoneNr</div>
+                    <div class="column has-background-dark">By FoodID</div>
+                </div>
+
+                <!-- Profile Content -->
+                <div id="profile-content" class="is-hidden">
+                    @Html.AntiForgeryToken()
+                </div>
+            </div>
+        </div>
+        <!-- Pagination and Search -->
+                
+                    <div class="column is-half pagination-container is-hidden">
+                    <!-- Search Bar -->
+                    <div class="field search-container has-addons">
+                        <p class="control is-expanded">
+                            <input type="text" class="input" placeholder="Search...">
+                        </p>
+                        <p class="control is-expanded ml-2 mt-0">
+                            <button class="button is-primary is-rounded" id="search-button-pagination">Search</button>
+                        </p>
+                    </div>
+
+                    <!-- Pagination Navigation -->
+                    <div class="is-flex is-flex-direction-row">
+                        <nav class="pagination is-small" role="navigation" aria-label="pagination">
+                            <a id="pagination-previous" class="pagination-previous mb-2">Previous</a>
+                            <a id="pagination-next" class="pagination-next mb-2">Next page</a>
+                            <ul class="pagination-list">
+                                <li><a href="#" class="pagination-link mb-2" aria-label="Goto page 1">1</a></li>
+                                <li><span class="pagination-ellipsis mb-2">&hellip;</span></li>
+                                <li><a href="#" class="pagination-link mb-2" aria-label="Goto page 45">45</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                        <!-- Pagination Content -->
+                        <div class="box" id="pagination-content">
+                        <!-- Dynamic content goes here -->
+                        </div>
+                    </div>
+                
+
+        <!-- Sidebar on the Right -->
+        <div class="column is-3-desktop is-12-mobile">
+            <!-- Burger Menu for Smaller Screens -->
+            <div class="is-hidden-desktop mb-3">
+                <a role="button" class="navbar-burger sidebar-burger" aria-label="menu" aria-expanded="false" data-target="sidebar-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <aside id="sidebar-menu" class="menu">
+                <p class="menu-label">General</p>
+                <div class="models-container">
+                    <ul class="menu-list models-lists">
+                        <li data-model="dashboard"><a class="is-active">Dashboard</a></li>
+                        <li data-model="customer"><a>Customers</a></li>
+                        <li data-model="foods"><a>Foods</a></li>
+                        <li data-model="foodscategories"><a>FoodsCategories</a></li>
+                        <li data-model="nutrients"><a>Nutrients</a></li>
+                        <li data-model="foodsnutrients"><a>FoodsNutrients</a></li>
+                        <li data-model="meals"><a>Meals</a></li>
+                    </ul>
+
+                    <p class="menu-label">Administration</p>
+                    <ul class="menu-list models-lists">
+                        <li data-model="manageuser"><a>Manage Users</a></li>
+                        <li data-model="managefoods"><a>Manage Foods</a></li>
+                        <li data-model="managemeals"><a>Manage Meals</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+   
+   
 </div>
 
-<!-- Profile update form container (initially hidden) -->
-<div id="profile-content" style="display: none;">
-    @Html.AntiForgeryToken()
-</div>
 
 @section Scripts {
-    <script src="~/js/profile.js"></script>
+    <script src="~/js/profiler/super_userprofile.js"></script>
 }

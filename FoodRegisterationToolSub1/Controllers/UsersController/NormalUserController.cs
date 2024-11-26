@@ -4,29 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
 [ApiController]
-/// <summary>
-/// API Controller for håndtering av normalbrukerdata, inkludert henting av brukerprofilinformasjon.
-/// </summary>
 
-public class NormalUserController : ControllerBase {
+
+public class NormalUserController : Controller {
 
     private readonly ApplicationDbContext _context;
-    /// <summary>
-    /// Initializes a new instance of the <see cref="NormalUserController"/> class, injecting the application database context.
-    /// </summary>
-    /// <param name="context">Database context for accessing normal user-related data.</param>
+
     public NormalUserController(ApplicationDbContext context) { 
         _context = context;
     }
-     /// <summary>
-    /// Retrieves the profile data of a normal user by ID.
-    /// </summary>
-    /// <param name="id">The unique identifier of the normal user.</param>
-    /// <returns>
-    /// An HTTP 200 OK response containing the normal user's profile data if found and valid; 
-    /// an HTTP 404 Not Found response if the user does not exist; 
-    /// or an HTTP 403 Forbidden response if the user type is not authorized.
-    /// </returns>
+
     [HttpGet("{id}/profile")]
 
     public IActionResult GetUserProfile(int id) {
@@ -58,6 +45,41 @@ public class NormalUserController : ControllerBase {
         
 
         return Ok(profile_data_NU);
+    }
+
+    [HttpGet("{id}/profile/view")]
+    public IActionResult GetUserProfileView(int id)
+    {
+        var loggedInUserId = HttpContext.User.FindFirst("UserId")?.Value;
+
+        if (loggedInUserId == null || int.Parse(loggedInUserId) != id)
+        {
+            return Forbid();
+        }
+
+        var normal_user = _context.NormalUsers.Find(id);
+
+        if (normal_user == null)
+        {
+            return NotFound();
+        }
+
+        if (normal_user.UserType != UserType.NormalUser)
+        {
+            return Forbid();
+        }
+
+        var profileData = new
+        {
+            normal_user.FirstName,
+            normal_user.PhoneNr,
+            normal_user.LastName,
+            normal_user.Email,
+            normal_user.UserType,
+            id
+        };
+
+        return View("/Views/Profile/NormalUser.cshtml", profileData);
     }
 
 

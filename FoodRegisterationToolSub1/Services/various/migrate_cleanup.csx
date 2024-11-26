@@ -1,4 +1,4 @@
-// Load environment variables and required assemblies
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DotNetEnv;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 var migrationDir = Path.Combine(Directory.GetCurrentDirectory(), "Migrations");
 var serviceCollection = new ServiceCollection();
-//Database configuration
+
 DataBaseConfiguration.ConfigurationDatabase(serviceCollection);
 
 

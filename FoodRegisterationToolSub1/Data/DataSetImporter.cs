@@ -17,6 +17,27 @@ public class DataSetImporter
     {
         _dbContext = dbContext;
     }
+    /// <summary>
+    /// Importing each comparer function based on the class name and type
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns>ComparerHelper fixed function have two method Equals and GetHash<see cref="ComparatorHelper"/></returns>
+    private IEqualityComparer<T> GetComparer<T>() where T : class {
+        if (typeof(T) == typeof(Food)) {
+            return (IEqualityComparer<T>)new FoodComparer();
+        }
+        if (typeof(T) == typeof(FoodCategory)) {
+            return (IEqualityComparer<T>)new FoodCategoryComparer();
+        }
+        if (typeof(T) == typeof(Nutrient)) {
+            return (IEqualityComparer<T>)new NutrientComparer();
+        }
+        if (typeof(T) == typeof(FoodNutrient)) {
+            return (IEqualityComparer<T>)new FoodNutrientComparer();
+        }
+        throw new InvalidOperationException("No comparer avaliabe for type" + typeof(T).Name);
+
+    }
 
     public void ImportData()
     {
@@ -55,38 +76,40 @@ public class DataSetImporter
             var validFoodIds = new HashSet<int>(_dbContext.Foods.Select(f => f.FoodId));
             var validNutrientIds = new HashSet<int>(_dbContext.Nutrients.Select(n => n.Id));
 
-            var existingRecords = _dbContext.Set<T>().AsNoTracking().ToList();
+            var existingRecords = _dbContext.Set<T>().AsNoTracking().ToHashSet(GetComparer<T>());
             var records = csv.GetRecords<T>().ToList();
-            var newRecords = new List<T>();
+            var newRecords = records.Where(r => !existingRecords.Contains(r)).ToList();
 
             foreach (var record in records)
             {
                 // Validate Food records
                 if (record is Food foodRecord)
-                {
+                {   //check for uncatagorized food and set the value to null in food table
                     if (foodRecord.FoodCategoryId == null || !validCategoryIds.Contains(foodRecord.FoodCategoryId.Value))
                     {
-                        Console.WriteLine($"Skipping Food record with fdc_id={foodRecord.FoodId} due to invalid or missing FoodCategoryId.");
-                        continue;
+                        Console.WriteLine($"Invalid FoodCategoryId {foodRecord.FoodCategoryId} for FoodId {foodRecord.FoodId}. Setting FoodCategoryId to null.");
+                        foodRecord.FoodCategoryId = null;
                     }
                 }
 
                 if (record is FoodNutrient foodNutrientRecord)
-                {
+                {    //skiping the ecord in FoodNutients where the ID for food is missing. This is crucial record to have a valid foodID
                     if (!validFoodIds.Contains(foodNutrientRecord.FdcId))
                     {
                         Console.WriteLine($"Skipping FoodNutrient record with id={foodNutrientRecord.Id} due to missing Food with FdcId={foodNutrientRecord.FdcId}.");
                         continue;
                     }
-
-                    if (!validNutrientIds.Contains(foodNutrientRecord.NutrientId))
+                    //check some FoodNutients record that do not contains nutrientsId. Set this ID to null. 
+                    //In dataset it could be some food been recorded in FoodNutrients but missing nutrientsId due to deletation of Nutrients in nutrients table where USD traited as no Cascade.
+                    //Where som food contains many nutrients. This application can manupulate this missing record and superuser can added manually. 
+                    if (!validNutrientIds.Contains(foodNutrientRecord.NutrientId.Value))
                     {
-                        Console.WriteLine($"Skipping FoodNutrient record with id={foodNutrientRecord.Id} due to missing Nutrient with NutrientId={foodNutrientRecord.NutrientId}.");
-                        continue;
+                        Console.WriteLine($"Invalid NutrientID for id={foodNutrientRecord.Id} due to missing Nutrient with NutrientId={foodNutrientRecord.NutrientId}. Setting to null");
+                        foodNutrientRecord.NutrientId = null;
                     }
                 }
 
-                // Add only unique records that pass validation
+                
                 if (!existingRecords.Contains(record))
                 {
                     newRecords.Add(record);

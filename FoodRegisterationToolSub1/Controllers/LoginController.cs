@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
+using EmailService;
 using FoodRegisterationToolSub1.Models.users;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,12 +32,18 @@ public class LogUpController : Controller {
 
     }
 
+    private bool IsCodeInUse(string code, string email) {
+        return _context.PendingSuperUser.Any(pu => pu.Email == email && pu.verificationcode == code);
+    }
+//********************************************************************Render Sub1 Frontend********************************************************************************//
     [HttpGet("")]
     
     public IActionResult Logup() {
         return View("/Views/Login/logup.cshtml");
     }
 
+
+//******************************************************************Log Up function******************************************************************************************//
     [HttpPost("s")]
     public async Task<IActionResult> LogupSubmitNormalUser(
         [FromForm] string firstname, [FromForm] string? lastname, 
@@ -45,80 +52,150 @@ public class LogUpController : Controller {
         [FromForm] string? dateofbirth, [FromForm] UserType usertype) {
 
         Console.WriteLine($"Received request with Email: {email}");
-    Console.WriteLine($"Firstname: {firstname}, Lastname: {lastname}, Phonenr: {phonenr}, Dateof birth {dateofbirth}, usertype: {usertype }");
+        Console.WriteLine($"Firstname: {firstname}, Lastname: {lastname}, Phonenr: {phonenr}, Dateof birth {dateofbirth}, usertype: {usertype }");
 
+
+//******************************************************Validation Input Block**********************************************************************//
        var validatorError = new List<String>(); 
-       var nameValidate = ValidatorSpes.ValidateNorwegianAlphabet(firstname, lastname);
+       var firstnameValidate = ValidatorSpes.ValidateNorwegianAlphabet(firstname)[0];
+       var lastnameValidate = ValidatorSpes.ValidateNorwegianAlphabet(lastname)[0];
        var emailEntity = new EmailAddressAttribute();
-       var EmailValidate = ValidatorSpes.IsEmail(email);
-       
+       var EmailValidate = ValidatorSpes.IsEmail(email)[0];
+       var phonenrValidate = ValidatorSpes.IsOnlyNumber(phonenr)[0];
+       var usertypeValidate = ValidatorSpes.IsValidUserType(usertype);
+       var dataofbirthNormaluser = string.IsNullOrEmpty(dateofbirth);
+       var lastnameSuperuser = string.IsNullOrEmpty(lastname);
+       var dateofbirthValidate = ValidatorSpes.IsOnlyNumber(dateofbirth)[0];
 
-       if(!nameValidate.All(result => result)) { 
-        validatorError.Add("First name or last name cotnais invalid charachters"); }
-       
-       //if(!emailEntity.IsValid(email)) {
-       // validatorError.Add("Email conatins invalid charachters");}
+//***************************************************Validation decistion based on User Type*******************************************************//
       
-       if(!ValidatorSpes.IsPhoneNumber(phonenr)[0]) {
-        validatorError.Add("Phone number invalid it should be only number");}
-       
-       
+       switch (usertype) { 
 
-       //if(validatorError.Count > 0) {
-        //return BadRequest(new {errors = validatorError});
-       //}
+        case UserType.NormalUser: 
 
-      try
+        if(!firstnameValidate)    {      validatorError.Add("Error with firstname input : Only Norwegian alfabet");                          }
+        if(!lastnameValidate)     {      validatorError.Add("Error with lastname input  : Only Norwegian accepted input");                   }
+        if(!EmailValidate)        {      validatorError.Add("Error with Email input     : Email format example@example.com");                }
+        if(!phonenrValidate)      {      validatorError.Add("Error with phonenr input   : Phone Number format only number 8-14");            }
+        if(!dataofbirthNormaluser){      validatorError.Add("Error with Date of Birth   : Date of Birth is not expected with Normal User");  } 
+
+        break;
+
+        case UserType.SuperUser:
+
+        if(!firstnameValidate)    {      validatorError.Add("Error with firstname input : Only Norwegian alfabet");                          }
+        if(!EmailValidate)        {      validatorError.Add("Error with Email input     : Email format example@example.com");                }
+        if(!phonenrValidate)      {      validatorError.Add("Error with phonenr input   : Phone Number format only number 8-14");            }
+        if(!lastnameSuperuser)    {      validatorError.Add("Error with Last Name       : Last name is not expected with Super User");       } 
+        if(!dateofbirthValidate)  {      validatorError.Add("Error with date of birth   : Only number format accepted e.g 01012024");        }
+
+        break;
+
+        default: 
+
+        validatorError.Add("Error with Usertype : Not defined");
+        break;
+} 
+
+
+    if(validatorError.Count > 0) { return BadRequest(new {errors = validatorError}); }
+
+
+//***************************************************Verification with Email OTP*************************************************************************************//
+
+string verificationCode; 
+
+do { 
+    verificationCode = new Random().Next(100000, 999999).ToString();
+
+} while(IsCodeInUse(verificationCode, email));
+
+
+
+
+
+
+
+//***************************************************Populate the input for creating*************************************************************************************//
+
+    try
         {
-            // Create the user based on UserType and save to database
-            User user = usertype switch
-    {
-        UserType.NormalUser => new NormalUser
-        {
-            FirstName = firstname,
-            LastName = lastname,
-            PhoneNr = phonenr,
-            Email = email
-        },
-        UserType.SuperUser =>  new SuperUser
-            {
-                FirstName = firstname,
-                PhoneNr = phonenr,
-                Email = email,
-                DateOfBirth = dateofbirth
-            } ,
-            
-        _ => throw new ArgumentException("Invalid user type.")
-    };
+            User newUser;
 
-
-            // Set the password for the user
-            user.SetPassword(password);
-
-            // Add the user to the specific table based on type
-            switch (user)
-            {
-                case NormalUser normalUser:
-                    _context.NormalUsers.Add(normalUser);
+            switch(usertype) {
+                
+                case UserType.NormalUser: 
+                
+                
+                    newUser = new NormalUser {
+                        FirstName = firstname,
+                        LastName = lastname,
+                        PhoneNr = phonenr,
+                        Email = email,
+                    
+                    }; 
                     break;
-                case SuperUser superUser:
-                    _context.SuperUsers.Add(superUser);
+
+                case UserType.SuperUser:
+                    newUser = new PendingSuperUser {
+                    FirstName = firstname,
+                    PhoneNr = phonenr,
+                    Email = email,
+                    DateOfBirth = dateofbirth,
+                    verificationcode = verificationCode
+                    }; 
                     break;
-                default:
-                    throw new ArgumentException("Invalid user type.");
+
+                default:  throw new ArgumentException("Invalid user type.");
+    }
+    
+//******************************************************************Password Creating***************************************************************************//
+    newUser.SetPassword(password);
+
+Console.WriteLine(newUser.UserType);
+//*****************************************************************Add User to Database***************************************************************************//
+    switch (newUser.UserType)
+            {
+                case UserType.NormalUser:  
+                    
+
+                    var normalUserExist = _context.NormalUsers.FirstOrDefault(n => n.Email == email);
+                
+                    if(normalUserExist == null ) { _context.NormalUsers.Add((NormalUser)newUser); await EmailVerification.SendVerificationCode(email, verificationCode);}
+                
+                    else { Console.WriteLine("Redirecting to /Login"); return Redirect("http://localhost:5072/Login");}                 break;
+                
+                case UserType.SuperUser:
+                
+                            
+                    var PuserExist = _context.PendingSuperUser.FirstOrDefault(nu => nu.Email == email);
+                 
+                    if(PuserExist == null) { _context.PendingSuperUser.Add((PendingSuperUser)newUser); await EmailVerification.SendVerificationCode(email, verificationCode);} 
+                 
+                    else if(PuserExist != null && PuserExist.ExpirationCheck() == true) { await EmailVerification.SendVerificationCode(verificationCode, email);}
+                    else { Console.WriteLine("Redirecting to /Login"); return Redirect("http://localhost:5072/Login"); }  break;
+                
+                default:                                throw new ArgumentException("Invalid user type.");
             }
 
-            await _context.SaveChangesAsync();
+    using var databaseTransaction =await _context.Database.BeginTransactionAsync();
 
-            return Ok( new {message = "User registration successful"});
-        }
-        catch (ValidationException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
+    try {
+
+            await _context.SaveChangesAsync();
+            await databaseTransaction.CommitAsync();
+
+    } catch {
+                await databaseTransaction.RollbackAsync();
+                throw;
+            }
+
+    return Ok( new {message = "User registration successful"});
+    }
+
+
+//*************************************************************Error Creating User with Database *****************************************************************//
+        catch (ValidationException ex) { return BadRequest(new { error = ex.Message }); }
+        catch (ArgumentException ex)   { return BadRequest(new { error = ex.Message }); }
     }
 }

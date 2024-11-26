@@ -37,6 +37,9 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<SuperUser>().ToTable("SuperUsers");
         modelBuilder.Entity<AdminUser>().ToTable("AdminUsers");
         modelBuilder.Entity<PendingSuperUser>().ToTable("PendingSuperUser");
+
+
+        
         modelBuilder.Entity<Nutrient>()
         .Property(n => n.Id)
         .ValueGeneratedNever();
@@ -48,31 +51,31 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<FoodNutrient>()
         .Property(fn => fn.Id)
         .ValueGeneratedNever();
-        
-        modelBuilder.Entity<Nutrient>()
-        .Property(n => n.Id)
+         modelBuilder.Entity<FoodCategory>()
+        .Property(fn => fn.Id)
         .ValueGeneratedNever();
-
-      modelBuilder.Entity<FoodNutrient>()
-        .HasOne(fn => fn.Food)
-        .WithMany(f => f.FoodNutrients)
-        .HasForeignKey(fn => fn.FdcId)
-        .OnDelete(DeleteBehavior.Cascade);  // Or use Restrict
-
-    // Many-to-one relationship: Nutrient -> FoodNutrient
-    modelBuilder.Entity<FoodNutrient>()
+        //Food and Foodcategory relationshipd
+        modelBuilder.Entity<Food>().HasOne(f => f.FoodCategory).WithMany(fc => fc.Foods).HasForeignKey(f=> f.FoodCategoryId)
+        .OnDelete(DeleteBehavior.SetNull);
+        // Many-to-one relationship: Nutrient -> FoodNutrient
+        modelBuilder.Entity<FoodNutrient>()
         .HasOne(fn => fn.Nutrient)
         .WithMany(n => n.FoodNutrients)
         .HasForeignKey(fn => fn.NutrientId)
-        .OnDelete(DeleteBehavior.Cascade); 
+        .OnDelete(DeleteBehavior.Cascade);
+        // Manny-to-many ralationship food -> foodNutrient
+        modelBuilder.Entity<FoodNutrient>().HasOne(fn => fn.Food).WithMany(f => f.FoodNutrients).HasForeignKey(fn => fn.FdcId)
+        .OnDelete(DeleteBehavior.Cascade);
+        //Ensuring datacreated not modified like UfcNow, 48 in increamenation method
+        modelBuilder.Entity<PendingSuperUser>().Property(p => p.datacreated).ValueGeneratedOnAdd().IsRequired();
     }
 
-public User CreateUser(string firstName, string lastName, string email, string phoneNr, UserType userType, string password, string dateOfBirth)
+public User CreateUser(string firstName, string lastName, string email, string phoneNr, UserType userType, string password, string? dateOfBirth)
 {
-    User user;
+    
 
     // Create user based on UserType
-    user = userType switch
+    User user = userType switch
     {
         UserType.NormalUser => new NormalUser 
         { 
@@ -81,7 +84,7 @@ public User CreateUser(string firstName, string lastName, string email, string p
             PhoneNr = phoneNr, 
             Email = email 
         },
-        UserType.SuperUser => new SuperUser 
+        UserType.SuperUser => new PendingSuperUser 
             { 
                 FirstName = firstName, 
                 PhoneNr = phoneNr, 
@@ -93,14 +96,20 @@ public User CreateUser(string firstName, string lastName, string email, string p
 
     // Set password and add to the appropriate DbSet
     user.SetPassword(password);
-    if (user is NormalUser normalUser)
-    {
-        NormalUsers.Add(normalUser);
+
+    switch(userType) {
+
+        case UserType.NormalUser:
+            NormalUsers.Add((NormalUser)user);
+            break;
+        case UserType.SuperUser:
+            PendingSuperUser.Add((PendingSuperUser)user);
+            break;
+        default:
+            throw new ArgumentException("Invalid User Type");
     }
-     if (user is SuperUser superUser)
-    {
-        SuperUsers.Add(superUser);
-    }
+
+    
 
     SaveChanges();
 

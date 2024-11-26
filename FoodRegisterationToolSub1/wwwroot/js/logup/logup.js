@@ -113,30 +113,30 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.querySelector("#password").value;
         const userType = document.querySelector("#userType").value;
     
-        // Client-side validation with error display
+        
         if (!isNorwegianAlphabet(firstname, lastname) || !isOnlyNumbers(phonenr) || !isValidEmail(email)) {
             displayErrors("One or more fields contain invalid input. Check and try again.");
             return;
         }
         
     
-        // Populate FormData
+     
         const formdata = new FormData();
         formdata.append("firstname", firstname);
         formdata.append("lastname", lastname);
         formdata.append("phonenr", phonenr);
         formdata.append("email", email);
         formdata.append("password", password);
-        formdata.append("usertype", userType) = 1;
+        formdata.append("usertype", userType);
 
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailPattern.test(email)) {
             console.error("Invalid Email format:", email);
             displayErrors("Invalid Email format.");
-            return; // Stop further execution if email is invalid
+            return; 
         }
     
-        // Debugging: Log FormData entries
+        
         for (const [key, value] of formdata.entries()) {
             console.log(`${key}: ${value}`);
         }
@@ -146,9 +146,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 body: formdata
             });
+            
+            if(response.redirected) {
+                window.location.href = response.url;
+                return;
+            }
+            
             const data = await response.json();
-    
-            // Handle the response
+
+            
             if (response.ok) {
                 console.log("Registration successful:", data.message);
                 alert("User registration successful");
@@ -170,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const password = document.querySelector("#password").value;
             const userType = document.querySelector("#userType").value;
         
-            // Client-side validation with error display
+            
             if (!isNorwegianAlphabet(firstname) || !isOnlyNumbers(phonenr) || !isValidEmail(email)) {
                 displayErrors("One or more fields contain invalid input. Check and try again.");
                 return;
@@ -188,10 +194,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!emailPattern.test(email)) {
             console.error("Invalid Email format:", email);
             displayErrors("Invalid Email format.");
-            return; // Stop further execution if email is invalid
+            return; 
         }
     
-        // Debugging: Log FormData entries
+        
         for (const [key, value] of formdata.entries()) {
             console.log(`${key}: ${value}`);
         }
@@ -201,9 +207,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 body: formdata
             });
+
+
+
+            if(response.redirected) {
+                window.location.href = response.url;
+                return;
+            }
+
+            
             const data = await response.json();
+
+            
     
-            // Handle the response
+           
             if (response.ok) {
                 console.log("Registration successful:", data.message);
                 alert("User registration successful");
@@ -223,7 +240,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayErrors(errors) {
         const errorContainer = document.querySelector("#errorMessages");
         errorContainer.style.display = 'block';
-        errorContainer.innerHTML = errors.map(error => `<p>${error}</p>`).join('');
+        if (Array.isArray(errors)) {
+            errorContainer.innerHTML = errors.map(error => `<p>${error}</p>`).join('');
+        } else {
+            errorContainer.innerHTML = `<p>${errors}</p>`;
+        }
+    
     }
 
 window.submitLoginForm = submitLoginForm;

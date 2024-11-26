@@ -3,31 +3,18 @@ using FoodRegistrationToolSub1.Models.datasets;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")]
+[Route("apimeals/[controller]")]
 [ApiController]
-/// <summary>
-/// API Controller for håndtering av måltidsdata, inkludert henting av måltidsdetaljer med tilknyttede matvarer og næringsinnhold.
-/// </summary>
 public class MealsController : ControllerBase {
 
     private readonly ApplicationDbContext _context;
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MealsController"/> class, injecting the application database context.
-    /// </summary>
-    /// <param name="context">Database context for accessing meal and food-related data.</param>
+
     public MealsController(ApplicationDbContext context) {
         _context = context;
     }
-    /// <summary>
-    /// Retrieves details of a specific meal by ID, including associated foods and their nutrient information.
-    /// </summary>
-    /// <param name="id">The unique identifier of the meal.</param>
-    /// <returns>
-    /// An HTTP 200 OK response containing the meal details, associated foods, and nutrients if found; 
-    /// otherwise, an HTTP 404 Not Found response.
-    /// </returns>
+
     //Get 
-    [HttpGet("{id}/Details")]
+    [HttpGet("meal/{id}/Details")]
     public IActionResult GetMealsDetails(int id) {
 
         var meal = _context.Meal.Find(id);

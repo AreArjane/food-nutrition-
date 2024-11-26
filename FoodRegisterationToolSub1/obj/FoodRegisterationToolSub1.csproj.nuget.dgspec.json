@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {}
+    "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {}
   },
   "projects": {
-    "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {
+    "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
+        "projectUniqueName": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
         "projectName": "FoodRegisterationToolSub1",
-        "projectPath": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
+        "projectPath": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
         "packagesPath": "/Users/arjan/.nuget/packages/",
-        "outputPath": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/",
+        "outputPath": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/arjan/.nuget/NuGet/NuGet.Config"
@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "LiteX.Email.Core": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -68,6 +72,28 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
+            },
+            "SendGrid.SmtpApi": {
+              "target": "Package",
+              "version": "[1.4.6, )"
+            },
+            "Sendgrid.Webhooks": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.8.2, )"
             }
           },
           "imports": [

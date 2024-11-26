@@ -31,7 +31,7 @@ async function submitLoginForm() {
     const userType = document.querySelector("#userType").value;
     const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
 
-    // Create a URL-encoded string
+   
     const formData = new URLSearchParams();
     formData.append('email', email);
     formData.append('password', password);
@@ -44,12 +44,12 @@ async function submitLoginForm() {
             headers: { 
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: formData.toString()  // Convert formData to a URL-encoded string
+            body: formData.toString()  
         });
 
         const data = await response.json();
 
-        if (data.success) {  // Corrected typo from 'seccess' to 'success'
+        if (data.success) {  
             window.location.href = data.redirectUrl;
         } else { 
             document.querySelector("#errorMessages").innerText = data.errorMessage;

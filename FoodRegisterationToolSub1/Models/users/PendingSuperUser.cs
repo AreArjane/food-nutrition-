@@ -18,11 +18,30 @@ namespace FoodRegisterationToolSub1.Models.users
        
         public string? Email { get; set; }
 
-        public bool isApproved {get; set;} = false;
+        public bool isApproved {get; private set;} = false;
+        public string verificationcode {get; set;}
+
+        public DateTime datacreated {get; private set;}
 
         public PendingSuperUser() : base(UserType.SuperUser)
         {
+            datacreated = DateTime.UtcNow;
             
+        }
+
+        public void ApprovPendingUser() {
+            isApproved = true;
+        }
+
+        public bool ExpirationCheck() {
+
+            DateTime expirationTime = datacreated.AddHours(48);
+            if(DateTime.UtcNow > expirationTime) {
+            
+                return true;
+            }
+
+            return false;
         }
 
         public override List<Permission> Permissions => new List<Permission> {

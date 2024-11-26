@@ -12,7 +12,7 @@ public class searchController : ControllerBase {
         _context = context;
     }
 
-    // GET api/Search?query={name}
+   
 
     [HttpGet]
     public IActionResult Search(string query) { 

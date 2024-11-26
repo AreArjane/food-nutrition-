@@ -2,36 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"] - User Profile</title>
-    <link rel="stylesheet" href="~/css/style_profile.css">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 </head>
-<body>
-    <header class="top-nav">
-        <h1>@ViewData["Title"]</h1>
-        <div class="dropdown">
-            <button class="dropbtn">Menu</button>
-            <div class="dropdown-content">
-                <a href="/" id="dashboardInfo">Dashboard</a>
-                <a href="#" id="personalInfo" data-user-type="@ViewData["UserType"]">Personal Info</a>
-                <a href="#">Settings</a>
-                <a href="#">Notifications</a>
-                <a href="/Auth/Logout">Logout</a>
+<body class="has-background-light">
+
+    <!-- Top Navigation -->
+    <div class="is-flex is-flex-direction-column is-flex-wrap-wrap">
+        <nav class="navbar is-white is-spaced">
+            <div class="container">
+                <div class="navbar-brand">
+                    <h1 class="title is-5 has-text-white" >UserID: "@Model.id"</h1>
+                    <!-- Burger menu for small screens -->
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbar-menu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">Home</a>
+                        <a class="navbar-item" id="personalInfo">Personal Infromation</a>@Html.AntiForgeryToken()
+                        <a class="navbar-item">Security</a>
+                        <a class="navbar-item">Managment</a>
+                        <a class="navbar-item">Document Order</a>
+                        <a class="navbar-item" id="logout">Logout</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <div class="profile-container">
-        @RenderBody() <!-- Content from each view goes here -->
+        </nav>
+        <div class="profile-container is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-between">@RenderBody() <!-- Content from each view goes here --></div>
+        <div class="is-flex is-flex-direction-row is-flex-wrap-wrap"><!-- #Footer --><footer>Hello from footer!</footer></div>
     </div>
-<script>
-    window.currentUserID = @Model.id;
-</script>
-
-<script src="~/js/profile.js" asp-append-version="true">
-
-</script>
-  @await RenderSectionAsync("Scripts", required: false)
+<script>window.currentUserID = @Model.id;</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
 </body>
-
 </html>

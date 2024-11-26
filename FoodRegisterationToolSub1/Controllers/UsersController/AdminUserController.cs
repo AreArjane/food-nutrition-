@@ -2,11 +2,11 @@
 
 using FoodRegisterationToolSub1.Models.users;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-[Route("api/[controller]")]
+[Route("AdminUser")]
 [ApiController]
-
-public class AdminUserController : ControllerBase { 
+public class AdminUserController : Controller { 
 
     private readonly ApplicationDbContext _context;
 
@@ -17,7 +17,7 @@ public class AdminUserController : ControllerBase {
     [HttpGet("{id}/profile")]
     public IActionResult GetUserProfile(int id)
     {
-        // Ensure the user is logged in by checking the session
+        
         var sessionUserId = HttpContext.Session.GetInt32("UserID");
 
         if (sessionUserId == null || sessionUserId != id)
@@ -25,14 +25,14 @@ public class AdminUserController : ControllerBase {
             return Unauthorized();
         }
 
-        // Retrieve the AdminUser's profile information
+       
         var adminUser = _context.AdminUser.Find(id);
         if (adminUser == null)
         {
             return NotFound();
         }
 
-        // Create a profile data response for the admin user
+        
         var profileData = new
         {
             adminUser.FirstName,
@@ -49,44 +49,44 @@ public class AdminUserController : ControllerBase {
 
 
 
-    [HttpGet("adm/allNormalUser")]
+    [HttpGet("allnormaluser")]
+    public async Task<IActionResult> GetAllNormalUser(
+        int pagenumber = 1, 
+        int pagesize = 20, 
+        string startwith = null) {
 
-    public IActionResult GetAllNormalUser(
+            var userQ = _context.NormalUsers.AsNoTracking();
 
-        //<<required>> access controll
+            if(!string.IsNullOrEmpty(startwith)) { 
 
-        int pageNumber = 1, 
-        int pageSize = 20, 
-        string NuserStartWith = null) {
-
-            var userQ = _context.NormalUsers.AsQueryable();
-
-            if(!string.IsNullOrEmpty(NuserStartWith)) { 
-
-                userQ = userQ.Where(nu => nu.FirstName.StartsWith(NuserStartWith));
+                userQ = userQ.Where(nu => nu.FirstName.StartsWith(startwith));
             }
 
-            var totalUsers = userQ.Count();
-            var totalPage = (int)Math.Ceiling(totalUsers / (double)pageSize);
+            var totalUsers = await userQ.CountAsync();
+            var totalPage = totalUsers == 0 ? 1 : (int)Math.Ceiling(totalUsers / (double)pagesize);
 
-            var normal_user = userQ 
-            .Skip((pageNumber - 1) * pageSize).Take(pageSize).Select(nu => new {
+            var normal_user = await userQ 
+            .Skip((pagenumber - 1) * pagesize)
+            .Take(pagesize)
+            .Select(nu => new {
 
                 nu.FirstName,
                 nu.PhoneNr,
                 nu.LastName,
                 nu.Email,
                 nu.HomeAddress,
-                nu.PostalCode
+                nu.PostalCode,
+                nu.UserId,
+                nu.UserType
 
-            }).ToList();
+            }).ToListAsync();
 
             var response = new {
-                TotalCount = totalUsers,
-                TotalPages = totalPage,
-                CurrentPage = pageNumber,
-                PageSize = pageSize,
-                Data = normal_user
+                totalCount = totalUsers,
+                totalPages = totalPage,
+                currentPage = pagenumber,
+                pageSize = pagesize,
+                data = normal_user
             };
 
             return Ok(response);

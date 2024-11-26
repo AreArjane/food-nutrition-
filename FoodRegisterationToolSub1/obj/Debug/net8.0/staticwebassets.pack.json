@@ -1,308 +1,76 @@
 {
   "Files": [
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css",
       "PackagePath": "staticwebassets/FoodRegisterationToolSub1.bundle.scp.css"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/home.css",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/css/home.css",
       "PackagePath": "staticwebassets/css/home.css"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/login.css",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/css/login.css",
       "PackagePath": "staticwebassets/css/login.css"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/site.css",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/css/style_profile.css",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/css/style_profile.css",
       "PackagePath": "staticwebassets/css/style_profile.css"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/favicon.ico",
-      "PackagePath": "staticwebassets/favicon.ico"
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/images/email.png",
+      "PackagePath": "staticwebassets/images/email.png"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/frez.svg",
-      "PackagePath": "staticwebassets/images/frez.svg"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/index.gif",
-      "PackagePath": "staticwebassets/images/index.gif"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/loging.svg",
-      "PackagePath": "staticwebassets/images/loging.svg"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/logupwelcome.svg",
-      "PackagePath": "staticwebassets/images/logupwelcome.svg"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/search_image.png",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/images/search_image.png",
       "PackagePath": "staticwebassets/images/search_image.png"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/search_image.svg",
-      "PackagePath": "staticwebassets/images/search_image.svg"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/images/sigupwelcome.svg",
-      "PackagePath": "staticwebassets/images/sigupwelcome.svg"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/login.js",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/login.js",
       "PackagePath": "staticwebassets/js/login.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/logup/logup.js",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/logup/logup.js",
       "PackagePath": "staticwebassets/js/logup/logup.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/logup/logupmodels.js",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/logup/logupmodels.js",
       "PackagePath": "staticwebassets/js/logup/logupmodels.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/profile.js",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/profile.js",
       "PackagePath": "staticwebassets/js/profile.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/search.js",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/profiler/normal_userprofile.js",
+      "PackagePath": "staticwebassets/js/profiler/normal_userprofile.js"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/profiler/super_userprofile.js",
+      "PackagePath": "staticwebassets/js/profiler/super_userprofile.js"
+    },
+    {
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/search.js",
       "PackagePath": "staticwebassets/js/search.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/js/site.js",
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/LICENSE",
-      "PackagePath": "staticwebassets/lib/bootstrap"
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/tabels/fetchFoodData.js",
+      "PackagePath": "staticwebassets/js/tabels/fetchFoodData.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/js/tabels/fetchNutrientData.js",
+      "PackagePath": "staticwebassets/js/tabels/fetchNutrientData.js"
     },
     {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
-      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
-      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
-      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation/LICENSE.md",
-      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation/dist/additional-methods.js",
-      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
-      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
-      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
-      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery/LICENSE.txt",
-      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery/dist/jquery.js",
-      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery/dist/jquery.min.js",
-      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
-    },
-    {
-      "Id": "/Users/arjan/Documents/GitHub/food-nutrition-/FoodRegisterationToolSub1/wwwroot/lib/jquery/dist/jquery.min.map",
-      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+      "Id": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/wwwroot/templates/email/email.html",
+      "PackagePath": "staticwebassets/templates/email/email.html"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.FoodRegisterationToolSub1.Microsoft.AspNetCore.StaticWebAssets.props",
