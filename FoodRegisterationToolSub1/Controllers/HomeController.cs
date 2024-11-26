@@ -1,31 +1,22 @@
-using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using FoodRegisterationToolSub1.Models;
-
-namespace FoodRegisterationToolSub1.Controllers;
-
+/// <summary>
+/// Controller for håndtering av hjemmesiden til applikasjonen.
+/// </summary>
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
+/// <summary>
+    /// Henter startsiden for applikasjonen.
+    /// </summary>
+    /// <returns>
+    /// En <see cref="IActionResult"/> som representerer visningen av startsiden.
+    /// </returns>
+    [HttpGet("")]
     public IActionResult Index()
     {
         return View();
     }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+ 
+      
+        
 }

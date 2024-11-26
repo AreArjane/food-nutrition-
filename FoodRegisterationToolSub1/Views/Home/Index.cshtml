@@ -1,8 +1,24 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "MainPage";
 }
+<link rel="stylesheet" href="~/css/home.css">
+<div class="gif-wrapper">
+    <!-- GIF Background -->
+    <img src="https://res.cloudinary.com/dnwuimgi4/image/upload/v1731588454/index_ffcn0m.gif" alt="Animated Design" class="animated-gif">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <!-- Overlay for Search Section in the Center of GIF -->
+    <div class="search-overlay">
+        
+        <input type="text" id="query" class="search-input" placeholder="Enter food or meal name" aria-label="Search query" />
+        <button id="searchButton" class="search-button" type="button">Search</button>
+    </div>
 </div>
+
+<div id="results" class="results-section" style="overflow-x:auto;">
+    <!-- JavaScript will populate search results hersdsde -->
+</div>
+
+@section Scripts {
+    <script src="~/js/search.js"></script>
+}

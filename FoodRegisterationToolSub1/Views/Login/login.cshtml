@@ -1,0 +1,47 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Login";
+}
+<link rel="stylesheet" href="~/css/login.css">
+<div class="login-container">
+    <h1>Select User Type</h1>
+    <!-- SVG Highlight Element (frez.svg) -->
+    
+   
+    <!-- Labels for Different User Types -->
+    <div class="user-types">
+
+ 
+        <a href="/normaluser" class="user-type-button" data-user-type="NormalUser">NormalUser</a>
+        <a href="/superuser" class="user-type-button" data-user-type="SuperUser">SuperUser</a>
+        <a href="/adminuser" class="user-type-button" data-user-type="AdminUser">AdminUser</a>
+       
+         <img src="~/images/loging.svg" class="highlight">
+        
+    </div>
+
+
+<div id="LoginForm" style="display:none; margin-top:20px">
+    <h2>Login</h2>
+    <br>
+    <form id="LoginFormElement">
+        @Html.AntiForgeryToken()
+        <input type="hidden" id="userType" name="userType" />
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        <br>
+
+        <button type="button" onClick="submitLoginForm()">Login</button>
+    </form>
+    <div id="errorMessages" style="color:red; display: none;"></div>
+</div>
+</div>
+@section Scripts {
+    <script src="~/js/login.js"></script>}
