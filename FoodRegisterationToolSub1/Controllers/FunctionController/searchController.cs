@@ -22,16 +22,16 @@ public class searchController : ControllerBase {
         }
 
         var foods = _context.Foods
-        .Where(f => f.Description.Contains(query.ToLower()))
+        .Where(f => f.Description.Contains(query))
         .Select(f => new { 
             f.Description,
             f.DataType,
             f.PublicationDate,
 
-        }).Take(10).ToList();
+        }).ToList();
 
         var meals = _context.Meal 
-        .Where(m => m.Name.Contains(query.ToLower()))
+        .Where(m => m.Name.Contains(query))
         .Select(m => new { 
             m.Name
         }).ToList();

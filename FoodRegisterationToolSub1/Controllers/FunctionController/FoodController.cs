@@ -15,7 +15,7 @@ public class FoodController : ControllerBase {
 
     //GET
 
-    [HttpGet("food/{id}")]
+    [HttpGet("{id}")]
     public IActionResult GetFoodDetails(int id) { 
         var food = _context.Foods.Find(id);
         if(food == null) {

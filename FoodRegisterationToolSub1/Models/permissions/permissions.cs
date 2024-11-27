@@ -15,8 +15,6 @@ public enum PermissionType {
 //NormalUser Permissions
     ViewOwnData, 
     EditOwnData, 
-    AddMeals,
-    ModifyMeals,
 //Admin Permissions
     ViewAll,
     EditAll,
@@ -28,14 +26,5 @@ public enum PermissionType {
 //SuperUSer permission
 ModifyFirstNameUser,
 ModifyLastNameUser, 
-ModifySpecificMeals,
-AddFood,
-ModifyFood,
-UpdateFood,
-AddNutrient,
-ModifyNutrient,
-UpdateNutrient,
-
-None
 
 }

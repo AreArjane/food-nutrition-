@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 public class HomeController : Controller
@@ -8,7 +7,6 @@ public class HomeController : Controller
     {
         return View();
     }
- 
-      
+        
         
 }
