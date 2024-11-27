@@ -6,6 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
+///<summary>
+///Class <c>NutrientController</c> a repository controller fo the Nutrients Models With CRUD operation follow API architecture.
+///<example>
+///Router all method should have a router name followed to the mehtod link /nutrientapi/*
+///GET      /Nutrients                          -> return all record in the models with fixed pagenumber and pagesize (pagination).
+///GET      /nutrient/{id:int}                  -> return the specific record by its Id given.
+///POST     /create                             -> create a new record with id, code and description
+///PUT      /update/{id:int}                    -> update the specified record by id
+///DELETE   /delete/{id:int}                    -> delete the specified record by id
+///</example>
+///</summary>
 
 
 [Route("nutrientapi")]
@@ -176,11 +187,14 @@ public class NutrientController : Controller {
     [HttpDelete("delete/{id:int}")]
     public async Task<IActionResult> DeleteFood(int id)
     {   //The FoodNutrient has a model CASCADE delete with Nutrient tabel which is no need to check the FOODNutrient table also. if check time speed of 2.54 s required. 
+        //we checked with the min value first of the id record first
+        var min = await _context.Nutrients.MinAsync(n => n.Id); var max = await _context.Nutrients.MaxAsync(n => n.Id);
+
+        if(id < min || id > max) {return BadRequest("The ID cannot be found it in the database records");} 
+
         var existingNutrients = await _context.Nutrients.FindAsync(id);
-        if (existingNutrients == null)
-        {
-            return NotFound("Food not found.");
-        }
+        
+        if (existingNutrients == null){ return NotFound("Food not found.");}
 
         _context.Nutrients.Remove(existingNutrients);
         await _context.SaveChangesAsync();

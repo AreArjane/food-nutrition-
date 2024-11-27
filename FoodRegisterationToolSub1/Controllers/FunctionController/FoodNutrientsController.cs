@@ -17,8 +17,11 @@ public class FoodNutrientsController : Controller {
     private readonly ApplicationDbContext _context;
 
     public FoodNutrientsController(ApplicationDbContext context) { _context = context; }
-
-
+    /// <summary>
+    /// Return a single FoodNutrient relationship between food and nutrients with the give ID.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
 
     [HttpGet("foodnutrient/{id:int}")]
     public async Task<IActionResult> GetFoodNutrientDetails(int id) { 
@@ -52,14 +55,12 @@ public class FoodNutrientsController : Controller {
             });
     }
     /// <summary>
-    /// Return all Foods registered in database with json format. It accept only with pagianation. PageSize represent 
+    /// Return all FoodsNutrients registered in database with json format. It accept only with pagianation. PageSize represent 
     /// how many element it should return along with the pagenumber. The frontend application does not take this complexity of calculating 
     /// pagenumber along with the pagesizxe instead. It has a fixed value of pagesize equal to 10 or 20. \
-    /// FoodStarwith is a filtering method. 
     /// </summary>
     /// <param name="pagenumber"></param>
     /// <param name="pagesize"></param>
-    /// <param name="foodstartwith"></param>
     /// <returns></returns>
     [HttpGet("FoodNutrient")]
     public async Task<IActionResult> GetAllFoods(int pagenumber, int pagesize) {
@@ -101,58 +102,94 @@ public class FoodNutrientsController : Controller {
 
             return Ok(response);
     }
+
+
 /// <summary>
-/// Create new element of the Food with required description and dataType.
-/// The category if its not given is set up to Null, uncatagorised food. 
-/// It create new Id based on the max id value of the datasets models. Better soultion is to store the max value of the
-/// id of the food table in such dictionary to speed up and give preformance to create Action, which it take time assoicated with the 
-/// calculating max value. max value now 2717714.
+/// Create new relation for FOOD and Nutrient. 
+/// At the begning it validate each description with non/null and each ID with the minimum value of datatbase record. Its fixed here (valvulated with SQL)
+/// It call the validation on numeric and alfabetical input.
+/// It check if the food and nutrient given exist in the Food and Nutrient table, if not it return a BadRequest with proposal to create a record for each before submitting.
+/// When it success and both Food and Nutrient exist it add the new relationship. It good practise to take the data as the [FormBody] instead of single input.
+/// This make it easier in the front end developing, while the datasets was not modified and the table relationship is breaking a many-to-many relationship between Food and Nutrient.
+/// Therefore this function relay on such architecture to check boot Food and Nutrient existence. 
+/// 
+/// This is manipulated with superuser after adding new Food and nutrient. 
+/// In Frontend we as we can call several endpoint and make the request more seemenless by callning the creating of Food and Nutrient before FoodNutrieent relationship. 
 /// </summary>
-/// <param name="foodId"></param>
 /// <param name="description"></param>
-/// <param name="dataType"></param>
-/// <param name="publicationDate"></param>
-/// <param name="foodCategoryId"></param>
+/// <param name="nutrient"></param>
+/// <param name="foodid"></param>
+/// <param name="min"></param>
+/// <param name="median"></param>
+/// <param name="max"></param>
+/// <param name="footnote"></param>
+/// <param name="datapoint"></param>
 /// <returns></returns>
-
-// POST: foodapi/create
     [HttpPost("create")]
-    public async Task<IActionResult> CreateFood(
+    public async Task<IActionResult> CreateFoodNutrient(
      [FromForm] string description, 
-     [FromForm] string dataType, 
-     [FromForm] string? publicationDate, 
-     [FromForm] int? foodCategoryId) 
+     [FromForm] int nutrient,
+     [FromForm] int foodid,
+     [FromForm] string min,
+     [FromForm] string median,
+     [FromForm] string max,
+     [FromForm] string footnote,
+     [FromForm] string datapoint)
      {
-        if (string.IsNullOrEmpty(description) || string.IsNullOrEmpty(dataType))
-        {
-            return BadRequest("Description and DataType are required.");
+
+/********************************************************************************Validation******************************************************************************************************/
+        
+        if(string.IsNullOrEmpty(description) ||  nutrient < 999 || foodid < 319874) {return BadRequest("Invalid assigned data request. All fields are required");}
+
+        
+        var numericvalues = ValidatorSpes.IsOnlyNumber(min, median, max, datapoint);
+
+        if(numericvalues.Contains(false)) { return BadRequest("The provided vlaue of min, median and max should only be numerical value");}
+
+        var alfabiticalvalue = ValidatorSpes.ValidateNorwegianAlphabet(footnote, description);
+
+        if(alfabiticalvalue.Contains(false)) { return BadRequest("The provided data of description and footnote should contain only alfabetical value.");}
+
+/****************************************************************Check existence*************************************************************************************************************************************/
+        
+        var foodExist = await _context.Foods.FirstOrDefaultAsync(f => f.Description.ToUpper().Contains(description.ToUpper(), StringComparison.OrdinalIgnoreCase));
+        if(foodExist == null) { 
+            return NotFound($"Food with description containting {description} not found. Please create the food in the food creating form first");}
+
+        var nutrientexist = await _context.Nutrients.FirstOrDefaultAsync(n => n.Id == nutrient);
+        if(nutrientexist == null) { 
+            return NotFound($"Nutrient with ID  '{nutrient}' not found. Please create the nutrient record first");
         }
 
-        if(foodCategoryId.HasValue) {
-            var categoryExist = await _context.FoodCategories.AnyAsync(fc => fc.Id == foodCategoryId.Value);
+        var foodnutrientexist = await _context.FoodNutrients.FirstOrDefaultAsync(fn => fn.FdcId == foodid && fn.NutrientId == nutrient);
+        if(foodnutrientexist == null) { 
+            //calcualting new Id for FoodNutrient record
+            int newId;
+            var maxId = await _context.FoodNutrients.MaxAsync(f => (int?)f.Id) ?? 34494304;
+            newId = maxId + 1;
+            
+            var newFoodNutrients = new FoodNutrient { 
+                Id              = newId,
+                FdcId           = foodExist.FoodId,
+                NutrientId      = nutrientexist.Id,
+                DataPoint       = datapoint,
+                Min             = min,
+                Median          = median,
+                Max             = max,
+                Footnote        = footnote
 
-            if(!categoryExist) {
-                Console.WriteLine($"The provided category does not exist {foodCategoryId}. Setting to NULL");
-                foodCategoryId = null;
-            } 
+
+            };
+            await _context.FoodNutrients.AddAsync(newFoodNutrients);
         }
-        int newId;
-        var maxId = await _context.Foods.MaxAsync(f => (int?)f.FoodId) ?? 2717714;
-        newId = maxId + 1;
+        else { 
+            foodnutrientexist.DataPoint = datapoint;
+            foodnutrientexist.Min = min;
+        }
 
-        var newFood = new Food
-        {
-            FoodId = newId,
-            Description = description,
-            DataType = dataType,
-            PublicationDate = publicationDate,
-            FoodCategoryId = foodCategoryId
-        };
+    await _context.SaveChangesAsync();
 
-        await _context.Foods.AddAsync(newFood);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetFoodDetails), new { id = newFood.FoodId }, newFood);
+        return Ok(new {message = "Food with nuterient relation been registered successfully"});
     }
     /// <summary>
     /// Accept only data given by form-data body with PUT API. 
@@ -191,16 +228,19 @@ public class FoodNutrientsController : Controller {
     [HttpDelete("delete/{id:int}")]
     public async Task<IActionResult> DeleteFood(int id)
     {
-        var existingFood = await _context.Foods.FindAsync(id);
-        if (existingFood == null)
-        {
-            return NotFound("Food not found.");
-        }
+        var min = await _context.FoodNutrients.MinAsync(fn => fn.Id);
+        var max = await _context.FoodNutrients.MaxAsync(fn => fn.Id);
+        
+        if(id < min || id > max) { return BadRequest("The FoodNutrient Id cannot be found it in the database records");}
 
-        _context.Foods.Remove(existingFood);
+        var existingFood = await _context.FoodNutrients.FindAsync(id);
+
+        if (existingFood == null) { return NotFound("Food not found.");}
+
+        _context.FoodNutrients.Remove(existingFood);
         await _context.SaveChangesAsync();
 
-        return Ok(new { Message = "Food deleted successfully." });
+        return Ok(new { Message = "FoodNutrients relationship deleted successfully." });
     }
     
 }
