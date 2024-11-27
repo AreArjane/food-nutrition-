@@ -1,0 +1,16 @@
+:root {
+    --primary-color: #007bff; /* Hovedfarge */
+    --secondary-color: #6c757d; /* Sekundærfarge */
+    --success-color: #28a745; /* Successtema */
+    --danger-color: #dc3545; /* Feilmelding */
+    --warning-color: #ffc107; /* Advarsel */
+    --info-color: #17a2b8; /* Informasjon */
+    --light-color: #f8f9fa; /* Lys bakgrunn */
+    --dark-color: #343a40; /* Mørk bakgrunn */
+    --header-bg: #333; /* Bakgrunn for header */
+    --header-color: #fff; /* Farge for header-tekst */
+    --footer-bg: #333; /* Mørk bakgrunn for footer */
+    --footer-text-color: #fff; /* Hvit tekstfarge for footer */
+    --body-font-size: 16px;
+    --body-line-height: 1.6;
+  }

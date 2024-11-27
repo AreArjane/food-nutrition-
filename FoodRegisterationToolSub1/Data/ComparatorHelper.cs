@@ -7,7 +7,7 @@ using FoodRegistrationToolSub1.Models.datasets;
 /// <see cref="https://fdc.nal.usda.gov/download-datasets"/>
 /// 
 /// Overriding method like Equals and GetHashCode are suitable for immutable classes.
-/// The best approach to distingush data tabel created for datasets food and our application mutable table wich will have CRUD operation. 
+/// The best approach to distingush data tabel created for datasets food and our application mutable table wich will have CRUD operations. 
 /// Due to time consuming this approach with IEqualityComparer are more suitable for data table holding both food data with CRUD operation and importing from datasets provided by fdc.nal
 /// 
 /// <seealso Simple immutable classes with overriding such methods cref="https://learn.microsoft.com/en-us/ef/core/modeling/value-comparers?tabs=ef5"/>
