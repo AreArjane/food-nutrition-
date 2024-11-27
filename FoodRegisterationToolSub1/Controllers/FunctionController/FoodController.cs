@@ -24,10 +24,14 @@ public class FoodController : Controller {
 
     [HttpGet("food/{id:int}")]
     public async Task<IActionResult> GetFoodDetails(int id) { 
+/***************************************************************************************Validation*************************************************************************************************************************************************/
+        if(id == null || id < 319874 ) { return BadRequest("Invalid ID data");}
+
         var food = await _context.Foods.FindAsync(id);
         
         if(food == null) { return NoContent();}
-
+        
+/************************************************************************************Find and manipulate the content****************************************************************************************************************************************************/
         var nutrients = _context.FoodNutrients.Where(fn => fn.FdcId == id).Select(fn => new { 
             fn.NutrientId,
             NutrientName = fn.Nutrient.Name,
@@ -190,13 +194,15 @@ public class FoodController : Controller {
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpDelete("delete/{id:int}")]
-    public async Task<IActionResult> DeleteFood(int id)
-    {
+    public async Task<IActionResult> DeleteFood(int id) {
+
+        var min = await _context.Foods.MinAsync(f => f.FoodId); var max = await _context.Foods.MaxAsync(f => f.FoodId);
+        
+        if(id < min || id > max ) {return BadRequest("The following Id cannot be found it in database records");}
+
         var existingFood = await _context.Foods.FindAsync(id);
-        if (existingFood == null)
-        {
-            return NotFound("Food not found.");
-        }
+
+        if (existingFood == null) { return NotFound("Food not found.");}
 
         _context.Foods.Remove(existingFood);
         await _context.SaveChangesAsync();
