@@ -17,7 +17,7 @@ public class searchController : ControllerBase {
 
         if(string.IsNullOrEmpty(query)) { return BadRequest("Search query is required"); }
 
-        var foods = await _context.Foods.Where(f => f.Description.Contains(query.ToLower(), StringComparison.OrdinalIgnoreCase)).Select(f => new { 
+        var foods = await _context.Foods.Where(f => f.Description.Contains(query.ToLower())).Select(f => new { 
             f.Description,
             f.DataType,
             f.PublicationDate, }).Take(10).ToListAsync();
