@@ -19,7 +19,7 @@ const AuthForm = () => {
   const login = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('/Auth/verify', {
+      const response = await fetch('http:localhost:5072/Auth/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const AuthForm = () => {
         body: JSON.stringify({
           email,
           password,
-          userType: userType === 'normal' ? 0 : userType === 'super' ? 1 : 2, // Match enum values
+          userType: userType === 'normal' ? 0 : userType === 'super' ? 1 : 2, 
         }),
       });
       await handleResponse(response);
@@ -40,13 +40,13 @@ const AuthForm = () => {
 
   const signup = async (event) => {
     event.preventDefault();
-    // Call your registration endpoint (not implemented in provided AuthController)
+    
     console.log('Sign-up logic not implemented in backend yet.');
   };
 
   const resetPassword = async (event) => {
     event.preventDefault();
-    // Call your password reset endpoint (not implemented in provided AuthController)
+  
     console.log('Password reset logic not implemented in backend yet.');
   };
 
