@@ -177,6 +177,7 @@ Console.WriteLine(newUser.UserType);
                 
                 default:                                throw new ArgumentException("Invalid user type.");
             }
+            //
 
     using var databaseTransaction =await _context.Database.BeginTransactionAsync();
 
