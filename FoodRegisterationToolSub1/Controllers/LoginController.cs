@@ -137,12 +137,11 @@ do {
                     break;
 
                 case UserType.SuperUser:
-                    newUser = new PendingSuperUser {
+                    newUser = new SuperUser {
                     FirstName = firstname,
                     PhoneNr = phonenr,
                     Email = email,
-                    DateOfBirth = dateofbirth,
-                    verificationcode = verificationCode
+                    DateOfBirth = dateofbirth
                     }; 
                     break;
 
@@ -161,23 +160,22 @@ Console.WriteLine(newUser.UserType);
 
                     var normalUserExist = _context.NormalUsers.FirstOrDefault(n => n.Email == email);
                 
-                    if(normalUserExist == null ) { _context.NormalUsers.Add((NormalUser)newUser);}
+                    if(normalUserExist == null ) { _context.NormalUsers.Add((NormalUser)newUser); await EmailVerification.SendVerificationCode(email, verificationCode);}
                 
                     else { Console.WriteLine("Redirecting to /Login"); return Redirect("http://localhost:5072/Login");}                 break;
                 
                 case UserType.SuperUser:
                 
                             
-                    var PuserExist = _context.PendingSuperUser.FirstOrDefault(nu => nu.Email == email);
+                    var PuserExist = _context.SuperUsers.FirstOrDefault(nu => nu.Email == email);
                  
-                    if(PuserExist == null) { _context.PendingSuperUser.Add((PendingSuperUser)newUser);} 
+                    if(PuserExist == null) { _context.SuperUsers.Add((SuperUser)newUser); await EmailVerification.SendVerificationCode(email, verificationCode);} 
                  
-                    else if(PuserExist != null && PuserExist.ExpirationCheck() == true) { }
+                    else if(PuserExist != null) { await EmailVerification.SendVerificationCode(verificationCode, email);}
                     else { Console.WriteLine("Redirecting to /Login"); return Redirect("http://localhost:5072/Login"); }  break;
                 
                 default:                                throw new ArgumentException("Invalid user type.");
             }
-            //
 
     using var databaseTransaction =await _context.Database.BeginTransactionAsync();
 

@@ -1,30 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AuthForm from './components/AuthForm/AuthForm'; // Adjust the path if necessary
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router> {/* Wrap your App with Router */}
-    <App />
+    <Router>
+      <App />
     </Router>
   </React.StrictMode>
 );
 
-// Define sendToAnalytics function
+// Define the URL for the analytics endpoint
+const analyticsUrl = 'http://localhost:5072/analytics'; // Update to your backend analytics endpoint
+
+// Function to send performance metrics to the backend
 function sendToAnalytics(metric) {
-  console.log(metric); // Log to console or send to an endpoint
   const body = JSON.stringify(metric);
-  const url = 'https://example.com/analytics'; // Replace with your URL
+
   if (navigator.sendBeacon) {
-    navigator.sendBeacon(url, body);
+    // Use navigator.sendBeacon for performance-friendly requests
+    navigator.sendBeacon(analyticsUrl, body);
   } else {
-    fetch(url, { body, method: 'POST', keepalive: true });
+    // Fallback to fetch for older browsers
+    fetch(analyticsUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body,
+    }).catch((err) => console.error('Failed to send analytics:', err));
   }
 }
 
-// Measure performance
+// Pass the function to reportWebVitals for monitoring
 reportWebVitals(sendToAnalytics);

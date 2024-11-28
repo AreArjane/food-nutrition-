@@ -82,4 +82,6 @@ public class ValidatorSpes
         
         return Enum.IsDefined(typeof(UserType), userType);
     }
+
+    
 }

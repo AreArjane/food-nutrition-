@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {}
+    "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {}
   },
   "projects": {
-    "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {
+    "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
+        "projectUniqueName": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
         "projectName": "FoodRegisterationToolSub1",
-        "projectPath": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
+        "projectPath": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
         "packagesPath": "/Users/arjan/.nuget/packages/",
-        "outputPath": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/obj/",
+        "outputPath": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/arjan/.nuget/NuGet/NuGet.Config"

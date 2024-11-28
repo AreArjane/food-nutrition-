@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZEwTTJjaFlo=",
+  "dgSpecHash": "MM2v/7Za3Yw=",
   "success": true,
-  "projectFilePath": "/Users/arjan/Documents/GitHub/food-private/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
+  "projectFilePath": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
   "expectedPackageFiles": [
     "/Users/arjan/.nuget/packages/aspnetcoreratelimit/5.0.0/aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "/Users/arjan/.nuget/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512",

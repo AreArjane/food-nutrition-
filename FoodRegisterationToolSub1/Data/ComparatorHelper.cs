@@ -5,9 +5,9 @@ using FoodRegistrationToolSub1.Models.datasets;
 /// The comparator interface equality implemented to check for Id for each entity when importing data from CSV files.
 /// This ensure to not add dublicated value add by agencies, as the CSV could be update it over time.
 /// <see cref="https://fdc.nal.usda.gov/download-datasets"/>
-/// 
+/// The 
 /// Overriding method like Equals and GetHashCode are suitable for immutable classes.
-/// The best approach to distingush data tabel created for datasets food and our application mutable table wich will have CRUD operations. 
+/// The best approach to distingush data tabel created for datasets food and our application mutable table wich will have CRUD operation. 
 /// Due to time consuming this approach with IEqualityComparer are more suitable for data table holding both food data with CRUD operation and importing from datasets provided by fdc.nal
 /// 
 /// <seealso Simple immutable classes with overriding such methods cref="https://learn.microsoft.com/en-us/ef/core/modeling/value-comparers?tabs=ef5"/>
