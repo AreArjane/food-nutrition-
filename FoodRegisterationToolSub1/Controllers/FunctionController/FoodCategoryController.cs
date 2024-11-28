@@ -86,42 +86,41 @@ public class FoodCategoryController : Controller {
 
     // POST: foodcategory/foodcategories
     [HttpPost("foodcategories/new")]
-    public async Task<IActionResult> CreateFoodCategory([FromForm] int id, [FromForm] string code, [FromForm] string description)
-    {
-        if (id == null || code == null || description == null)
-        {
-            return BadRequest("FoodCategory data is required.");
-        }
+    public async Task<IActionResult> CreateFoodCategory([FromForm] string code, [FromForm] string description) {
+
+        if (code == null || description == null) {return BadRequest("FoodCategory data required both description and code.");}
 
         // Check if a category with the same Code or Description already exists
         var existingCategory = await _context.FoodCategories
             .FirstOrDefaultAsync(fc => fc.Code == code || fc.Description == description);
 
-        if (existingCategory != null)
-        {
-            return Conflict("A FoodCategory with the same Code or Description already exists.");
-        }
+        if (existingCategory != null) { return Conflict("A FoodCategory with the same Code or Description already exists."); }
 
         FoodCategory foodCa;
-        foodCa = new FoodCategory {Id = id, Code = code, Description = description};
+        int newId = 0;
+
+        var max = await _context.FoodCategories.MaxAsync(fc => (int?)fc.Id) ?? 99;
+        newId = max + 1;
+
+        foodCa = new FoodCategory {Id = newId, Code = code, Description = description};
 
         await _context.FoodCategories.AddAsync(foodCa);
         await _context.SaveChangesAsync();
 
-        return Ok(new {message = "New Food categories beed added", Id = id, Code = code, Description = description});
+        return Ok(new {message = "New Food categories beed added", Id = newId, Code = code, Description = description});
     }
 
     // PUT: foodcategory/foodcategories/{id}
     [HttpPut("foodcategories/update/{id:int}")]
-    public async Task<IActionResult> UpdateFoodCategoryById(int id, [FromForm] string code, string description)
-    {
-        var foodc = await _context.FoodCategories.FindAsync(id);
+    public async Task<IActionResult> UpdateFoodCategoryById(int id, [FromForm] string code, string description) {
 
+        var min = await _context.FoodCategories.MinAsync(fc => fc.Id); var max = await _context.FoodCategories.MaxAsync(fc => fc.Id);
+
+        if (id < min || id > max) {return BadRequest("The given recordd was not found it in the database records");}
         
-        if (foodc == null)
-        {
-            return NotFound("FoodCategory not found.");
-        }
+        var foodc = await _context.FoodCategories.FindAsync(id);
+        
+        if (foodc == null) { return NotFound("FoodCategory not found."); }
 
         foodc.Code = code;
         foodc.Description = description;
@@ -130,19 +129,24 @@ public class FoodCategoryController : Controller {
         await _context.SaveChangesAsync();
 
         return Ok(new {message = "FoodCategories successfully update"});
-    }
+    }    
 
-    
-
-    // DELETE: foodcategory/foodcategories/delete/{id}
+ /// <summary>
+ /// Delete the given category by the Id from the database. First it check the Id againt the minimum and maximum value of the record in the database records.
+ /// Then it check against the existence of the recortd in the database tabels. Preform the deleteation of the record if it is exist. 
+ /// </summary>
+ /// <param name="id"></param>
+ /// <returns></returns>
     [HttpDelete("foodcategories/delete/{id:int}")]
-    public async Task<IActionResult> DeleteFoodCategoryById(int id)
-    {
+    public async Task<IActionResult> DeleteFoodCategoryById(int id) {
+
+        var min = await _context.FoodCategories.MinAsync(fc => fc.Id); var max = await _context.FoodCategories.MaxAsync(fc => fc.Id);
+
+        if (id < min || id > max) {return BadRequest("The given recordd was not found it in the database records");}
+
         var existingCategory = await _context.FoodCategories.FindAsync(id);
-        if (existingCategory == null)
-        {
-            return NotFound("FoodCategory not found.");
-        }
+
+        if (existingCategory == null) { return NotFound("FoodCategory not found."); }
 
         _context.FoodCategories.Remove(existingCategory);
         await _context.SaveChangesAsync();
