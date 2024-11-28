@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';  // Use axios for API calls
 
 const AuthForm = () => {
   const [activeForm, setActiveForm] = useState('login');
@@ -7,23 +8,64 @@ const AuthForm = () => {
   const [password, setPassword] = useState('');
   const [userType, setUserType] = useState('normal');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Using useNavigate for redirection after login
 
+  // Login function that sends data to the API
   const login = async (event) => {
     event.preventDefault();
     console.log('Logging in with:', email, password);
-    // Logikk for innlogging...
+    
+    try {
+      // API call for logging the user in
+      const response = await axios.post('/api/login', { email, password });
+      
+      // Check if login was successful
+      if (response.status === 200) {
+        console.log('Login successful');
+        localStorage.setItem('user', JSON.stringify(response.data)); // Store user data in localStorage
+        navigate('/food-list');  // After successful login, navigate to the food list page
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      setError('Invalid email or password');
+    }
   };
 
+  // Sign-up function that sends data to the API
   const signup = async (event) => {
     event.preventDefault();
     console.log('Signing up with:', email, password, userType);
-    // Logikk for registrering...
+
+    try {
+      // API call for registering the user
+      const response = await axios.post('/api/signup', { email, password, userType });
+
+      // Check if registration was successful
+      if (response.status === 201) {
+        console.log('Sign-up successful');
+        setActiveForm('login'); // After registration, switch to login form
+      }
+    } catch (error) {
+      console.error('Sign up failed:', error);
+      setError('There was an error signing up');
+    }
   };
 
+  // Password reset function
   const resetPassword = async (event) => {
     event.preventDefault();
     console.log('Resetting password for:', email);
-    // Logikk for tilbakestilling...
+
+    try {
+      const response = await axios.post('/api/reset-password', { email });
+      if (response.status === 200) {
+        console.log('Password reset email sent');
+        setError('Check your email to reset your password');
+      }
+    } catch (error) {
+      console.error('Password reset failed:', error);
+      setError('Error resetting password');
+    }
   };
 
   return (

@@ -13,4 +13,15 @@
     --footer-text-color: #fff; /* Hvit tekstfarge for footer */
     --body-font-size: 16px;
     --body-line-height: 1.6;
+
+     /* Legg til variabler for AddFoodItem */
+    --form-background: #f9f9f9; /* Bakgrunnsfarge for skjema */
+    --form-border-color: #ccc; /* Border farge for skjema */
+    --input-padding: 8px; /* Padding for input-feltene */
+    --button-padding: 10px; /* Padding for knappen */
+    --form-border-radius: 8px; /* Border-radius for skjemaet */
+    --message-padding: 3px; /* Padding for meldinger */
+    --max-width: 450px; /* Maks bredde for skjemaet */
+    --margin-auto: auto; /* Margin auto for å sentrere elementene */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Skjema skygge */
   }
