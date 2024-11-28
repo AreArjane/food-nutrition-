@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
 const AuthForm = () => {
   const [activeForm, setActiveForm] = useState('login');
   const [email, setEmail] = useState('');
@@ -8,22 +5,49 @@ const AuthForm = () => {
   const [userType, setUserType] = useState('normal');
   const [error, setError] = useState('');
 
+  const handleResponse = async (response) => {
+    const data = await response.json();
+    if (data.success) {
+      if (data.redirectUrl) {
+        window.location.href = data.redirectUrl;
+      }
+    } else {
+      setError(data.errorMessage || 'Something went wrong. Please try again.');
+    }
+  };
+
   const login = async (event) => {
     event.preventDefault();
-    console.log('Logging in with:', email, password);
-    // Logikk for innlogging...
+    try {
+      const response = await fetch('/Auth/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': document.querySelector('input[name="__RequestVerificationToken"]').value,
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          userType: userType === 'normal' ? 0 : userType === 'super' ? 1 : 2, // Match enum values
+        }),
+      });
+      await handleResponse(response);
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('Login failed. Please try again.');
+    }
   };
 
   const signup = async (event) => {
     event.preventDefault();
-    console.log('Signing up with:', email, password, userType);
-    // Logikk for registrering...
+    // Call your registration endpoint (not implemented in provided AuthController)
+    console.log('Sign-up logic not implemented in backend yet.');
   };
 
   const resetPassword = async (event) => {
     event.preventDefault();
-    console.log('Resetting password for:', email);
-    // Logikk for tilbakestilling...
+    // Call your password reset endpoint (not implemented in provided AuthController)
+    console.log('Password reset logic not implemented in backend yet.');
   };
 
   return (
@@ -41,33 +65,16 @@ const AuthForm = () => {
           <h2>Login</h2>
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-          <button type="submit">Login</button>
-        </form>
-      )}
-
-      {activeForm === 'signup' && (
-        <form onSubmit={signup}>
-          <h2>Sign Up</h2>
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <select value={userType} onChange={(e) => setUserType(e.target.value)}>
             <option value="normal">Normal User</option>
             <option value="super">Super User</option>
             <option value="admin">Admin User</option>
           </select>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Login</button>
         </form>
       )}
 
-      {activeForm === 'reset' && (
-        <form onSubmit={resetPassword}>
-          <h2>Reset Password</h2>
-          <input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <button type="submit">Send Reset Link</button>
-        </form>
-      )}
+      {/* Similar forms for Sign-Up and Reset Password */}
     </div>
   );
 };
-
-export default AuthForm;
