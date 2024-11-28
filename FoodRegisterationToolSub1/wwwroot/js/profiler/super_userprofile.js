@@ -279,7 +279,11 @@ class superuserJS  {
 
 
 /*****************************************************************Setter and getters******************************************************************************************************************************************* */
-
+/**
+ * 
+ * @param {string } modelsType
+ * Track the navbar on the left side, based on change the tags string on the top of the page 
+ */
     setTabs(modelsType) { 
         switch(modelsType) {
 
@@ -321,7 +325,14 @@ class superuserJS  {
         }
     }
 
-
+/**
+ * Getts and setts of the Class
+ * Tabdescription            ->  is string display along with the tag display the name Filter By or Action
+ * MainContent               ->  is the statics data display and hero welcome page ofr the superuser profile
+ * setPaginationCotnainer    ->  is the the container of the search assoicated with the get method for each navbar action
+ * setPaginationSerachButton ->  is the button in the pagnation conainer provide the GET method to API URL
+ * setPaginationContent      ->  is the content of the pagination container display with paragraf 
+ */
     getTabedescription() {
         return this.#tabdescription;
     }
@@ -383,34 +394,31 @@ class superuserJS  {
 
 /*****************************************************************FUNCTIONS******************************************************************************************************************************************************/
 
-
+/**Update the GET method section data and set the previous and next buttom equal to the pagenumber of the API
+ * User can navigate between the pages the pagesize are fixed here to the 10 element for each page. If there 100 element in database, means we have 10 pages. 
+ */
     PaginationUpdate(modeltype) {
-
-
         const updatePage = (newPage) =>  {
             this.#metaData.currentPage = newPage;
             this.fetchGetDataDecision(modeltype, newPage, this.#metaData.pageSize);
             //this.InnerHtmlContent(modeltype);
         }
-
-
         this.#previous.addEventListener('click', () => {
             if(this.#metaData.currentPage > 1) {
                 updatePage(this.#metaData.currentPage - 1);
-                
-            }
-        });
+            }});
 
         this.#next.addEventListener('click', () => {
-
             if(this.#metaData.currentPage < this.#metaData.totalPages) { 
                 updatePage(this.#metaData.currentPage + 1);
-            }
-
-        });
-        
-
+            }});
     }
+    /**
+     * 
+     * @param {*} mode
+     * Mode is the string model type of the tags where the user click on navbar in the right side
+     * Ensuring display the content based on the nav click. 
+     */
 
     updateVisibility(mode) {
 
@@ -428,20 +436,24 @@ class superuserJS  {
                 this.#maincontent.forEach((element) => element.classList.remove('is-hidden'));
                 this.#paginationcontainer.forEach((element)=> element.classList.add('is-hidden'));              break;
         }
-
-
     }
+    /**
+     * Next task function to process the data and manipulated after success fetching from the API. It put on the class variabel metadata and datacontent.
+     * @param {*} jsonData data after success from API service
+     * @param {*} pagenumber represent the pagenumber with the database element divided into the pagesize
+     * @param {*} modelType The model type of the API where we need it to manage the data based on what it is FOOD, Nutrients, FOODNutrient or FooodCategories.
+     * @returns 
+     */
+
     processFetchingData(jsonData, pagenumber, modelType) { 
         if(!jsonData || typeof jsonData !== 'object' || !Array.isArray(jsonData.data)) {
             console.error("Invalid data format");
             return;
         }
-        //clearing the content
         if (!this.#dataContent) {
             this.#dataContent = new Map();
         } else {
-            this.#dataContent.clear();
-            
+            this.#dataContent.clear();   
         }
 
         this.#metaData = { 
@@ -450,20 +462,13 @@ class superuserJS  {
             currentPage : jsonData.currentPage,
             pageSize    : jsonData.pageSize
         };
-
-        
          
         jsonData.data.forEach((item, key) => {
             const globalIndex = key +(pagenumber - 1) * jsonData.pageSize;
-
             this.#dataContent.set(globalIndex, item);
             console.log(this.#dataContent);
         });
-
         this.InnerHtmlContent(modelType);
-
-
-        //caching data from page
         this.#pageCach.addRear({
             modelType,
             pagenumber,
@@ -471,18 +476,19 @@ class superuserJS  {
             dataContent: new Map(this.#dataContent),
         });
     }
-
-
+    /**
+     * Next Tasks function fetch the data from the API service after the models given in the GETdataLink. 
+     * @param {*} link is the link to be fetched 
+     * @param {*} mode the mode the type of the data, here it use it to passed to the process data function
+     * @param {*} pageNumber represent the pagenumber assoicated with the datafetched to passed to the process function.
+     * @returns 
+     */
     async fetchGetlink(link, mode, pageNumber) { 
         console.log(`Fetching link: ${link} for mode: ${mode} on page: ${pageNumber}`);
 
         //const url = new URL(link);
         //const param = new URLSearchParams(url.search);
-    
         const cachpage = this.getCachedPage(1);
-
-        
-
        /*if(cachpage) {
             //console.log(`page ${param.get("pagenumber")} loaded from cach`);
             this.#metaData = cachpage.metadata;
@@ -497,47 +503,38 @@ class superuserJS  {
     try {
 
     const response = await fetch(link, {
-            method: 'GET',
-            headers : {'Content-Type' : 'application/json'}
-            
-            });
-        if(response.ok) {
+                    method: 'GET',
+                    headers : {'Content-Type' : 'application/json'}});
+    if(response.ok) {
         const data = await response.json();
         console.log("From fetching link",data);
         this.processFetchingData(data, pageNumber, mode);
-        
-        
         return data; 
-
-        } else { 
+    } else { 
             console.log("An error ocurred during detching data. Check API call");
             return null;
-        }
-    
-    } catch(error) {
 
-            console.error("Error: ", error);
-            return null; 
+    }} catch(error) {
+        console.error("Error: ", error);
+        return null; 
         }
     }
-    
-
-    
+    /**
+     * Function Decide the link to be fetched depend on the model given 
+     * @param {*} mode represnet the button been clicked on the nav bar section on the right side
+     * @param {*} page represent the pagenumber of the database to be fetched   
+     * @param {*} pagesize represent the amount of the lement to be fetched, this is crucial when the superuser will decide how many food or how many record need to be fetched.
+     * @param {*} startwith the filter method given to the API to based on the name of the record registered in the API database 
+     * @param {*} id is the ID of the varoius API database models when the superuser fetching in order to make CRUD operations.
+     * @returns 
+     */
 
     async fetchGetDataDecision(mode, page, pagesize, startwith, id) {
+        if(this.#activeModelType !== mode) { console.log(`skiping fetching modeType ${mode}a s its not an active model type`);return;}
 
-        if(this.#activeModelType !== mode) { 
-            console.log(`skiping fetching modeType ${mode}a s its not an active model type`);
-            return;
-        }
-      
-
-        
-
-            switch(mode) {
+           switch(mode) {
                 case 'customer':
                     await this.fetchGetlink(`http://localhost:5072/AdminUser/allnormaluser?pagenumber=${page}&pagesize=${pagesize}`, mode, page);          break;
-        
                 case 'foods':
                     await this.fetchGetlink(`http://localhost:5072/foodapi/Foods?pagenumber=${page}&pagesize=${pagesize}`, mode, page);                     break;
                 case 'nutrients':
@@ -548,7 +545,6 @@ class superuserJS  {
                     break;
                 case 'meals':
                     break;
-        
                 case 'singlefoods':
                     await this.fetchGetlink(GET_SINGLE_FOOD(id));                               break;
         
@@ -557,36 +553,26 @@ class superuserJS  {
         
                 case 'singlemeals':
                     await this.fetchGetlink(GET_SINGLE_MEALS(id));                              break;
-        
-        
-            
             }
-
-
-       
-   
     
     }
-
-
+    /**
+     * Function been processed after the dataprocess function done with applying the data to the metadata and datacontent. 
+     * It fill up the container named pagination in the html document with the paragarafe dividev with tcontainer for each paragrafe containes the data from the API service.
+     * @param {*} modelType 
+     * @returns 
+     */
 
     InnerHtmlContent(modelType) { 
-        if (!this.#paginationcontent || !this.#paginationcontent.innerHTML) {
-            console.error("Pagination content element is not properly set.");
-            return;
-        }
+        if (!this.#paginationcontent || !this.#paginationcontent.innerHTML) {console.error("Pagination content element is not properly set.");return;}
 
         this.#paginationcontent.innerHTML = '';
         
-        if (this.#dataContent.size === 0) {
-            this.#paginationcontent.innerHTML = `<p class="notification is-warning">No data available to display.</p>`;
-            return;
-        }
+        if (this.#dataContent.size === 0) {this.#paginationcontent.innerHTML = `<p class="notification is-warning">No data available to display.</p>`;return;}
         
 
         //this.#paginationcontentbutton = this.#tabs.map((tab, index)=> tab);
         //var count = 0;var count_1 = 0;var count_2 = 0;var count_3 = 0;
-
         switch(modelType) {
             case 'customer': 
 
@@ -753,9 +739,7 @@ document.querySelector('.models-container').addEventListener('click', (event) =>
             superuser.fetchGetDataDecision(modelType, 1 , 10).then(() => {
                 superuser.PaginationUpdate(modelType);
         
-        });
-
-            
+        });      
     }
 });
 
@@ -770,7 +754,10 @@ window.addEventListener('DOMContentLoaded', () => {
         superuser.updateTags('#tab-lists');
     }
 });
-
+/**
+ * Special function to fetch the static data and added to the fronted page of the superuser 
+ * The sattic data contains how many record there is in the databse registered. This could further developed to give like news data content and information.
+ */
 function AppendStatic() {
     document.addEventListener("DOMContentLoaded", async function(event) {
 
@@ -819,11 +806,8 @@ function AppendStatic() {
         }
     });
 
-}
+}AppendStatic();
 /**********************************************************************END of the main class of SuperUser Profile******************************************************************************************************** */
-
-AppendStatic();
-
 
 
 
@@ -839,8 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navbarMenu.classList.toggle('is-active');
         });
     }
-
-    // Handle Sidebar Burger
+    //Burger functionn given with the Bulma CSS to handle the mobil view for the navbar section.
     const sidebarBurger = document.querySelector('.sidebar-burger[data-target="sidebar-menu"]');
     const sidebarMenu = document.getElementById('sidebar-menu');
 
