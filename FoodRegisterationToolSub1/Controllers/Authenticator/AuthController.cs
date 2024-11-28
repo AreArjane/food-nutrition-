@@ -1,3 +1,12 @@
+
+
+using System.Security.Claims;
+using FoodRegisterationToolSub1.Models.users;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+
 /// <summary>
 /// Controller responsible for handling authentication-related actions such as login, logout, and access control.
 /// </summary>
