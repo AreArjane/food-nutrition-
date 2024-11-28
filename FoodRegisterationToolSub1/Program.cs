@@ -6,6 +6,8 @@ using FoodRegisterationToolSub1.Models.users;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using AspNetCoreRateLimit;
 using EmailService;
+using DotNetEnv;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,10 +19,16 @@ var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
         builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
         builder.Services.AddHttpContextAccessor();**/
-//*****************************************************Cookies Configuration*****************************************************************************************************************************************************************************************************************************************************************************/
 
-//Database configuration
+
+/************************************************************************************Database connection service**************************************************************************************/
+//This file ensure the connection to the database using the enviroment vaiabel, the know case in production this will be set in the enviroment, then the code will 
+//track the name of the enviroment vaiabel. Normally provided the name the program explore with the user manuelt
+
+
 DataBaseConfiguration.ConfigurationDatabase(builder.Services);
+
+/**********************************************************************************************************************************************************************************************/
 //Import dataset to database
 builder.Services.AddScoped<DataSetImporter>();
 
@@ -38,6 +46,8 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Required for GDPR compliance
 });
 
+//*****************************************************Cookies Configuration*****************************************************************************************************************************************************************************************************************************************************************************/
+
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -46,6 +56,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Auth/Login";
         options.AccessDeniedPath = "/Auth/AccessDenied";
     });
+
+//*****************************************************Allowing sub2 to access*****************************************************************************************************************************************************************************************************************************************************************************/
+
 
 builder.Services.AddCors(options =>
 {
