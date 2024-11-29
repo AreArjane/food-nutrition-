@@ -1,19 +1,32 @@
 
 using FoodRegisterationToolSub1.Models.users;
 using Microsoft.AspNetCore.Mvc;
+/// <summary>
+/// Controller responsible for managing normal user profiles, including retrieving profile data and rendering profile views.
+/// </summary>
 
 [Route("api/[controller]")]
 [ApiController]
 
 
 public class NormalUserController : Controller {
-
+/// <summary>
+    /// Instance of the application's database context for accessing normal user data.
+    /// </summary>
     private readonly ApplicationDbContext _context;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="NormalUserController"/> class with the provided database context.
+/// </summary>
+/// <param name="context">Database context used for accessing user data.</param>
     public NormalUserController(ApplicationDbContext context) { 
         _context = context;
     }
-
+ /// <summary>
+    /// Retrieves the profile data of a specific normal user based on their ID.
+/// </summary>
+/// <param name="id">The ID of the normal user to retrieve profile information for.</param>
+/// <returns>An <see cref="IActionResult"/> containing the user's profile data, or an error response if not found or access is forbidden.</returns>
     [HttpGet("{id}/profile")]
 
     public IActionResult GetUserProfile(int id) {
@@ -46,7 +59,11 @@ public class NormalUserController : Controller {
 
         return Ok(profile_data_NU);
     }
-
+ /// <summary>
+    /// Retrieves and renders the profile view for a specific normal user.
+/// </summary>
+/// <param name="id">The ID of the normal user to retrieve and render profile information for.</param>
+/// <returns>An <see cref="IActionResult"/> that renders the profile view or an error response if access is forbidden or user is not found.</returns>
     [HttpGet("{id}/profile/view")]
     public IActionResult GetUserProfileView(int id)
     {
