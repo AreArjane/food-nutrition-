@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RPszmHTRgmhgpPGS9pZLXrs9442uSP9lPPTGu61r6SY=",
+  "Hash": "wBQ9bx07iVAB5iqPIVgNVsLQWF6pFaWK1EHcEa6mOvs=",
   "Source": "FoodRegisterationToolSub1",
   "BasePath": "_content/FoodRegisterationToolSub1",
   "Mode": "Default",
@@ -8,21 +8,21 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "FoodRegisterationToolSub1/wwwroot",
+      "Name": "FoodRegisterationToolSub1\\wwwroot",
       "Source": "FoodRegisterationToolSub1",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/bundle/FoodRegisterationToolSub1.styles.css",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FoodRegisterationToolSub1.styles.css",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "FoodRegisterationToolSub1.styles.css",
+      "RelativePath": "FoodRegisterationToolSub1#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Primary",
@@ -31,17 +31,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "6oj4gkkev1",
+      "Integrity": "ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/bundle/FoodRegisterationToolSub1.styles.css"
+      "OriginalItemSpec": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FoodRegisterationToolSub1.styles.css"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FoodRegisterationToolSub1.bundle.scp.css",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "FoodRegisterationToolSub1.bundle.scp.css",
+      "RelativePath": "FoodRegisterationToolSub1#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Primary",
@@ -50,332 +52,1928 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "6oj4gkkev1",
+      "Integrity": "ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FoodRegisterationToolSub1.bundle.scp.css"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/home.css",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\home.css",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "css/home.css",
+      "RelativePath": "css/home#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "p92eohdgll",
+      "Integrity": "AzG51+rSRCijFZF34MF/MN2RmXhMobM9VuIQmk6ZD4Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/home.css"
+      "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/login.css",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\login.css",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "css/login.css",
+      "RelativePath": "css/login#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "jenpus3143",
+      "Integrity": "u4AoT84dPEYhUKmqy6OIlml7WE5jLsYRbjtlDcAXylc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/login.css"
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/site.css",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\site.css",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "css/site.css",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "tlluwstn81",
+      "Integrity": "4WjsRGPZ3KkLLV6pR+qJ++32PbKsxA/K99fDXw0h8XA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/site.css"
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/style_profile.css",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\style_profile.css",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "css/style_profile.css",
+      "RelativePath": "css/style_profile#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "2fsl2gr0b0",
+      "Integrity": "HrWOAey6SjwZvYuUl49ZCH7lD7mLSSM125ANdHV5Qjs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/style_profile.css"
+      "OriginalItemSpec": "wwwroot\\css\\style_profile.css"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/images/email.png",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\images\\email.png",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "images/email.png",
+      "RelativePath": "images/email#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "ytsewvghub",
+      "Integrity": "ijpqQE9CmcLYOvw3ypXQuebozUyhE3CWZjCWGy4EnZg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/email.png"
+      "OriginalItemSpec": "wwwroot\\images\\email.png"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/images/search_image.png",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\images\\search_image.png",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "images/search_image.png",
+      "RelativePath": "images/search_image#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "gbsgqo4qq2",
+      "Integrity": "pJKZCgZlRNXMRJp6I2PgBusA7R5cIBO667EoMMtqOHw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/search_image.png"
+      "OriginalItemSpec": "wwwroot\\images\\search_image.png"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/login.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\login.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/login.js",
+      "RelativePath": "js/login#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "devus5s0dd",
+      "Integrity": "dYq/qEh18hk7pvi4DLfI6koZ9fXY1Von638D/OsqKys=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/login.js"
+      "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/logup/logup.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logup.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/logup/logup.js",
+      "RelativePath": "js/logup/logup#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "m7477jk9a3",
+      "Integrity": "EiSG0+SGtNtfHSDiKF6wgsQAaE7NUgElcgJB4Y+GQTI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/logup/logup.js"
+      "OriginalItemSpec": "wwwroot\\js\\logup\\logup.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/logup/logupmodels.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logupmodels.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/logup/logupmodels.js",
+      "RelativePath": "js/logup/logupmodels#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/logup/logupmodels.js"
+      "OriginalItemSpec": "wwwroot\\js\\logup\\logupmodels.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/profile.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profile.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/profile.js",
+      "RelativePath": "js/profile#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/profile.js"
+      "OriginalItemSpec": "wwwroot\\js\\profile.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/profiler/normal_userprofile.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\normal_userprofile.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/profiler/normal_userprofile.js",
+      "RelativePath": "js/profiler/normal_userprofile#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "7ehdbwhe2j",
+      "Integrity": "T5RtHX0P+o13KdZ1gTkyUwL8tW+aIcF9H+1J183+ayQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/profiler/normal_userprofile.js"
+      "OriginalItemSpec": "wwwroot\\js\\profiler\\normal_userprofile.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/profiler/super_userprofile.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\super_userprofile.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/profiler/super_userprofile.js",
+      "RelativePath": "js/profiler/super_userprofile#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "1wcq55mdof",
+      "Integrity": "wbzgjYIb0YQmYTP7PN1fm6UVJ1w0Hy8k2AtK2y3LcGQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/profiler/super_userprofile.js"
+      "OriginalItemSpec": "wwwroot\\js\\profiler\\super_userprofile.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/search.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\search.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/search.js",
+      "RelativePath": "js/search#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "oiil3jh0bc",
+      "Integrity": "AJAeg9SbAQycU1CoWYfzX1C0ROems3Mlq1p44xzew7o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/search.js"
+      "OriginalItemSpec": "wwwroot\\js\\search.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/site.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\site.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "3e3kbtbypl",
+      "Integrity": "1QKMSoV3dDWrUFIpLz+xvzUl0d4bWNcViCowZYby+hU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/tabels/fetchFoodData.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchFoodData.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/tabels/fetchFoodData.js",
+      "RelativePath": "js/tabels/fetchFoodData#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "gxv7gjwtfm",
+      "Integrity": "ZBlgFKSLQFl1dcQHRXqUYS4uFM0y1ZfmO71GfdUDPsw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/tabels/fetchFoodData.js"
+      "OriginalItemSpec": "wwwroot\\js\\tabels\\fetchFoodData.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/tabels/fetchNutrientData.js",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchNutrientData.js",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "js/tabels/fetchNutrientData.js",
+      "RelativePath": "js/tabels/fetchNutrientData#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "o7r9w6gm17",
+      "Integrity": "/JXdBserT7PCRSWlZr9aATUaHuQSpiEL5zm69G8cjHE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/tabels/fetchNutrientData.js"
+      "OriginalItemSpec": "wwwroot\\js\\tabels\\fetchNutrientData.js"
     },
     {
-      "Identity": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/templates/email/email.html",
+      "Identity": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\templates\\email\\email.html",
       "SourceId": "FoodRegisterationToolSub1",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/",
+      "ContentRoot": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\",
       "BasePath": "_content/FoodRegisterationToolSub1",
-      "RelativePath": "templates/email/email.html",
+      "RelativePath": "templates/email/email#[.{fingerprint}]?.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "fgsu334m4w",
+      "Integrity": "j3osNccX45pYWxh4Iv93f8E3PzofdUHLbDcDC4s+wzA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/templates/email/email.html"
+      "OriginalItemSpec": "wwwroot\\templates\\email\\email.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/home.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AzG51+rSRCijFZF34MF/MN2RmXhMobM9VuIQmk6ZD4Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AzG51+rSRCijFZF34MF/MN2RmXhMobM9VuIQmk6ZD4Y="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.p92eohdgll.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AzG51+rSRCijFZF34MF/MN2RmXhMobM9VuIQmk6ZD4Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p92eohdgll"
+        },
+        {
+          "Name": "label",
+          "Value": "css/home.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AzG51+rSRCijFZF34MF/MN2RmXhMobM9VuIQmk6ZD4Y="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u4AoT84dPEYhUKmqy6OIlml7WE5jLsYRbjtlDcAXylc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u4AoT84dPEYhUKmqy6OIlml7WE5jLsYRbjtlDcAXylc="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.jenpus3143.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u4AoT84dPEYhUKmqy6OIlml7WE5jLsYRbjtlDcAXylc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jenpus3143"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-u4AoT84dPEYhUKmqy6OIlml7WE5jLsYRbjtlDcAXylc="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2144"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4WjsRGPZ3KkLLV6pR+qJ++32PbKsxA/K99fDXw0h8XA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4WjsRGPZ3KkLLV6pR+qJ++32PbKsxA/K99fDXw0h8XA="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.tlluwstn81.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2144"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4WjsRGPZ3KkLLV6pR+qJ++32PbKsxA/K99fDXw0h8XA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tlluwstn81"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4WjsRGPZ3KkLLV6pR+qJ++32PbKsxA/K99fDXw0h8XA="
+        }
+      ]
+    },
+    {
+      "Route": "css/style_profile.2fsl2gr0b0.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\style_profile.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1979"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HrWOAey6SjwZvYuUl49ZCH7lD7mLSSM125ANdHV5Qjs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2fsl2gr0b0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/style_profile.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HrWOAey6SjwZvYuUl49ZCH7lD7mLSSM125ANdHV5Qjs="
+        }
+      ]
+    },
+    {
+      "Route": "css/style_profile.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\css\\style_profile.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1979"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HrWOAey6SjwZvYuUl49ZCH7lD7mLSSM125ANdHV5Qjs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HrWOAey6SjwZvYuUl49ZCH7lD7mLSSM125ANdHV5Qjs="
+        }
+      ]
+    },
+    {
+      "Route": "FoodRegisterationToolSub1.6oj4gkkev1.bundle.scp.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FoodRegisterationToolSub1.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6oj4gkkev1"
+        },
+        {
+          "Name": "label",
+          "Value": "FoodRegisterationToolSub1.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g="
+        }
+      ]
+    },
+    {
+      "Route": "FoodRegisterationToolSub1.6oj4gkkev1.styles.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FoodRegisterationToolSub1.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6oj4gkkev1"
+        },
+        {
+          "Name": "label",
+          "Value": "FoodRegisterationToolSub1.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g="
+        }
+      ]
+    },
+    {
+      "Route": "FoodRegisterationToolSub1.bundle.scp.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FoodRegisterationToolSub1.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g="
+        }
+      ]
+    },
+    {
+      "Route": "FoodRegisterationToolSub1.styles.css",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FoodRegisterationToolSub1.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ltwZwJ1FfqNKXBsKvZFqY1IIwi3+va8utYOmNBBza4g="
+        }
+      ]
+    },
+    {
+      "Route": "images/email.png",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\images\\email.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24628"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ijpqQE9CmcLYOvw3ypXQuebozUyhE3CWZjCWGy4EnZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ijpqQE9CmcLYOvw3ypXQuebozUyhE3CWZjCWGy4EnZg="
+        }
+      ]
+    },
+    {
+      "Route": "images/email.ytsewvghub.png",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\images\\email.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24628"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ijpqQE9CmcLYOvw3ypXQuebozUyhE3CWZjCWGy4EnZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ytsewvghub"
+        },
+        {
+          "Name": "label",
+          "Value": "images/email.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ijpqQE9CmcLYOvw3ypXQuebozUyhE3CWZjCWGy4EnZg="
+        }
+      ]
+    },
+    {
+      "Route": "images/search_image.gbsgqo4qq2.png",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\images\\search_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26125"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pJKZCgZlRNXMRJp6I2PgBusA7R5cIBO667EoMMtqOHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gbsgqo4qq2"
+        },
+        {
+          "Name": "label",
+          "Value": "images/search_image.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pJKZCgZlRNXMRJp6I2PgBusA7R5cIBO667EoMMtqOHw="
+        }
+      ]
+    },
+    {
+      "Route": "images/search_image.png",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\images\\search_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26125"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pJKZCgZlRNXMRJp6I2PgBusA7R5cIBO667EoMMtqOHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pJKZCgZlRNXMRJp6I2PgBusA7R5cIBO667EoMMtqOHw="
+        }
+      ]
+    },
+    {
+      "Route": "js/login.devus5s0dd.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\login.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dYq/qEh18hk7pvi4DLfI6koZ9fXY1Von638D/OsqKys=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "devus5s0dd"
+        },
+        {
+          "Name": "label",
+          "Value": "js/login.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dYq/qEh18hk7pvi4DLfI6koZ9fXY1Von638D/OsqKys="
+        }
+      ]
+    },
+    {
+      "Route": "js/login.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\login.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dYq/qEh18hk7pvi4DLfI6koZ9fXY1Von638D/OsqKys=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dYq/qEh18hk7pvi4DLfI6koZ9fXY1Von638D/OsqKys="
+        }
+      ]
+    },
+    {
+      "Route": "js/logup/logup.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logup.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12812"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EiSG0+SGtNtfHSDiKF6wgsQAaE7NUgElcgJB4Y+GQTI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EiSG0+SGtNtfHSDiKF6wgsQAaE7NUgElcgJB4Y+GQTI="
+        }
+      ]
+    },
+    {
+      "Route": "js/logup/logup.m7477jk9a3.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logup.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12812"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EiSG0+SGtNtfHSDiKF6wgsQAaE7NUgElcgJB4Y+GQTI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m7477jk9a3"
+        },
+        {
+          "Name": "label",
+          "Value": "js/logup/logup.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EiSG0+SGtNtfHSDiKF6wgsQAaE7NUgElcgJB4Y+GQTI="
+        }
+      ]
+    },
+    {
+      "Route": "js/logup/logupmodels.5ipweew5fc.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logupmodels.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "js/logup/logupmodels.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "js/logup/logupmodels.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logupmodels.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "js/profile.5ipweew5fc.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "js/profile.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "js/profile.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "js/profiler/normal_userprofile.7ehdbwhe2j.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\normal_userprofile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4871"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T5RtHX0P+o13KdZ1gTkyUwL8tW+aIcF9H+1J183+ayQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7ehdbwhe2j"
+        },
+        {
+          "Name": "label",
+          "Value": "js/profiler/normal_userprofile.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T5RtHX0P+o13KdZ1gTkyUwL8tW+aIcF9H+1J183+ayQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/profiler/normal_userprofile.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\normal_userprofile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4871"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T5RtHX0P+o13KdZ1gTkyUwL8tW+aIcF9H+1J183+ayQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T5RtHX0P+o13KdZ1gTkyUwL8tW+aIcF9H+1J183+ayQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/profiler/super_userprofile.1wcq55mdof.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\super_userprofile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34234"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wbzgjYIb0YQmYTP7PN1fm6UVJ1w0Hy8k2AtK2y3LcGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1wcq55mdof"
+        },
+        {
+          "Name": "label",
+          "Value": "js/profiler/super_userprofile.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wbzgjYIb0YQmYTP7PN1fm6UVJ1w0Hy8k2AtK2y3LcGQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/profiler/super_userprofile.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\super_userprofile.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34234"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wbzgjYIb0YQmYTP7PN1fm6UVJ1w0Hy8k2AtK2y3LcGQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wbzgjYIb0YQmYTP7PN1fm6UVJ1w0Hy8k2AtK2y3LcGQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/search.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\search.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AJAeg9SbAQycU1CoWYfzX1C0ROems3Mlq1p44xzew7o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AJAeg9SbAQycU1CoWYfzX1C0ROems3Mlq1p44xzew7o="
+        }
+      ]
+    },
+    {
+      "Route": "js/search.oiil3jh0bc.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\search.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2127"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AJAeg9SbAQycU1CoWYfzX1C0ROems3Mlq1p44xzew7o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oiil3jh0bc"
+        },
+        {
+          "Name": "label",
+          "Value": "js/search.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AJAeg9SbAQycU1CoWYfzX1C0ROems3Mlq1p44xzew7o="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.3e3kbtbypl.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "199"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1QKMSoV3dDWrUFIpLz+xvzUl0d4bWNcViCowZYby+hU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3e3kbtbypl"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1QKMSoV3dDWrUFIpLz+xvzUl0d4bWNcViCowZYby+hU="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "199"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1QKMSoV3dDWrUFIpLz+xvzUl0d4bWNcViCowZYby+hU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1QKMSoV3dDWrUFIpLz+xvzUl0d4bWNcViCowZYby+hU="
+        }
+      ]
+    },
+    {
+      "Route": "js/tabels/fetchFoodData.gxv7gjwtfm.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchFoodData.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZBlgFKSLQFl1dcQHRXqUYS4uFM0y1ZfmO71GfdUDPsw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gxv7gjwtfm"
+        },
+        {
+          "Name": "label",
+          "Value": "js/tabels/fetchFoodData.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZBlgFKSLQFl1dcQHRXqUYS4uFM0y1ZfmO71GfdUDPsw="
+        }
+      ]
+    },
+    {
+      "Route": "js/tabels/fetchFoodData.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchFoodData.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZBlgFKSLQFl1dcQHRXqUYS4uFM0y1ZfmO71GfdUDPsw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZBlgFKSLQFl1dcQHRXqUYS4uFM0y1ZfmO71GfdUDPsw="
+        }
+      ]
+    },
+    {
+      "Route": "js/tabels/fetchNutrientData.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchNutrientData.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2051"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/JXdBserT7PCRSWlZr9aATUaHuQSpiEL5zm69G8cjHE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/JXdBserT7PCRSWlZr9aATUaHuQSpiEL5zm69G8cjHE="
+        }
+      ]
+    },
+    {
+      "Route": "js/tabels/fetchNutrientData.o7r9w6gm17.js",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchNutrientData.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2051"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/JXdBserT7PCRSWlZr9aATUaHuQSpiEL5zm69G8cjHE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o7r9w6gm17"
+        },
+        {
+          "Name": "label",
+          "Value": "js/tabels/fetchNutrientData.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/JXdBserT7PCRSWlZr9aATUaHuQSpiEL5zm69G8cjHE="
+        }
+      ]
+    },
+    {
+      "Route": "templates/email/email.fgsu334m4w.html",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\templates\\email\\email.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9254"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j3osNccX45pYWxh4Iv93f8E3PzofdUHLbDcDC4s+wzA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fgsu334m4w"
+        },
+        {
+          "Name": "label",
+          "Value": "templates/email/email.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j3osNccX45pYWxh4Iv93f8E3PzofdUHLbDcDC4s+wzA="
+        }
+      ]
+    },
+    {
+      "Route": "templates/email/email.html",
+      "AssetFile": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\wwwroot\\templates\\email\\email.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9254"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j3osNccX45pYWxh4Iv93f8E3PzofdUHLbDcDC4s+wzA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 23:52:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j3osNccX45pYWxh4Iv93f8E3PzofdUHLbDcDC4s+wzA="
+        }
+      ]
     }
   ]
 }

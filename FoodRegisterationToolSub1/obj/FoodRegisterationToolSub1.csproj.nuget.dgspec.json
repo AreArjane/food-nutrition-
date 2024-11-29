@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {}
+    "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj": {}
   },
   "projects": {
-    "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj": {
+    "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
+        "projectUniqueName": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj",
         "projectName": "FoodRegisterationToolSub1",
-        "projectPath": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/FoodRegisterationToolSub1.csproj",
-        "packagesPath": "/Users/arjan/.nuget/packages/",
-        "outputPath": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/",
+        "projectPath": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\FoodRegisterationToolSub1.csproj",
+        "packagesPath": "C:\\Users\\hacke\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hacke\\Desktop\\food-nutrition--2\\FoodRegisterationToolSub1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/arjan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\hacke\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -36,8 +36,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -45,7 +46,7 @@
           "dependencies": {
             "AspNetCoreRateLimit": {
               "target": "Package",
-              "version": "[4.1.0, )"
+              "version": "[5.0.0, )"
             },
             "CsvHelper": {
               "target": "Package",
@@ -68,6 +69,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -115,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
