@@ -9,13 +9,22 @@ using System.IO;
 
 
 namespace EmailService {
-
+/// <summary>
+    /// Handles email-related operations such as sending verification emails and embedded image emails.
+    /// </summary>
     internal class EmailVerification {
+        /// <summary>
+        /// Entry point for testing the email service.
+        /// Sends a test email with an embedded image.
+        /// </summary>
         private static async Task Main() {
 
             await Execute();
         }
-
+        /// <summary>
+        /// Sends a test email with an embedded image using the SendGrid API.
+        /// </summary>
+        /// <returns>A task representing the asynchronous operation.</returns>
         public static async Task Execute()  {
 
             string base64image = "data:image/jpeg;base64," + Base64Converter.ConvertImageToBase64("wwwroot/images/email.png");
@@ -40,7 +49,15 @@ namespace EmailService {
             Console.WriteLine($"Response Body: {await response.Body.ReadAsStringAsync()}");
             Console.WriteLine($"Response Headers: {response.Headers}");
         }
-
+      /// <summary>
+        /// Sends a verification email to a user with a verification code.
+        /// </summary>
+        /// <param name="email">The recipient's email address.</param>
+        /// <param name="verificationCode">The verification code to include in the email.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
+        /// <exception cref="FileNotFoundException">
+        /// Thrown if the email template file is not found at the specified path.
+        /// </exception>
         public static async Task SendVerificationCode(string email, string verificationCode) {
 
             var apiKey = Env.GetString("ApiKeySenGridConfiguration");
