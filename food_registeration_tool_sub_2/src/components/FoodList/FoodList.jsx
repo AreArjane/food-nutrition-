@@ -2,47 +2,53 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const FoodList = () => {
-    // State to hold food items fetched from the API
-    const [foodItems, setFoodItems] = useState([]);
-    // State to handle errors
-    const [error, setError] = useState(null);
-    // State to track loading status
-    const [loading, setLoading] = useState(true);
+    const [foodItems, setFoodItems] = useState([]); // Tilstand for matvarer
+    const [error, setError] = useState(null); // Tilstand for feil
+    const [loading, setLoading] = useState(true); // Tilstand for lasting
 
-    // Fetch food items when the component is mounted
     useEffect(() => {
-        axios.get('/foodapi/Foods') // API endpoint to fetch food items
-            .then(response => {
-                setFoodItems(response.data);  // Update state with fetched data
-                setLoading(false);  // Turn off loading indicator
-            })
-            .catch(error => {
-                console.error('Error fetching food items:', error);
-                setError('There was an error fetching the food items.');  // Set error message
-                setLoading(false);  // Turn off loading indicator even if there's an error
-            });
-    }, []);  // Empty dependency array ensures this runs only once when component is mounted
+        const fetchData = async () => {
+            console.log('Fetching food items...'); // Logg når forespørselen starter
+            try {
+                const response = await axios.get('http://localhost:5072/foodapi/Foods'); // API-endepunkt
+                console.log('Response received:', response.data); // Logg responsen
+                setFoodItems(response.data); // Oppdater tilstanden med dataene
+            } catch (error) {
+                console.error('Error fetching food items:', error); // Logg feilen
+                setError('Det oppstod en feil under henting av matvarer: ' + (error.response ? error.response.data : error.message)); // Sett feilmelding
+            } finally {
+                setLoading(false); // Sett lasting til false uansett hva
+            }
+        };
 
-    // If the component is still loading, display a loading message
+        fetchData();
+    }, []); // Tom array sørger for at effekten bare kjører én gang
+
+    // Hvis komponenten laster, vis en melding
     if (loading) {
         return <div>Loading...</div>;
     }
 
-    // If there was an error fetching the data, show the error message
+    // Hvis det oppstod en feil, vis feilmeldingen
     if (error) {
         return <div>{error}</div>;
     }
 
-    // Render the list of food items if no errors and not loading
+    // Hvis ingen matvarer finnes, vis en melding
+    if (foodItems.length === 0) {
+        return <div>Ingen matvarer tilgjengelig.</div>;
+    }
+
+    // Render listen over matvarer
     return (
         <div>
             <h2>Food List</h2>
             <ul>
                 {foodItems.map(item => (
-                    <li key={item.id}> {/* Displaying food item by its id */}
-                        <h3>{item.name}</h3> {/* Assuming 'name' is a property in the food data */}
-                        <p>{item.description}</p> {/* Display description (if available in your data) */}
-                        <p>Price: ${item.price}</p> {/* Assuming 'price' is available */}
+                    <li key={item.id}> {/* Bruker id som nøkkel */}
+                        <h3>{item.name}</h3> {/* Anta at 'name' er en egenskap i dataene */}
+                        <p>{item.description}</p> {/* Beskrivelse av maten */}
+                        <p>Price: ${item.price}</p> {/* Anta at 'price' er tilgjengelig */}
                     </li>
                 ))}
             </ul>

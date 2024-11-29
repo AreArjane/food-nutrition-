@@ -1,91 +1,91 @@
 {
   "Files": [
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/obj/Debug/net8.0/scopedcss/projectbundle/FoodRegisterationToolSub1.bundle.scp.css",
-      "PackagePath": "staticwebassets/FoodRegisterationToolSub1.bundle.scp.css"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FoodRegisterationToolSub1.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FoodRegisterationToolSub1.bundle.scp.css"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/home.css",
-      "PackagePath": "staticwebassets/css/home.css"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/login.css",
-      "PackagePath": "staticwebassets/css/login.css"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/site.css",
-      "PackagePath": "staticwebassets/css/site.css"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/css/style_profile.css",
-      "PackagePath": "staticwebassets/css/style_profile.css"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\css\\style_profile.css",
+      "PackagePath": "staticwebassets\\css\\style_profile.css"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/images/email.png",
-      "PackagePath": "staticwebassets/images/email.png"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\images\\email.png",
+      "PackagePath": "staticwebassets\\images\\email.png"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/images/search_image.png",
-      "PackagePath": "staticwebassets/images/search_image.png"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\images\\search_image.png",
+      "PackagePath": "staticwebassets\\images\\search_image.png"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/login.js",
-      "PackagePath": "staticwebassets/js/login.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/logup/logup.js",
-      "PackagePath": "staticwebassets/js/logup/logup.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logup.js",
+      "PackagePath": "staticwebassets\\js\\logup\\logup.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/logup/logupmodels.js",
-      "PackagePath": "staticwebassets/js/logup/logupmodels.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\logup\\logupmodels.js",
+      "PackagePath": "staticwebassets\\js\\logup\\logupmodels.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/profile.js",
-      "PackagePath": "staticwebassets/js/profile.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\profile.js",
+      "PackagePath": "staticwebassets\\js\\profile.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/profiler/normal_userprofile.js",
-      "PackagePath": "staticwebassets/js/profiler/normal_userprofile.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\normal_userprofile.js",
+      "PackagePath": "staticwebassets\\js\\profiler\\normal_userprofile.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/profiler/super_userprofile.js",
-      "PackagePath": "staticwebassets/js/profiler/super_userprofile.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\profiler\\super_userprofile.js",
+      "PackagePath": "staticwebassets\\js\\profiler\\super_userprofile.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/search.js",
-      "PackagePath": "staticwebassets/js/search.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\search.js",
+      "PackagePath": "staticwebassets\\js\\search.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/site.js",
-      "PackagePath": "staticwebassets/js/site.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/tabels/fetchFoodData.js",
-      "PackagePath": "staticwebassets/js/tabels/fetchFoodData.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchFoodData.js",
+      "PackagePath": "staticwebassets\\js\\tabels\\fetchFoodData.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/js/tabels/fetchNutrientData.js",
-      "PackagePath": "staticwebassets/js/tabels/fetchNutrientData.js"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\js\\tabels\\fetchNutrientData.js",
+      "PackagePath": "staticwebassets\\js\\tabels\\fetchNutrientData.js"
     },
     {
-      "Id": "/Users/arjan/Downloads/food-nutrition--my-feature-branch/FoodRegisterationToolSub1/wwwroot/templates/email/email.html",
-      "PackagePath": "staticwebassets/templates/email/email.html"
+      "Id": "C:\\Users\\karam\\Downloads\\food-nutrition-\\FoodRegisterationToolSub1\\wwwroot\\templates\\email\\email.html",
+      "PackagePath": "staticwebassets\\templates\\email\\email.html"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.FoodRegisterationToolSub1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FoodRegisterationToolSub1.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.FoodRegisterationToolSub1.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FoodRegisterationToolSub1.props",
       "PackagePath": "build\\FoodRegisterationToolSub1.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FoodRegisterationToolSub1.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FoodRegisterationToolSub1.props",
       "PackagePath": "buildMultiTargeting\\FoodRegisterationToolSub1.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FoodRegisterationToolSub1.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FoodRegisterationToolSub1.props",
       "PackagePath": "buildTransitive\\FoodRegisterationToolSub1.props"
     }
   ],
