@@ -5,12 +5,17 @@ using FoodRegisterationToolSub1.Models.users;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.EntityFrameworkCore;
-
+/// <summary>
+/// Controller responsible for handling user login and registration (log up) actions.
+/// </summary>
 [Route("Login")]
 [ApiController]
 public class LoginController : Controller
     {
-
+ /// <summary>
+    /// Renders the login page view.
+    /// </summary>
+    /// <returns>An <see cref="IActionResult"/> rendering the login page.</returns>
 
         [HttpGet("")]
         public IActionResult Login()
@@ -18,12 +23,21 @@ public class LoginController : Controller
             return View();
         }
     }
-
+/// <summary>
+/// Controller responsible for user registration (log up) functionality, including form validation and database operations.
+/// </summary>
 [Route("set")]
 [ApiController]
 public class LogUpController : Controller {
-
+/// <summary>
+    /// Instance of the application's database context for managing user-related data.
+    /// </summary>
     private readonly ApplicationDbContext _context;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="LogUpController"/> class with the provided database context.
+    /// </summary>
+    /// <param name="context">Database context for user registration.</param>
     
 
     public LogUpController(ApplicationDbContext context) { 
@@ -31,11 +45,20 @@ public class LogUpController : Controller {
        
 
     }
-
+   /// <summary>
+    /// Checks if a given verification code is already associated with an email in the database.
+    /// </summary>
+    /// <param name="code">Verification code to check.</param>
+    /// <param name="email">Email address to check the code against.</param>
+    /// <returns>True if the code is in use; otherwise, false.</returns>
     private bool IsCodeInUse(string code, string email) {
         return _context.PendingSuperUser.Any(pu => pu.Email == email && pu.verificationcode == code);
     }
 //********************************************************************Render Sub1 Frontend********************************************************************************//
+   /// <summary>
+    /// Renders the log up page view for user registration.
+    /// </summary>
+    /// <returns>An <see cref="IActionResult"/> rendering the log up page view.</returns>
     [HttpGet("")]
     
     public IActionResult Logup() {
@@ -44,13 +67,24 @@ public class LogUpController : Controller {
 
 
 //******************************************************************Log Up function******************************************************************************************//
+   /// <summary>
+    /// Handles user registration submissions, validating input data and storing new users in the database.
+    /// </summary>
+    /// <param name="firstname">The first name of the user.</param>
+    /// <param name="lastname">The last name of the user (optional).</param>
+    /// <param name="phonenr">The phone number of the user.</param>
+    /// <param name="email">The email address of the user.</param>
+    /// <param name="password">The password for the new user account.</param>
+    /// <param name="dateofbirth">The date of birth of the user (optional).</param>
+    /// <param name="usertype">The type of the user (NormalUser or SuperUser).</param>
+    /// <returns>An <see cref="IActionResult"/> indicating the result of the registration.</returns>
     [HttpPost("s")]
     public async Task<IActionResult> LogupSubmitNormalUser(
         [FromForm] string firstname, [FromForm] string? lastname, 
         [FromForm] string phonenr, [FromForm] string email, 
         [FromForm] string password,  
         [FromForm] string? dateofbirth, [FromForm] UserType usertype) {
-
+     // Log request details
         Console.WriteLine($"Received request with Email: {email}");
         Console.WriteLine($"Firstname: {firstname}, Lastname: {lastname}, Phonenr: {phonenr}, Dateof birth {dateofbirth}, usertype: {usertype }");
 
