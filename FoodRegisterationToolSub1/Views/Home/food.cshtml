@@ -1,3 +1,23 @@
+/// <summary>
+/// Razor view for displaying a paginated table of food information.
+/// </summary>
+/// <remarks>
+/// This view provides a structured table to display food-related data, allowing users to view details such as Food ID, Data Type, Description, and Category.
+/// It includes a dynamic "Load More" functionality to fetch additional data as needed.
+/// </remarks>
+///
+/// <dependencies>
+/// - Layout: The view uses a shared layout located at "~/Views/Shared/_Layout.cshtml".
+/// - CSS Framework: The view is styled with Bootstrap 5.3, loaded from a CDN.
+/// - JavaScript: Dynamic functionality for fetching and populating table data is implemented using the script "~/js/tabels/fetchFoodData.js".
+/// </dependencies>
+///
+/// <example>
+/// Use this view to present food-related data in an organized table:
+/// - Initially, the table is populated dynamically through the JavaScript file.
+/// - The "Load More" button allows users to fetch additional data, enhancing user interaction.
+/// - Example: Displaying information like Food ID, Data Type, and Category for each food item.
+/// </example>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "FoodPage";
