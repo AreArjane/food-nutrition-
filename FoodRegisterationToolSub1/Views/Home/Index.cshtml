@@ -1,3 +1,22 @@
+/// <summary>
+/// Razor view for the main page of the application, featuring a GIF background and a centered search overlay.
+/// </summary>
+/// <remarks>
+/// This view is designed to provide users with an engaging landing page that includes a search functionality for foods or meals.
+/// The page is styled with external CSS and functionality is extended with JavaScript for dynamic search results.
+/// </remarks>
+///
+/// <dependencies>
+/// - Layout: The view relies on a shared layout located at "~/Views/Shared/_Layout.cshtml".
+/// - CSS: Styling is applied through the external stylesheet "~/css/home.css".
+/// - JavaScript: Dynamic functionality is implemented using the script "~/js/search.js".
+/// </dependencies>
+///
+/// <example>
+/// Use this view as the main page of the application:
+/// - Users can input a search query, and results will dynamically populate the results section.
+/// - Example: Typing "Pizza" will return relevant meal information (via the linked JavaScript file).
+/// </example>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "MainPage";
