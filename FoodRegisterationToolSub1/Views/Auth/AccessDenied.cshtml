@@ -1,3 +1,20 @@
+/// <summary>
+/// Razor view that displays an "Access Denied" message to users who attempt to view a restricted page.
+/// </summary>
+/// <remarks>
+/// This view is designed to provide a user-friendly response when access to a specific resource or page is denied.
+/// It uses embedded HTML and CSS for layout and styling, ensuring compatibility across browsers and devices.
+/// </remarks>
+///
+/// <example>
+/// Usage in a Razor-based ASP.NET Core application:
+/// - This view could be rendered by an action in a controller that checks user permissions.
+/// - Example: If a user is not authorized, the controller redirects to this view.
+/// </example>
+///
+/// <dependencies>
+/// This view assumes that `ViewData["Title"]` is set in the controller or layout to provide a page title.
+/// </dependencies>
 @{
     ViewData["Title"] = "Access Denied";
 }
