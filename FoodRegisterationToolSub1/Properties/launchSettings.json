@@ -1,4 +1,124 @@
-﻿{
+/// <summary>
+/// Represents the launch settings configuration for an ASP.NET Core application during development.
+/// This file is used to define environment-specific settings, including URLs, environment variables, and authentication options.
+/// </summary>
+public class LaunchSettings
+{
+    /// <summary>
+    /// IIS-specific settings for the application when running with IIS Express.
+    /// </summary>
+    public class IISSettings
+    {
+        /// <summary>
+        /// Indicates whether Windows Authentication is enabled.
+        /// </summary>
+        public bool WindowsAuthentication { get; set; }
+
+        /// <summary>
+        /// Indicates whether Anonymous Authentication is enabled.
+        /// </summary>
+        public bool AnonymousAuthentication { get; set; }
+
+        /// <summary>
+        /// Configuration for IIS Express.
+        /// </summary>
+        public class IISExpressSettings
+        {
+            /// <summary>
+            /// The URL where the application is hosted when running with IIS Express.
+            /// </summary>
+            public string ApplicationUrl { get; set; }
+
+            /// <summary>
+            /// The SSL port used for secure connections.
+            /// </summary>
+            public int SSLPort { get; set; }
+        }
+    }
+
+    /// <summary>
+    /// Defines different launch profiles for running the application.
+    /// </summary>
+    public class Profiles
+    {
+        /// <summary>
+        /// Represents the configuration for running the application over HTTP.
+        /// </summary>
+        public class HttpProfile
+        {
+            /// <summary>
+            /// The command used to run the application (e.g., `Project` for dotnet CLI).
+            /// </summary>
+            public string CommandName { get; set; }
+
+            /// <summary>
+            /// Enables verbose messages when running the application.
+            /// </summary>
+            public bool DotNetRunMessages { get; set; }
+
+            /// <summary>
+            /// Determines whether the browser should launch automatically.
+            /// </summary>
+            public bool LaunchBrowser { get; set; }
+
+            /// <summary>
+            /// The URL where the application is hosted during development.
+            /// </summary>
+            public string ApplicationUrl { get; set; }
+
+            /// <summary>
+            /// Environment variables for the application during runtime.
+            /// </summary>
+            public class EnvironmentVariables
+            {
+                /// <summary>
+                /// The environment in which the application is running (e.g., `Development`, `Production`).
+                /// </summary>
+                public string ASPNETCORE_ENVIRONMENT { get; set; }
+            }
+        }
+
+        /// <summary>
+        /// Represents the configuration for running the application over HTTPS.
+        /// </summary>
+        public class HttpsProfile : HttpProfile
+        {
+            /// <summary>
+            /// The URL for both HTTPS and fallback HTTP hosting.
+            /// </summary>
+            public string HttpsApplicationUrl { get; set; }
+        }
+
+        /// <summary>
+        /// Represents the configuration for running the application using IIS Express.
+        /// </summary>
+        public class IISExpressProfile
+        {
+            /// <summary>
+            /// The command used to launch the application under IIS Express.
+            /// </summary>
+            public string CommandName { get; set; }
+
+            /// <summary>
+            /// Indicates whether the browser should launch automatically.
+            /// </summary>
+            public bool LaunchBrowser { get; set; }
+
+            /// <summary>
+            /// Environment variables for IIS Express runtime.
+            /// </summary>
+            public class EnvironmentVariables
+            {
+                /// <summary>
+                /// The environment in which the application is running (e.g., `Development`).
+                /// </summary>
+                public string ASPNETCORE_ENVIRONMENT { get; set; }
+            }
+        }
+    }
+}
+
+{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
