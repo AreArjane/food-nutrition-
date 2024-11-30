@@ -1,3 +1,24 @@
+/// <summary>
+/// Razor view for the login page with user type selection and a hidden "Log Up" form.
+/// </summary>
+/// <remarks>
+/// This page serves as an entry point for users to select their type and proceed to relevant login or registration processes.
+/// It dynamically reveals a "Log Up" form based on user interactions.
+/// </remarks>
+///
+/// <dependencies>
+/// - Layout: Utilizes the shared layout at "~/Views/Shared/_Layout.cshtml".
+/// - CSS Styles: Custom styles are applied from "~/css/login.css".
+/// - JavaScript: Dynamic behaviors are handled by "~/js/logup/logup.js".
+/// - External Resource: An SVG image hosted remotely is used for decorative purposes.
+/// </dependencies>
+///
+/// <example>
+/// Example usage:
+/// - Users are presented with a choice of user types: NormalUser, SuperUser, or AdminUser.
+/// - Clicking a user type navigates to specific routes (`/normaluser`, `/superuser`, `/adminuser`).
+/// - The "Log Up" form is hidden by default but can be displayed dynamically using JavaScript.
+/// </example>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Login";
