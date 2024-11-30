@@ -1,3 +1,22 @@
+/// <summary>
+/// Razor view for displaying a dynamic table of nutrient information.
+/// </summary>
+/// <remarks>
+/// This view provides a visually appealing interface to display a list of nutrients, including details such as ID, Name, Unit Name, and Rank.
+/// It uses dynamic functionality to fetch and display additional rows as needed, with a "Load More" button.
+/// </remarks>
+///
+/// <dependencies>
+/// - Layout: Integrates with the shared layout located at "~/Views/Shared/_Layout.cshtml".
+/// - CSS Framework: Styled with Bootstrap 5.3, loaded from a CDN.
+/// - JavaScript: Uses the script "~/js/tabels/fetchNutrientData.js" for fetching and dynamically rendering table rows.
+/// </dependencies>
+///
+/// <example>
+/// Example use case:
+/// - Display nutrient information retrieved from an API or database.
+/// - Allow users to load additional nutrients dynamically by clicking the "Load More" button.
+/// </example>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "NutrientsPage";
