@@ -1,3 +1,24 @@
+/// <summary>
+/// Razor view for the login page with user type selection and a dynamic login form.
+/// </summary>
+/// <remarks>
+/// This view provides a user interface for selecting a user type and logging in.
+/// It dynamically displays the login form based on the selected user type and allows users to submit credentials.
+/// </remarks>
+///
+/// <dependencies>
+/// - Layout: Integrates with the shared layout located at "~/Views/Shared/_Layout.cshtml".
+/// - CSS Styles: Uses a custom stylesheet from "~/css/login.css".
+/// - JavaScript: Incorporates dynamic behavior using "~/js/login.js".
+/// - External Resource: Includes a remote SVG image for decorative purposes.
+/// </dependencies>
+///
+/// <example>
+/// Example functionality:
+/// - Users select "NormalUser," "SuperUser," or "AdminUser."
+/// - Based on the selection, the login form is displayed.
+/// - Users enter their email and password to log in.
+/// </example>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Login";
