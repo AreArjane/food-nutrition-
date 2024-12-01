@@ -1,19 +1,19 @@
-// Importerer nødvendige moduler fra '@testing-library/react' for testing
+// Import necessary modules from '@testing-library/react' for testing
 import { render, screen } from '@testing-library/react';
 
-// Importerer App-komponenten som skal testes
+// Import the App component to be tested
 import App from './App';
 
-// Definerer en test for å sjekke om en bestemt tekst finnes i App-komponenten
+// Define a test to check if a specific text exists in the App component
 test('renders learn react link', () => {
 
-  // Render App-komponenten i et testmiljø
+  // Render the App component in a test environment
   render(<App />);
 
-  // Søker etter et element som inneholder teksten "learn react"
-  // Teksten er ikke case-sensitiv på grunn av regex-flagget /i
+  // Search for an element containing the text "learn react"
+  // The text is not case-sensitive due to the regex flag /i
   const linkElement = screen.getByText(/learn react/i);
 
-  // Forventer at elementet skal finnes i dokumentet
+  // Expect the element to be present in the document
   expect(linkElement).toBeInTheDocument();
 });
