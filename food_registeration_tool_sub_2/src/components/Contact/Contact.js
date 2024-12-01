@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // Import React and useState hook for managing state
 
-
+// Define the Contact component
 const Contact = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-  
+    // State variables to manage the form inputs 
+    const [name, setName] = useState(''); // State for the user's name
+    const [email, setEmail] = useState(''); // State for the user's email
+    const [message, setMessage] = useState(''); // State for the user's message
+
+    // Handle form submission
     const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Form submitted with data:", { name, email, message });
+      e.preventDefault(); // Prevent the default form submission behavior
+      console.log("Form submitted with data:", { name, email, message }); // Log the submitted data for debugging
+
+      // Clear the form fields after submission
       setName('');
       setEmail('');
       setMessage('');
@@ -50,4 +54,4 @@ const Contact = () => {
     );
   };
   
-  export default Contact;
+  export default Contact; // Export the Contact component for use in other parts of the application
