@@ -1,8 +1,9 @@
-// Importer nødvendige avhengigheter og komponenter
 import React from 'react';
+
+// Hovedkomponent for Nutrient Manager
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer'; // Fjernet for nå
+// import Footer from './components/Footer/Footer'; 
 import AuthForm from './components/AuthForm/AuthForm';
 import Home from './pages/Home/Home';
 import Error from './pages/Error/Error';
@@ -11,12 +12,11 @@ import Menu from './components/Menu/Menu';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import AddFoodItem from './components/AddFoodItem/AddFoodItem';
-import NutrientManager from './NutrientManager'; // Importer NutrientManager
-import './styles/global.css'; // Globale stilark
-import './styles/variables.css'; // CSS-variabler
+import NutrientManager from './NutrientManager'; // Import NutrientManager component
+import './styles/global.css'; // Global styles for the application
+import './styles/variables.css'; // CSS variables for consistent styling
 
-
-// Definerer hovedkomponenten for applikasjonen
+// Main application component
 function App() {
   return (
     <div className="App">
@@ -48,11 +48,11 @@ function App() {
         
       </main>
       
-      {/* Her kan du gjenopprette Footer når nødvendig */}
+      {/* Here you can restore the Footer when needed */}
       {/* <Footer /> */}
       
     </div>
   );
 }
-// Eksporterer App-komponenten som standardeksport
+// Eksporterer App-companents
 export default App;
