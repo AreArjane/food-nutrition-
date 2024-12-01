@@ -1,7 +1,7 @@
-import React from 'react';
-import foodImage from '../../assets/images/food-image.jpg';
+import React from 'react'; // Import React library
+import foodImage from '../../assets/images/food-image.jpg'; // Import the food image asset
 
-
+// Define the Home component
 const Home = () => {
   return (
     <div className="home-container">
@@ -16,4 +16,4 @@ const Home = () => {
 };
 
 
-export default Home;
+export default Home; // Export the Home component for use in other parts of the application
