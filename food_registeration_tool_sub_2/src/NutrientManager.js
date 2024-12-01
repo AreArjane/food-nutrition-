@@ -1,39 +1,49 @@
 import React, { useEffect, useState } from 'react';
 
 const NutrientManager = () => {
+
+    // State to store the list of nutrients
     const [nutrients, setNutrients] = useState([]);
+
+    // State to handle new nutrient input form
     const [newNutrient, setNewNutrient] = useState({ name: '', unit: '', number: '', rank: '' });
+
+    // State to handle error messages
     const [error, setError] = useState('');
+
+    // State to manage loading state
     const [loading, setLoading] = useState(false);
 
     // Fetch nutrients from API
     const fetchNutrients = async () => {
-        setLoading(true);
-        setError('');
+        setLoading(true); // Show loading state
+        setError(''); // Clear any previous errors
         try {
             const response = await fetch('http://localhost:5072/nutrientapi/Nutrients');
-            if (!response.ok) throw new Error('Network response was not ok');
+            if (!response.ok) throw new Error('Network response was not ok'); // Handle network errors
             const data = await response.json();
-            setNutrients(data);
+            setNutrients(data); // Update state with fetched nutrients
         } catch (err) {
-            setError('Error fetching data: ' + err.message);
-        } finally {
-            setLoading(false);
+            setError('Error fetching data: ' + err.message); // Set error message in case of failure
+        } finally { 
+            setLoading(false);  // Hide loading state
         }
     };
 
+    // Fetch nutrients on component mount
     useEffect(() => {
         fetchNutrients();
     }, []);
 
     // Handle input changes
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setNewNutrient({ ...newNutrient, [name]: value });
+        const { name, value } = e.target; // Destructure input name and value
+        setNewNutrient({ ...newNutrient, [name]: value }); // Update form state
     };
 
+    // Handle form submission to add a new nutrient
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent default form submission
     
         console.log(newNutrient);  // Sjekk hva som blir sendt til serveren
     
@@ -41,32 +51,34 @@ const NutrientManager = () => {
             const response = await fetch('http://localhost:5072/nutrientapi/Nutrients', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json', // Specify content type
                 },
-                body: JSON.stringify(newNutrient),
+                body: JSON.stringify(newNutrient), // Send nutrient data as JSON
             });
     
             if (!response.ok) {
-                throw new Error('Failed to add nutrient');
+                throw new Error('Failed to add nutrient'); // Handle errors
             }
     
-            // Oppdater listen over næringsstoffer
+            // Refresh the list of nutrients after successful addition
             fetchNutrients();
+
+            // Reset the form inputs
             setNewNutrient({ name: '', unit: '', number: '', rank: '' }); // Tilbakestill skjemaet
         } catch (error) {
-            setError(error.message); // Sett error state for å vise feilmeldingen
+            setError(error.message); // Set error state to display the message
         }
     };
 
-    // Delete a nutrient
+    // Handle deletion of a nutrient
     const handleDelete = async (id) => {
-        setError('');
+        setError(''); // Clear any previous errors
         try {
             const response = await fetch(`http://localhost:5072/nutrientapi/Nutrients/${id}`, { method: 'DELETE' });
-            if (!response.ok) throw new Error('Failed to delete nutrient');
-            await fetchNutrients(); // Refresh the list
+            if (!response.ok) throw new Error('Failed to delete nutrient'); // Handle deletion errors
+            await fetchNutrients(); // Refresh the list of nutrients after deletion
         } catch (err) {
-            setError(err.message);
+            setError(err.message); // Set error state to display the message
         }
     };
 
