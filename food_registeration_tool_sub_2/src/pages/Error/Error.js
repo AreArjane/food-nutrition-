@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'; // Import React library
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
-
+// Define the Error component
 const Error = () => {
   return (
     <div className="error-container">
@@ -12,4 +12,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default Error; // Export the Error component for use in other parts of the application
