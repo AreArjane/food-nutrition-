@@ -1,3 +1,4 @@
+// Importer nødvendige avhengigheter og komponenter
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
@@ -11,11 +12,11 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import AddFoodItem from './components/AddFoodItem/AddFoodItem';
 import NutrientManager from './NutrientManager'; // Importer NutrientManager
-import './styles/global.css';
-import './styles/variables.css';
+import './styles/global.css'; // Globale stilark
+import './styles/variables.css'; // CSS-variabler
 
 
-
+// Definerer hovedkomponenten for applikasjonen
 function App() {
   return (
     <div className="App">
@@ -53,5 +54,5 @@ function App() {
     </div>
   );
 }
-
+// Eksporterer App-komponenten som standardeksport
 export default App;
