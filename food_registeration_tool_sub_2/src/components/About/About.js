@@ -1,5 +1,6 @@
-import React from 'react';
+import React from 'react';  // Import React library
 
+// Define the About component
 const About = () => {
   return (
     <div className="home-container">
@@ -11,4 +12,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About; // Export the About component for use in other parts of the application
