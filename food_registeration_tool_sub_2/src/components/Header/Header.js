@@ -18,6 +18,7 @@ const Header = () => {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/auth" className="loginBtn">Login</Link></li>
+    <Link to="/nutrients">Nutrient Manager</Link>
         </ul>
       </nav>
     </header>

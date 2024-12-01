@@ -12,6 +12,115 @@ body {
     text-align: center;
     
   }
+  /* Generelle stiler for NutrientManager */
+.nutrient-manager {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Overskrift for NutrientManager */
+.nutrient-manager h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Stiler for tabellen */
+.nutrient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.nutrient-table th,
+.nutrient-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.nutrient-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Stiler for handling knapper i tabellen */
+.nutrient-table .actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nutrient-table button {
+  background-color: #28a745;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nutrient-table button:hover {
+  background-color: #218838;
+}
+
+/* Stiler for skjemaet */
+.nutrient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nutrient-form input,
+.nutrient-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nutrient-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nutrient-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Stiler for feilmeldinger */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsivt design */
+@media (max-width: 768px) {
+  .nutrient-manager {
+      padding: 15px;
+  }
+
+  .nutrient-table th,
+  .nutrient-table td {
+      font-size: 14px;
+      padding: 8px;
+  }
+
+  .nutrient-form button {
+      padding: 8px;
+  }
+}
   
   /* Header-stiler */
   header {

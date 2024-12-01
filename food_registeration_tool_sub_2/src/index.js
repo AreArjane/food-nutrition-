@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NutrientManager from './NutrientManager'; // Juster stien hvis nødvendig
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,6 +12,13 @@ root.render(
       <App />
     </Router>
   </React.StrictMode>
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <NutrientManager />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // Define the URL for the analytics endpoint
