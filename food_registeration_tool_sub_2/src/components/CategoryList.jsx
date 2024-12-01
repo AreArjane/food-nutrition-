@@ -1,5 +1,9 @@
-import React from 'react';
+import React from 'react'; // Import React library
 
+// Define the CategoryList component
+// Props: 
+// - categories: an array of category objects
+// - onSelectCategory: a callback function to handle category selection
 const CategoryList = ({ categories, onSelectCategory }) => {
     return (
         <div className="category-list">
@@ -14,5 +18,5 @@ const CategoryList = ({ categories, onSelectCategory }) => {
         </div>
     );
 };
-
-export default CategoryList;
+ 
+export default CategoryList; // Export the CategoryList component for use in other parts of the application
