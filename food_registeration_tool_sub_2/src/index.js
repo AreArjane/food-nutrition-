@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import NutrientManager from './NutrientManager'; // Juster stien hvis nødvendig
+import ReactDOM from 'react-dom/client'; // Import React DOM for rendering
+import { BrowserRouter as Router } from 'react-router-dom'; // Import React Router for routing
+import App from './App'; // Import the main App component
+import reportWebVitals from './reportWebVitals'; // Import for performance monitoring (optional)
+import NutrientManager from './NutrientManager'; // Import the NutrientManager component (adjust the path if necessary)
 
+// Create the root element for rendering the application
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -14,11 +15,12 @@ root.render(
   </React.StrictMode>
 );
 
+// Render the NutrientManager component separately
 ReactDOM.render(
   <React.StrictMode>
     <NutrientManager />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root') // Attach to the same root element
 );
 
 // Define the URL for the analytics endpoint
