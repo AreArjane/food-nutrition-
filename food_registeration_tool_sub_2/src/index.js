@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Import React DOM for rendering
-import { BrowserRouter as Router } from 'react-router-dom'; // Import React Router for routing
-import App from './App'; // Import the main App component
-import reportWebVitals from './reportWebVitals'; // Import for performance monitoring (optional)
-import NutrientManager from './NutrientManager'; // Import the NutrientManager component (adjust the path if necessary)
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-// Create the root element for rendering the application
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,26 +13,17 @@ root.render(
   </React.StrictMode>
 );
 
-// Render the NutrientManager component separately
-ReactDOM.render(
-  <React.StrictMode>
-    <NutrientManager />
-  </React.StrictMode>,
-  document.getElementById('root') // Attach to the same root element
-);
-
 // Define the URL for the analytics endpoint
-const analyticsUrl = 'http://localhost:5072/analytics'; // Update to your backend analytics endpoint
+const analyticsUrl = 'http://localhost:5072/analytics'; // Oppdater til din backend analytics endpoint
 
-// Function to send performance metrics to the backend
+// Funksjon for å sende ytelsesmålinger til backend
 function sendToAnalytics(metric) {
+  console.log('Sending metric:', metric); // Debugging
   const body = JSON.stringify(metric);
 
   if (navigator.sendBeacon) {
-    // Use navigator.sendBeacon for performance-friendly requests
     navigator.sendBeacon(analyticsUrl, body);
   } else {
-    // Fallback to fetch for older browsers
     fetch(analyticsUrl, {
       method: 'POST',
       headers: {
@@ -45,5 +34,5 @@ function sendToAnalytics(metric) {
   }
 }
 
-// Pass the function to reportWebVitals for monitoring
+// Passer funksjonen til reportWebVitals for overvåking
 reportWebVitals(sendToAnalytics);
