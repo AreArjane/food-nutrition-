@@ -64,7 +64,7 @@ const NutrientManager = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5072/nutrientapi/nutrient/create', {
+            const response = await fetch('http://localhost:5072/nutrientapi/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const NutrientManager = () => {
     const handleDelete = async (id) => {
         setError('');
         try {
-            const response = await fetch(`http://localhost:5072/nutrientapi/nutrient/delete/${id}`, { method: 'DELETE' });
+            const response = await fetch(`http://localhost:5072/nutrientapi/delete/${id}`, { method: 'DELETE' });
             if (!response.ok) throw new Error('Failed to delete nutrient');
             fetchNutrients();
         } catch (err) {
