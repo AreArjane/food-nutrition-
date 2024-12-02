@@ -12,6 +12,8 @@ import Contact from './components/Contact/Contact';
 import AddFoodItem from './components/AddFoodItem/AddFoodItem';
 import './styles/global.css';
 import './styles/variables.css';
+import FoodList from './components/FoodList/FoodList'; // Importer matliste-komponenten her
+import NutrientManager from './NutrientManager';
 
 function App() {
   const [foodList, setFoodList] = useState([]); // Lokal state for matvarer
@@ -32,11 +34,15 @@ function App() {
 
           {/* Authentication page */}
           <Route path="/auth" element={<AuthForm />} />
+          <Route path="/food-list" element={<FoodList />} />
           
+
           {/* Food-related pages */}
           <Route path="/menu" element={<Menu foodList={foodList} />} />
           <Route path="/add-food" element={<AddFoodItem onSubmit={handleAddFood} />} />
           <Route path="/food-app" element={<FoodAppPage />} /> {/* Add the new route for food app */}
+           {/* Nutrient Manager page */}
+           <Route path="/nutrients" element={<NutrientManager />} /> {/* Ny rute for NutrientManager */}
 
           {/* Other informational pages */}
           <Route path="/about" element={<About />} />
@@ -52,3 +58,4 @@ function App() {
 }
 
 export default App;
+
