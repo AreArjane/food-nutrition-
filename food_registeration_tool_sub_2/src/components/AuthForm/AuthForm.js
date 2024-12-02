@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';  // Use axios for API calls
+import axios from 'axios';
 import loginImage from '../../assets/images/login-image.jpg';
 
 const AuthForm = () => {
@@ -9,42 +9,39 @@ const AuthForm = () => {
   const [password, setPassword] = useState('');
   const [userType, setUserType] = useState('normal');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Using useNavigate for redirection after login
+  const navigate = useNavigate();
 
-  // Login function that sends data to the API
   const login = async (event) => {
     event.preventDefault();
     console.log('Logging in with:', email, password);
     
+     // Logg dataene som sendes til API-en
+     console.log('Sending data:', { email, password });
     try {
-      // API call for logging the user in
       const response = await axios.post('/api/login', { email, password });
-      
-      // Check if login was successful
+      console.log('Response:', response); // Logg responsen fra API-en
+
       if (response.status === 200) {
         console.log('Login successful');
-        localStorage.setItem('user', JSON.stringify(response.data)); // Store user data in localStorage
-        navigate('/food-list');  // After successful login, navigate to the food list page
+        localStorage.setItem('user', JSON.stringify(response.data)); // Lagre brukerdata
+        navigate('/info');  // Naviger til informasjonssiden
       }
     } catch (error) {
-      console.error('Login failed:', error);
+      console.error('Login failed:', error.response ? error.response.data : error.message);
+    
       setError('Invalid email or password');
     }
   };
 
-  // Sign-up function that sends data to the API
   const signup = async (event) => {
     event.preventDefault();
     console.log('Signing up with:', email, password, userType);
 
     try {
-      // API call for registering the user
       const response = await axios.post('/api/signup', { email, password, userType });
-
-      // Check if registration was successful
       if (response.status === 201) {
         console.log('Sign-up successful');
-        setActiveForm('login'); // After registration, switch to login form
+        setActiveForm('login');
       }
     } catch (error) {
       console.error('Sign up failed:', error);
@@ -52,7 +49,6 @@ const AuthForm = () => {
     }
   };
 
-  // Password reset function
   const resetPassword = async (event) => {
     event.preventDefault();
     console.log('Resetting password for:', email);
@@ -71,8 +67,7 @@ const AuthForm = () => {
 
   return (
     <div className="auth-form">
-      {/* Image Container with inline style */}
-      <div className="auth-image-container" style={{ backgroundImage: url(${loginImage}) }}></div>
+      <div className="auth-image-container" style={{ backgroundImage: `url(${loginImage})` }}></div>
       <nav>
         <Link to="#" onClick={() => setActiveForm('login')} className={activeForm === 'login' ? 'active' : ''}>Login</Link>
         <Link to="#" onClick={() => setActiveForm('signup')} className={activeForm === 'signup' ? 'active' : ''}>Sign Up</Link>
