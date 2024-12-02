@@ -1,11 +1,16 @@
-import axios from "axios";
+import axios from 'axios';
 
-const API_URL = "http://lokalhost:5072/foodapi/Foods"; // Change to your backend URL
+const apiClient = axios.create({
+  baseURL: 'http://localhost:5072/foodapi', // Your backend URL
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-// Get all food items
+// Fetch all food items
 export const getFoodItems = async () => {
   try {
-    const response = await axios.get(API_URL);
+    const response = await apiClient.get('/Foods');  // Use apiClient
     return response.data;
   } catch (error) {
     console.error("Error fetching food items:", error);
@@ -16,7 +21,7 @@ export const getFoodItems = async () => {
 // Create a new food item
 export const createFoodItem = async (foodItem) => {
   try {
-    const response = await axios.post(API_URL, foodItem);
+    const response = await apiClient.post('/Foods', foodItem);  // Use apiClient
     return response.data;
   } catch (error) {
     console.error("Error creating food item:", error);
@@ -27,7 +32,7 @@ export const createFoodItem = async (foodItem) => {
 // Update an existing food item
 export const updateFoodItem = async (id, foodItem) => {
   try {
-    const response = await axios.put(`${API_URL}/${id}`, foodItem);
+    const response = await apiClient.put(/Foods/${id}, foodItem);  // Use apiClient
     return response.data;
   } catch (error) {
     console.error("Error updating food item:", error);
@@ -38,7 +43,7 @@ export const updateFoodItem = async (id, foodItem) => {
 // Delete a food item
 export const deleteFoodItem = async (id) => {
   try {
-    await axios.delete(`${API_URL}/${id}`);
+    await apiClient.delete(/Foods/${id});  // Use apiClient
   } catch (error) {
     console.error("Error deleting food item:", error);
     throw error;
