@@ -1,264 +1,100 @@
 /* Generelle stiler for kroppen */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    line-height: 1.6;
-    font-size: 20px;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+  font-size: 20px;
+}
 
-  .text-center {
-    text-align: center;
-    
-  }
+.text-center {
+  text-align: center;
   
-  /* Header-stiler */
-  header {
-    background-color: var(--header-bg);
-    color: var(--header-color);
-    padding: 0.5rem 1rem; /* Redusert padding */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Tillater at innholdet brettes */
-  }
-  
-  .logoImage {
-    height: 2.5rem;
-  }
-  
-  nav {
-    margin-left: auto;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap; /* Tillater at navigasjonen brettes */
-  }
-  
-  nav li {
-    margin: 0 0.5rem; /* Redusert margin */
-  }
-  
-  nav a {
-    color: var(--header-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    white-space: nowrap; /* Forhindrer linjeskift */
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  .loginBtn {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.5rem 1rem; /* Redusert padding */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
-  }
-  
-  .loginBtn:hover {
-    background-color: var(--dark-color);
-  }
+}
 
-  
-  
-  /* Footer-stiler */
-  footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-text-color);
-    padding: 1rem; /* Justert padding */
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Tillater at footer-navigasjonen brettes */
-  }
-  
-  .footer nav li {
-    margin: 0 0.5rem; /* Redusert margin */
-  }
-  
-  .footer nav a {
-    color: var(--footer-text-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-  
-  .footer nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsivt design */
-  @media (max-width: 768px) {
-    body {
-      font-size: 14px;
-    }
-  
-    header {
-      padding: 0.5rem 0.5rem; /* Justert padding */
-    }
-  
-    .logoImage {
-      height: 2rem;
-    }
-  
-    nav li {
-      margin: 0 0.4rem; /* Justert margin */
-    }
-  
-    nav a {
-      font-size: 0.9rem;
-    }
-  
-    .loginBtn {
-      padding: 0.4rem 0.8rem; /* Justert padding */
-      font-size: 0.9rem;
-    }
-  
-    footer {
-      padding: 0.8rem; /* Justert padding */
-    }
-  
-    .footer nav li {
-      margin: 0 0.4rem; /* Justert margin */
-    }
-  
-    .footer nav a {
-      font-size: 0.8rem;
-    }
-  }
-  
-  @media (min-width: 769px) and (max-width: 1024px) {
-    body {
-      font-size: 15px;
-    }
-  
-    header {
-      padding: 0.875rem 1.25rem;
-    }
-  
-    .logoImage {
-      height: 2.25rem;
-    }
-  
-    nav li {
-      margin: 0 0.9rem;
-    }
-  
-    nav a {
-      font-size: 0.95rem;
-    }
-  
-    .loginBtn {
-      padding: 0.6rem 1rem;
-      font-size: 0.95rem;
-    }
-  
-    footer {
-      padding: 1.1rem;
-    }
-  
-    .footer nav li {
-      margin: 0 0.75rem;
-    }
-  
-    .footer nav a {
-      font-size: 0.85rem;
-    }
-  }
-
-   /* AuthForm Styles */
-.auth-form {
-  max-width: 400px;
-  margin: 50px auto;
+/* Generelle stiler for NutrientManager */
+.nutrient-manager {
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   background-color: #f9f9f9;
+  border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.auth-image-container {
-  width: 100%;
-  height: 100vh; /* Fyller hele skjermhøyden */
-  background-size: cover; /* Gjør bildet til et dekkende bakgrunnsbilde */
-  background-position: center; /* Sentraliserer bildet */
-  background-repeat: no-repeat; /* Hindrer at bildet gjentar seg */
-  position: absolute; /* Gjør containeren absolutt posisjonert */
-  top: 0;
-  left: 0;
-  z-index: -1; /* Sender bildet bak andre elementer */
+/* Overskrift for NutrientManager */
+.nutrient-manager h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.auth-form nav {
+/* Stiler for tabellen */
+.nutrient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.nutrient-table th,
+.nutrient-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+.nutrient-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Stiler for handling knapper i tabellen */
+.nutrient-table .actions {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
 }
-
-.auth-form nav a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-.auth-form nav a.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.auth-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-.auth-form input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.auth-form select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-
-.auth-form button[type="submit"] {
-  width: 100%;
-  padding: 10px;
+.nutrient-table button {
   background-color: #28a745;
   color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nutrient-table button:hover {
+  background-color: #218838;
+}
+
+/* Stiler for skjemaet */
+.nutrient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nutrient-form input,
+.nutrient-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nutrient-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.auth-form button[type="submit"]:hover {
-  background-color: #218838;
+.nutrient-form button:hover {
+  background-color: #0056b3;
 }
-
+/* Stiler for feilmeldinger */
 .error-message {
   color: red;
   text-align: center;
@@ -266,404 +102,675 @@ body {
   font-size: 14px;
 }
 
+/* Responsivt design */
+@media (max-width: 768px) {
+  .nutrient-manager {
+      padding: 15px;
+  }
+
+  .nutrient-table th,
+  .nutrient-table td {
+      font-size: 14px;
+      padding: 8px;
+  }
+
+  .nutrient-form button {
+      padding: 8px;
+  }
+}
+
+/* Header-stiler */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-color);
+  padding: 0.5rem 1rem; /* Redusert padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Tillater at innholdet brettes */
+}
+
+.logoImage {
+  height: 2.5rem;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Tillater at navigasjonen brettes */
+}
+
+nav li {
+  margin: 0 0.5rem; /* Redusert margin */
+}
+
+nav a {
+  color: var(--header-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  white-space: nowrap; /* Forhindrer linjeskift */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.loginBtn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem; /* Redusert padding */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.loginBtn:hover {
+  background-color: var(--dark-color);
+}
+
+
+
+/* Footer-stiler */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text-color);
+  padding: 1rem; /* Justert padding */
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Tillater at footer-navigasjonen brettes */
+}
+
+.footer nav li {
+  margin: 0 0.5rem; /* Redusert margin */
+}
+
+.footer nav a {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivt design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 0.5rem 0.5rem; /* Justert padding */
+  }
+
+  .logoImage {
+    height: 2rem;
+  }
+
+  nav li {
+    margin: 0 0.4rem; /* Justert margin */
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .loginBtn {
+    padding: 0.4rem 0.8rem; /* Justert padding */
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 0.8rem; /* Justert padding */
+  }
+
+  .footer nav li {
+    margin: 0 0.4rem; /* Justert margin */
+  }
+
+  .footer nav a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  header {
+    padding: 0.875rem 1.25rem;
+  }
+
+  .logoImage {
+    height: 2.25rem;
+  }
+
+  nav li {
+    margin: 0 0.9rem;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  .loginBtn {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  footer {
+    padding: 1.1rem;
+  }
+
+  .footer nav li {
+    margin: 0 0.75rem;
+  }
+
+  .footer nav a {
+    font-size: 0.85rem;
+  }
+}
+
+ /* AuthForm Styles */
+.auth-form {
+max-width: 400px;
+margin: 50px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 8px;
+background-color: #f9f9f9;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-image-container {
+width: 100%;
+height: 100vh; /* Fyller hele skjermhøyden */
+background-size: cover; /* Gjør bildet til et dekkende bakgrunnsbilde */
+background-position: center; /* Sentraliserer bildet */
+background-repeat: no-repeat; /* Hindrer at bildet gjentar seg */
+position: absolute; /* Gjør containeren absolutt posisjonert */
+top: 0;
+left: 0;
+z-index: -1; /* Sender bildet bak andre elementer */
+}
+
+.auth-form nav {
+display: flex;
+justify-content: space-around;
+margin-bottom: 20px;
+}
+
+.auth-form nav a {
+text-decoration: none;
+color: #007bff;
+}
+
+.auth-form nav a.active {
+font-weight: bold;
+text-decoration: underline;
+}
+
+.auth-form h2 {
+text-align: center;
+margin-bottom: 20px;
+font-size: 24px;
+color: #333;
+}
+
+.auth-form input {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.auth-form select {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin: 10px 0;
+}
+
+.auth-form button[type="submit"] {
+width: 100%;
+padding: 10px;
+background-color: #28a745;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.auth-form button[type="submit"]:hover {
+background-color: #218838;
+}
+
+.error-message {
+color: red;
+text-align: center;
+margin-top: 10px;
+font-size: 14px;
+}
+
 
 
 /* Kontaktform-stiler */
 .contact-container {
-  max-width: 600px;
-  margin: 10px auto;
-  padding: 17px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+max-width: 600px;
+margin: 10px auto;
+padding: 17px;
+background-color: #f9f9f9;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form .form-group {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 .contact-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+width: 100%;
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 14px;
 }
 
 .contact-form textarea {
-  resize: vertical;
-  height: 100px;
+resize: vertical;
+height: 100px;
 }
 
 .submit-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0;
+display: block;
+width: 100%;
+padding: 10px;
+background-color: var(--primary-color);
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0;
 }
 
 /* Gallery Section */
 .image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsiv grid */
-  gap: 10px; /* Avstand mellom bildene */
-  padding: 20px;
-  justify-items: center; /* Sentrerer bildene horisontalt */
-  margin-bottom: 30px; /* Avstand før beskrivelsen */
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsiv grid */
+gap: 10px; /* Avstand mellom bildene */
+padding: 20px;
+justify-items: center; /* Sentrerer bildene horisontalt */
+margin-bottom: 30px; /* Avstand før beskrivelsen */
 }
 
 .gallery-image {
-  width: 100%; /* Bildene fyller opp cellene */
-  height: auto; /* Beholder proporsjonene */
-  border-radius: 8px; /* Runder av kantene på bildene */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
-  transition: transform 0.3s ease; /* Animasjon for hover-effekt */
+width: 100%; /* Bildene fyller opp cellene */
+height: auto; /* Beholder proporsjonene */
+border-radius: 8px; /* Runder av kantene på bildene */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
+transition: transform 0.3s ease; /* Animasjon for hover-effekt */
 }
 
 .gallery-image:hover {
-  transform: scale(1.05); /* Litt forstørrelse ved hover */
+transform: scale(1.05); /* Litt forstørrelse ved hover */
 }
 
 .text-center {
-  text-align: center;
+text-align: center;
 }
 
 /* Responsivt design for bilde-galleri */
 @media (max-width: 768px) {
-  .image-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Juster kolonnebredde på små skjermer */
-  }
+.image-gallery {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Juster kolonnebredde på små skjermer */
+}
 }
 
 @media (max-width: 480px) {
-  .image-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Færre bilder per rad på ekstra små skjermer */
-  }
+.image-gallery {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Færre bilder per rad på ekstra små skjermer */
+}
 }
 
 
 /* Styling for Menu Component */
 .menu-container {
-  padding: 20px;
-  background-color: var(--light-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 20px;
+background-color: var(--light-color);
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu-container h1 {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--dark-color);
-  margin-bottom: 20px;
+text-align: center;
+font-size: 2rem;
+color: var(--dark-color);
+margin-bottom: 20px;
 }
 
 .food-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
 }
 
 .food-table th,
 .food-table td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid var(--secondary-color);
+padding: 12px;
+text-align: left;
+border-bottom: 1px solid var(--secondary-color);
 }
 
 .food-table th {
-  background-color: var(--primary-color);
-  color: white;
-  font-size: 1.1rem;
+background-color: var(--primary-color);
+color: white;
+font-size: 1.1rem;
 }
 
 .food-table td {
-  font-size: 1rem;
-  color: var(--dark-color);
+font-size: 1rem;
+color: var(--dark-color);
 }
 
 .food-table tr:hover {
-  background-color: var(--light-color);
+background-color: var(--light-color);
 }
 
 .pagination-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+display: flex;
+justify-content: center;
+margin-top: 20px;
 }
 
 .pagination-controls button {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 1rem;
-  margin: 0 10px;
+background-color: var(--primary-color);
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+font-size: 1rem;
+margin: 0 10px;
 }
 
 .pagination-controls button:hover {
-  background-color: var(--dark-color);
+background-color: var(--dark-color);
 }
 
 .pagination-controls button:disabled {
-  background-color: var(--secondary-color);
-  cursor: not-allowed;
+background-color: var(--secondary-color);
+cursor: not-allowed;
 }
 
 .pagination-info {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  color: var(--dark-color);
+display: flex;
+align-items: center;
+font-size: 1rem;
+color: var(--dark-color);
 }
 
 .pagination-info span {
-  margin: 0 5px;
+margin: 0 5px;
 }
 
 /* Responsivt design for meny */
 @media (max-width: 768px) {
-  .menu-container {
-    padding: 10px;
-  }
+.menu-container {
+  padding: 10px;
+}
 
-  .food-table th,
-  .food-table td {
-    padding: 8px;
-  }
+.food-table th,
+.food-table td {
+  padding: 8px;
+}
 
-  .food-table th {
-    font-size: 1rem;
-  }
+.food-table th {
+  font-size: 1rem;
+}
 
-  .food-table td {
-    font-size: 0.9rem;
-  }
+.food-table td {
+  font-size: 0.9rem;
+}
 
-  .pagination-controls button {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    margin: 0 8px;
-  }
+.pagination-controls button {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  margin: 0 8px;
+}
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .menu-container {
-    padding: 15px;
-  }
+.menu-container {
+  padding: 15px;
+}
 
-  .food-table th,
-  .food-table td {
-    padding: 10px;
-  }
+.food-table th,
+.food-table td {
+  padding: 10px;
+}
 
-  .pagination-controls button {
-    padding: 9px 18px;
-    font-size: 1rem;
-  }
+.pagination-controls button {
+  padding: 9px 18px;
+  font-size: 1rem;
+}
 }
 
 @media (max-width: 480px) {
-  .menu-container h1 {
-    font-size: 1.5rem;
-  }
+.menu-container h1 {
+  font-size: 1.5rem;
+}
 
-  .food-table th,
-  .food-table td {
-    padding: 6px;
-  }
+.food-table th,
+.food-table td {
+  padding: 6px;
+}
 
-  .food-table th {
-    font-size: 0.9rem;
-  }
+.food-table th {
+  font-size: 0.9rem;
+}
 
-  .food-table td {
-    font-size: 0.8rem;
-  }
+.food-table td {
+  font-size: 0.8rem;
+}
 
-  .pagination-controls button {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    margin: 0 6px;
-  }
+.pagination-controls button {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  margin: 0 6px;
+}
 }
 
 /* Styling for AddFoodItem Component */
 .add-food-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-  padding: 20px;
-  background-color: var(--light-color);
-  border-radius: var(--form-border-radius);
-  box-shadow: var(--box-shadow);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 70vh;
+padding: 20px;
+background-color: var(--light-color);
+border-radius: var(--form-border-radius);
+box-shadow: var(--box-shadow);
 }
 
 .add-food-item h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--dark-color);
-  margin-bottom: 20px;
+text-align: center;
+font-size: 2rem;
+color: var(--dark-color);
+margin-bottom: 20px;
 }
 
 .add-food-item .form-group {
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 600px; /* Maksimal bredde på skjemaet */
+margin-bottom: 20px;
+width: 100%;
+max-width: 600px; /* Maksimal bredde på skjemaet */
 }
 
 .add-food-item label {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: var(--dark-color);
+font-weight: bold;
+margin-bottom: 10px;
+color: var(--dark-color);
 }
 
 .add-food-item input,
 .add-food-item select,
 .add-food-item textarea {
-  width: 100%;
-  padding: 16px; /* Økt padding for større inputfelt */
-  border: 2px solid var(--form-border-color);
-  border-radius: var(--form-border-radius);
-  font-size: 16px; /* Økt fontstørrelse */
-  background-color: #fff;
-  transition: all 0.3s ease;
+width: 100%;
+padding: 16px; /* Økt padding for større inputfelt */
+border: 2px solid var(--form-border-color);
+border-radius: var(--form-border-radius);
+font-size: 16px; /* Økt fontstørrelse */
+background-color: #fff;
+transition: all 0.3s ease;
 }
 
 /* Hover-effekt for inputfeltene */
 .add-food-item input:hover,
 .add-food-item select:hover,
 .add-food-item textarea:hover {
-  border-color: var(--primary-color); /* Endrer borderfarge på hover */
-  background-color: #f1f1f1; /* Bakgrunnsfarge ved hover */
+border-color: var(--primary-color); /* Endrer borderfarge på hover */
+background-color: #f1f1f1; /* Bakgrunnsfarge ved hover */
 }
 
 /* Fokus på inputfeltene */
 .add-food-item input:focus,
 .add-food-item select:focus,
 .add-food-item textarea:focus {
-  outline: none;
-  border-color: var(--primary-color); /* Fokusborder med primærfarge */
-  background-color: var(--light-color); /* Bakgrunnsfarge ved fokus */
+outline: none;
+border-color: var(--primary-color); /* Fokusborder med primærfarge */
+background-color: var(--light-color); /* Bakgrunnsfarge ved fokus */
 }
 
 .add-food-item textarea {
-  resize: vertical;
-  height: 120px; /* Økt høyde på tekstområder */
+resize: vertical;
+height: 120px; /* Økt høyde på tekstområder */
 }
 
 /* Styling for submit-knappen */
 .submit-button {
-  padding: 16px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: var(--form-border-radius);
-  font-size: 18px; /* Økt fontstørrelse */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-  max-width: 600px; /* Maksimal bredde på knappen */
+padding: 16px;
+background-color: var(--primary-color);
+color: white;
+border: none;
+border-radius: var(--form-border-radius);
+font-size: 18px; /* Økt fontstørrelse */
+cursor: pointer;
+transition: background-color 0.3s ease;
+width: 100%;
+max-width: 600px; /* Maksimal bredde på knappen */
 }
 
 /* Hover-effekt på submit-knappen */
 .submit-button:hover {
-  background-color: var(--dark-color); /* Endre bakgrunn ved hover */
+background-color: var(--dark-color); /* Endre bakgrunn ved hover */
 }
 
 /* Disabled submit button */
 .submit-button:disabled {
-  background-color: var(--secondary-color);
-  cursor: not-allowed;
+background-color: var(--secondary-color);
+cursor: not-allowed;
 }
 
 /* Error message styling */
 .error-message {
-  color: var(--danger-color);
-  text-align: center;
-  margin-top: 10px;
-  font-size: 16px;
+color: var(--danger-color);
+text-align: center;
+margin-top: 10px;
+font-size: 16px;
 }
 
 /* Responsiv tilpasning for skjermstørrelser */
 @media (max-width: 768px) {
-  .add-food-item {
-      padding: 15px;
-  }
+.add-food-item {
+    padding: 15px;
+}
 
-  .add-food-item h2 {
-      font-size: 1.5rem;
-  }
+.add-food-item h2 {
+    font-size: 1.5rem;
+}
 
-  .add-food-item label {
-      font-size: 1rem;
-  }
+.add-food-item label {
+    font-size: 1rem;
+}
 
-  .add-food-item input,
-  .add-food-item select,
-  .add-food-item textarea {
-      font-size: 14px; /* Mindre fontstørrelse på små skjermer */
-  }
+.add-food-item input,
+.add-food-item select,
+.add-food-item textarea {
+    font-size: 14px; /* Mindre fontstørrelse på små skjermer */
+}
 
-  .submit-button {
-      font-size: 16px;
-      padding: 14px;
-  }
+.submit-button {
+    font-size: 16px;
+    padding: 14px;
+}
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .add-food-item {
-      padding: 20px;
-  }
+.add-food-item {
+    padding: 20px;
+}
 
-  .add-food-item h2 {
-      font-size: 1.8rem;
-  }
+.add-food-item h2 {
+    font-size: 1.8rem;
+}
 
-  .add-food-item label {
-      font-size: 1.1rem;
-  }
+.add-food-item label {
+    font-size: 1.1rem;
+}
 
-  .submit-button {
-      font-size: 16px;
-  }
+.submit-button {
+    font-size: 16px;
+}
 }
 
 @media (max-width: 480px) {
-  .add-food-item {
-      padding: 10px;
-  }
-
-  .add-food-item h2 {
-      font-size: 1.4rem;
-  }
-
-  .add-food-item input,
-  .add-food-item select,
-  .add-food-item textarea {
-      font-size: 12px; /* Endret fontstørrelse for små skjermer */
-  }
-
-  .submit-button {
-      font-size: 14px;
-      padding: 12px;
-  }
+.add-food-item {
+    padding: 10px;
 }
+
+.add-food-item h2 {
+    font-size: 1.4rem;
+}
+
+.add-food-item input,
+.add-food-item select,
+.add-food-item textarea {
+    font-size: 12px; /* Endret fontstørrelse for små skjermer */
+}
+
+.submit-button {
+    font-size: 14px;
+    padding: 12px;
+}
+}
+
