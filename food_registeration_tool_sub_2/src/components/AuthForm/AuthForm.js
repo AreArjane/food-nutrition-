@@ -1,21 +1,19 @@
-import React, { useState } from 'react'; // Import React and useState hook for managing state
-import { Link, useNavigate } from 'react-router-dom'; // Import Link for navigation and useNavigate for programmatic redirection
-import axios from 'axios';  // Import Axios for making API calls
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';  // Use axios for API calls
+import loginImage from '../../assets/images/login-image.jpg';
 
-// Define the AuthForm component
 const AuthForm = () => {
-
-  // State variables for form management
-  const [activeForm, setActiveForm] = useState('login'); // Tracks the currently active form ('login', 'signup', or 'reset')
-  const [email, setEmail] = useState(''); // Stores email input
-  const [password, setPassword] = useState(''); // Stores password input
-  const [userType, setUserType] = useState('normal'); // Tracks user type selection (default: normal)
-  const [error, setError] = useState(''); // Stores error messages
+  const [activeForm, setActiveForm] = useState('login');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [userType, setUserType] = useState('normal');
+  const [error, setError] = useState('');
   const navigate = useNavigate(); // Using useNavigate for redirection after login
 
   // Login function that sends data to the API
   const login = async (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault();
     console.log('Logging in with:', email, password);
     
     try {
@@ -73,6 +71,8 @@ const AuthForm = () => {
 
   return (
     <div className="auth-form">
+      {/* Image Container with inline style */}
+      <div className="auth-image-container" style={{ backgroundImage: url(${loginImage}) }}></div>
       <nav>
         <Link to="#" onClick={() => setActiveForm('login')} className={activeForm === 'login' ? 'active' : ''}>Login</Link>
         <Link to="#" onClick={() => setActiveForm('signup')} className={activeForm === 'signup' ? 'active' : ''}>Sign Up</Link>
