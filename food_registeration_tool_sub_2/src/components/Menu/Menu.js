@@ -18,7 +18,7 @@ const Menu = ({ foodList }) => {
       const fetchFoodItems = async () => {
         try {
           const response = await apiClient.get(
-            /Foods?pagenumber=${pagination.pageNumber}&pagesize=${pagination.pageSize}
+            '/Foods?pagenumber=${pagination.pageNumber}&pagesize=${pagination.pageSize}'
           );
           const { data, pagenumber, pagesize, totalItems } = response.data;
 
