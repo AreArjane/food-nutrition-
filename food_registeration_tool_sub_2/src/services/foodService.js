@@ -32,7 +32,7 @@ export const createFoodItem = async (foodItem) => {
 // Update an existing food item
 export const updateFoodItem = async (id, foodItem) => {
   try {
-    const response = await apiClient.put(/Foods/${id}, foodItem);  // Use apiClient
+    const response = await apiClient.put('/Foods/${id}', foodItem);  // Use apiClient
     return response.data;
   } catch (error) {
     console.error("Error updating food item:", error);
@@ -43,7 +43,7 @@ export const updateFoodItem = async (id, foodItem) => {
 // Delete a food item
 export const deleteFoodItem = async (id) => {
   try {
-    await apiClient.delete(/Foods/${id});  // Use apiClient
+    await apiClient.delete('/Foods/${id}');  // Use apiClient
   } catch (error) {
     console.error("Error deleting food item:", error);
     throw error;
