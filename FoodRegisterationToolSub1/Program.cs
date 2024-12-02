@@ -62,12 +62,11 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost3000", builder =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        //WithOrigins("http://localhost:3000")
-        builder.WithOrigins("http://localhost:3000")
-               .AllowAnyHeader()
-               .AllowAnyMethod();
+        policy.AllowAnyOrigin()  
+              .AllowAnyMethod() 
+              .AllowAnyHeader();  
     });
 });
 
