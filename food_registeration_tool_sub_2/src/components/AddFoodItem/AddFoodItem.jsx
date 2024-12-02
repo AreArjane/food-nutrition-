@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 const AddFoodItem = ({ onSubmit }) => {
   const [foodData, setFoodData] = useState({ name: '', description: '', price: '' });
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,15 +28,22 @@ const AddFoodItem = ({ onSubmit }) => {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
-    if (typeof onSubmit === 'function') {
-      onSubmit(foodData);
+    setLoading(true);
+    setSuccess(false);
+
+    try {
+      // Assuming onSubmit is an async function
+      await onSubmit(foodData);
+      setSuccess(true);
       setFoodData({ name: '', description: '', price: '' });
-    } else {
-      console.error('onSubmit is not a function.');
+    } catch (error) {
+      setError('Failed to add food item. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -53,6 +62,7 @@ const AddFoodItem = ({ onSubmit }) => {
             onChange={handleChange}
             className="form-control"
             placeholder="Enter food name"
+            required
           />
         </div>
         
@@ -67,6 +77,7 @@ const AddFoodItem = ({ onSubmit }) => {
             onChange={handleChange}
             className="form-control"
             placeholder="Enter food description"
+            required
           />
         </div>
 
@@ -81,15 +92,19 @@ const AddFoodItem = ({ onSubmit }) => {
             onChange={handleChange}
             className="form-control"
             placeholder="Enter price"
+            required
+            min="0.01"
+            step="0.01"
           />
         </div>
 
-        {/* Error Message */}
+        {/* Error and Success Messages */}
         {error && <p className="text-danger mt-2">{error}</p>}
+        {success && <p className="text-success mt-2">Food item added successfully!</p>}
 
         {/* Submit Button */}
-        <button type="submit" className="btn btn-primary mt-3">
-          Add Food
+        <button type="submit" className="btn btn-primary mt-3" disabled={loading}>
+          {loading ? 'Adding...' : 'Add Food'}
         </button>
       </form>
     </div>
