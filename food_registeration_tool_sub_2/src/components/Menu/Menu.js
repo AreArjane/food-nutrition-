@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import apiClient from '../../api'; // Import the API client for Sub1's API
+import AddFoodItem from '../AddFoodItem/AddFoodItem'; // Import the AddFoodItem component for editing
 
-// Menu component accepts a foodList prop and can also fetch food items from an API
 const Menu = ({ foodList }) => {
   const [apiFoodItems, setApiFoodItems] = useState([]); // Stores food items fetched from API
   const [error, setError] = useState(null); // Stores error message if something goes wrong
@@ -11,34 +11,25 @@ const Menu = ({ foodList }) => {
     pageSize: 10,
     totalItems: 0, // Total number of items (useful for pagination)
   });
+  const [editingFoodItem, setEditingFoodItem] = useState(null); // Stores food item to be edited
 
   // Fetch food items from the API (if no foodList is passed as a prop)
   useEffect(() => {
     if (!foodList) {
       const fetchFoodItems = async () => {
         try {
-          const response = await apiClient.get(
-            '/Foods?pagenumber=${pagination.pageNumber}&pagesize=${pagination.pageSize}'
-          );
-          const { data, pagenumber, pagesize, totalItems } = response.data;
+          const response = await apiClient.get(`/Foods?pagenumber=${pagination.pageNumber}&pagesize=${pagination.pageSize}`);
+          const { data, totalItems } = response.data;
 
           // Manipulate data if necessary
-          const manipulatedData = data.map((item) => {
-            const foodCategoryDescription = item.foodCategory?.description || 'Unknown category';
-            const foodCategoryCode = item.foodCategory?.code || 'N/A';
-
-            return {
-              ...item,
-              foodCategoryDescription,
-              foodCategoryCode,
-            };
-          });
+          const manipulatedData = data.map((item) => ({
+            ...item,
+            foodCategoryDescription: item.foodCategory?.description || 'Unknown category',
+            foodCategoryCode: item.foodCategory?.code || 'N/A',
+          }));
 
           setApiFoodItems(manipulatedData);
-          setPagination({
-            ...pagination,
-            totalItems,
-          });
+          setPagination((prev) => ({ ...prev, totalItems }));
         } catch (err) {
           setError('There was an error fetching food items.');
           console.error('Error fetching food items:', err);
@@ -50,6 +41,22 @@ const Menu = ({ foodList }) => {
       fetchFoodItems();
     }
   }, [pagination.pageNumber, pagination.pageSize, foodList]); // Dependency array includes foodList to avoid unnecessary fetch
+
+  // Function to handle deletion of a food item
+  const handleDelete = async (foodId) => {
+    try {
+      await apiClient.delete(`/Foods/${foodId}`);
+      setApiFoodItems(prevItems => prevItems.filter(item => item.foodId !== foodId));
+    } catch (err) {
+      setError('Failed to delete food item.');
+      console.error('Error deleting food item:', err);
+    }
+  };
+
+  // Function to handle editing of a food item
+  const handleEdit = (foodItem) => {
+    setEditingFoodItem(foodItem);
+  };
 
   // If loading, show a loading message
   if (loading && !foodList) return <div>Loading food items...</div>;
@@ -72,6 +79,7 @@ const Menu = ({ foodList }) => {
             <th>Category Code</th>
             <th>Type</th>
             <th>Published</th>
+            <th>Actions</th> {/* New column for actions */}
           </tr>
         </thead>
         <tbody>
@@ -84,11 +92,15 @@ const Menu = ({ foodList }) => {
                 <td>{item.foodCategoryCode || 'N/A'}</td>
                 <td>{item.dataType || 'N/A'}</td>
                 <td>{item.publicationDate || 'N/A'}</td>
+                <td>
+                  <button onClick={() => handleEdit(item)} className="btn btn-warning btn-sm">Edit</button>
+                  <button onClick={() => handleDelete(item.foodId)} className="btn btn-danger btn-sm">Delete</button>
+                </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="6" className="text-center">No food items available.</td>
+              <td colSpan="7" className="text-center">No food items available.</td>
             </tr>
           )}
         </tbody>
@@ -123,6 +135,27 @@ const Menu = ({ foodList }) => {
             Next
           </button>
         </div>
+      )}
+
+      {/* Edit Food Item Modal or Component */}
+      {editingFoodItem && (
+        <AddFoodItem
+          onSubmit={async (foodData) => {
+            // API call to update the food item
+            try {
+              await apiClient.put(`/Foods/${editingFoodItem.foodId}`, foodData);
+              setApiFoodItems((prevItems) =>
+                prevItems.map((item) =>
+                  item.foodId === editingFoodItem.foodId ? { ...item, ...foodData } : item
+                )
+              );
+              setEditingFoodItem(null); // Close the edit form
+            } catch (err) {
+              setError('Failed to update food item.');
+              console.error('Error updating food item:', err);
+            }
+          }}
+        />
       )}
     </div>
   );
