@@ -1,84 +1,101 @@
 import React, { useEffect, useState } from 'react';
 
 const NutrientManager = () => {
-
-    // State to store the list of nutrients
+    // State for å lagre næringsstoffene
     const [nutrients, setNutrients] = useState([]);
 
-    // State to handle new nutrient input form
+    // State for ny næringsstoff input
     const [newNutrient, setNewNutrient] = useState({ name: '', unit: '', number: '', rank: '' });
 
-    // State to handle error messages
+    // State for feilmeldinger
     const [error, setError] = useState('');
 
-    // State to manage loading state
+    // State for å håndtere innlasting
     const [loading, setLoading] = useState(false);
 
-    // Fetch nutrients from API
+    // State for paginering
+    const [pageNumber, setPageNumber] = useState(1);
+    const [pageSize] = useState(20); // Fast størrelse for hver side
+
+    // Fetch funksjon for næringsstoffene
     const fetchNutrients = async () => {
-        setLoading(true); // Show loading state
-        setError(''); // Clear any previous errors
+        setLoading(true);
+        setError('');
+        
         try {
-            const response = await fetch('http://localhost:5072/nutrientapi/Nutrients');
-            if (!response.ok) throw new Error('Network response was not ok'); // Handle network errors
+            const response = await fetch(`http://localhost:5072/nutrientapi/Nutrients?pagenumber=${pageNumber}&pagesize=${pageSize}`);
+            
+            if (!response.ok) throw new Error('Failed to fetch nutrients');
+            
             const data = await response.json();
-            setNutrients(data); // Update state with fetched nutrients
+            
+            if (data && data.length > 0) {
+                setNutrients((prevNutrients) => [...prevNutrients, ...data]);
+                setPageNumber(pageNumber + 1); // Øk pageNumber for neste henting
+            } else {
+                setError('No nutrients available');
+            }
         } catch (err) {
-            setError('Error fetching data: ' + err.message); // Set error message in case of failure
-        } finally { 
-            setLoading(false);  // Hide loading state
+            setError('Error fetching data: ' + err.message);
+        } finally {
+            setLoading(false);
         }
     };
 
-    // Fetch nutrients on component mount
+    // Hent næringsstoffer når komponenten monteres
     useEffect(() => {
         fetchNutrients();
     }, []);
 
-    // Handle input changes
+    // Håndtere input endringer
     const handleChange = (e) => {
-        const { name, value } = e.target; // Destructure input name and value
-        setNewNutrient({ ...newNutrient, [name]: value }); // Update form state
+        const { name, value } = e.target;
+        setNewNutrient({ ...newNutrient, [name]: value });
     };
 
-    // Handle form submission to add a new nutrient
+    // Håndtere innsending av nytt næringsstoff
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent default form submission
-    
-        console.log(newNutrient);  // Sjekk hva som blir sendt til serveren
-    
+        e.preventDefault();
+
+        // Validering før innsending
+        if (!newNutrient.name || !newNutrient.unit || !newNutrient.number || !newNutrient.rank) {
+            setError('All fields are required!');
+            return;
+        }
+
         try {
             const response = await fetch('http://localhost:5072/nutrientapi/Nutrients', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json', // Specify content type
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(newNutrient), // Send nutrient data as JSON
+                body: JSON.stringify(newNutrient),
             });
-    
+
             if (!response.ok) {
-                throw new Error('Failed to add nutrient'); // Handle errors
+                throw new Error('Failed to add nutrient');
             }
-    
-            // Refresh the list of nutrients after successful addition
+
+            // Etter vellykket innsending, hent oppdaterte næringsstoffer
             fetchNutrients();
 
-            // Reset the form inputs
-            setNewNutrient({ name: '', unit: '', number: '', rank: '' }); // Tilbakestill skjemaet
+            // Nullstill input
+            setNewNutrient({ name: '', unit: '', number: '', rank: '' });
+            setError('');
         } catch (error) {
-            setError(error.message); // Set error state to display the message
+            setError(error.message);
         }
     };
 
-    // Handle deletion of a nutrient
+    // Håndtere sletting av næringsstoff
     const handleDelete = async (id) => {
-        setError(''); // Clear any previous errors
+        setError('');
         try {
             const response = await fetch(`http://localhost:5072/nutrientapi/Nutrients/${id}`, { method: 'DELETE' });
-            if (!response.ok) throw new Error('Failed to delete nutrient'); // Handle deletion errors
-            await fetchNutrients(); // Refresh the list of nutrients after deletion
+            if (!response.ok) throw new Error('Failed to delete nutrient');
+            fetchNutrients();
         } catch (err) {
-            setError(err.message); // Set error state to display the message
+            setError(err.message);
         }
     };
 
@@ -87,13 +104,43 @@ const NutrientManager = () => {
             <h2>Nutrient Manager</h2>
             {error && <div className="error-message">{error}</div>}
             {loading && <div>Loading...</div>}
+            
             <form onSubmit={handleSubmit}>
-                <input type="text" name="name" placeholder="Name" value={newNutrient.name} onChange={handleChange} required />
-                <input type="text" name="unit" placeholder="Unit" value={newNutrient.unit} onChange={handleChange} required />
-                <input type="number" name="number" placeholder="Number" value={newNutrient.number} onChange={handleChange} required />
-                <input type="number" name="rank" placeholder="Rank" value={newNutrient.rank} onChange={handleChange} required />
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={newNutrient.name}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="text"
+                    name="unit"
+                    placeholder="Unit"
+                    value={newNutrient.unit}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="number"
+                    name="number"
+                    placeholder="Number"
+                    value={newNutrient.number}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="number"
+                    name="rank"
+                    placeholder="Rank"
+                    value={newNutrient.rank}
+                    onChange={handleChange}
+                    required
+                />
                 <button type="submit">Add Nutrient</button>
             </form>
+
             <table>
                 <thead>
                     <tr>
@@ -105,19 +152,30 @@ const NutrientManager = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {nutrients.map((nutrient) => (
-                        <tr key={nutrient.id}>
-                            <td>{nutrient.name}</td>
-                            <td>{nutrient.unit}</td>
-                            <td>{nutrient.number}</td>
-                            <td>{nutrient.rank}</td>
-                            <td>
-                                <button onClick={() => handleDelete(nutrient.id)}>Delete</button>
-                            </td>
+                    {nutrients.length > 0 ? (
+                        nutrients.map((nutrient) => (
+                            <tr key={nutrient.id}>
+                                <td>{nutrient.name}</td>
+                                <td>{nutrient.unit}</td>
+                                <td>{nutrient.number}</td>
+                                <td>{nutrient.rank}</td>
+                                <td>
+                                    <button onClick={() => handleDelete(nutrient.id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="5">No nutrients available</td>
                         </tr>
-                    ))}
+                    )}
                 </tbody>
             </table>
+
+            {/* Load more button for paginated data */}
+            <button onClick={fetchNutrients} disabled={loading}>
+                Load More Nutrients
+            </button>
         </div>
     );
 };
