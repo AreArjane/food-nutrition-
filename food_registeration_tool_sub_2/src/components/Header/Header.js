@@ -15,6 +15,7 @@ const Header = () => {
         <li><Link to="/">Home</Link></li>
           <li><Link to="/menu">Menu</Link></li>
           <li><Link to="/add-food">Add Food</Link></li>
+          <li><Link to="/nutrients">Nutrient Manager</Link></li> {/* Ny lenke til NutrientManager */}
           <li><Link to="/auth" className="loginBtn">Login</Link></li>
         </ul>
       </nav>
