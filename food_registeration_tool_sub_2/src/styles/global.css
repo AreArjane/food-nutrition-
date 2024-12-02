@@ -12,115 +12,6 @@ body {
     text-align: center;
     
   }
-  /* Generelle stiler for NutrientManager */
-.nutrient-manager {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Overskrift for NutrientManager */
-.nutrient-manager h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Stiler for tabellen */
-.nutrient-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.nutrient-table th,
-.nutrient-table td {
-  padding: 12px;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-
-.nutrient-table th {
-  background-color: #007bff;
-  color: white;
-}
-
-/* Stiler for handling knapper i tabellen */
-.nutrient-table .actions {
-  display: flex;
-  justify-content: space-around;
-}
-
-.nutrient-table button {
-  background-color: #28a745;
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.nutrient-table button:hover {
-  background-color: #218838;
-}
-
-/* Stiler for skjemaet */
-.nutrient-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.nutrient-form input,
-.nutrient-form select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.nutrient-form button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.nutrient-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Stiler for feilmeldinger */
-.error-message {
-  color: red;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-/* Responsivt design */
-@media (max-width: 768px) {
-  .nutrient-manager {
-      padding: 15px;
-  }
-
-  .nutrient-table th,
-  .nutrient-table td {
-      font-size: 14px;
-      padding: 8px;
-  }
-
-  .nutrient-form button {
-      padding: 8px;
-  }
-}
   
   /* Header-stiler */
   header {
@@ -291,7 +182,7 @@ body {
     }
   }
 
-  /* AuthForm Styles */
+   /* AuthForm Styles */
 .auth-form {
   max-width: 400px;
   margin: 50px auto;
@@ -300,6 +191,18 @@ body {
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-image-container {
+  width: 100%;
+  height: 100vh; /* Fyller hele skjermhøyden */
+  background-size: cover; /* Gjør bildet til et dekkende bakgrunnsbilde */
+  background-position: center; /* Sentraliserer bildet */
+  background-repeat: no-repeat; /* Hindrer at bildet gjentar seg */
+  position: absolute; /* Gjør containeren absolutt posisjonert */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Sender bildet bak andre elementer */
 }
 
 .auth-form nav {
@@ -363,6 +266,8 @@ body {
   font-size: 14px;
 }
 
+
+
 /* Kontaktform-stiler */
 .contact-container {
   max-width: 600px;
@@ -411,92 +316,354 @@ body {
   transition: background-color 0;
 }
 
-.home-image {
-  max-width: 100%; /* Tilpasser seg bredden på containeren */
-  height: 300px; /* Beholder proporsjonene til bildet */
-  display: block; /* Sentrerer bildet */
-  margin: 20px auto; /* Legger til margin for å sentrere bildet */
+/* Gallery Section */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsiv grid */
+  gap: 10px; /* Avstand mellom bildene */
+  padding: 20px;
+  justify-items: center; /* Sentrerer bildene horisontalt */
+  margin-bottom: 30px; /* Avstand før beskrivelsen */
 }
 
-/* Styling for AddFoodItem-komponenten */
-.add-food-item-container {
-  padding: var(--padding-large);
-  max-width: var(--max-width);
-  margin: var(--margin-auto);
-  background-color: var(--form-background);
+.gallery-image {
+  width: 100%; /* Bildene fyller opp cellene */
+  height: auto; /* Beholder proporsjonene */
+  border-radius: 8px; /* Runder av kantene på bildene */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
+  transition: transform 0.3s ease; /* Animasjon for hover-effekt */
+}
+
+.gallery-image:hover {
+  transform: scale(1.05); /* Litt forstørrelse ved hover */
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsivt design for bilde-galleri */
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Juster kolonnebredde på små skjermer */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Færre bilder per rad på ekstra små skjermer */
+  }
+}
+
+
+/* Styling for Menu Component */
+.menu-container {
+  padding: 20px;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+}
+
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.food-table th,
+.food-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.food-table th {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.1rem;
+}
+
+.food-table td {
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+
+.food-table tr:hover {
+  background-color: var(--light-color);
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  margin: 0 10px;
+}
+
+.pagination-controls button:hover {
+  background-color: var(--dark-color);
+}
+
+.pagination-controls button:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+
+.pagination-info span {
+  margin: 0 5px;
+}
+
+/* Responsivt design for meny */
+@media (max-width: 768px) {
+  .menu-container {
+    padding: 10px;
+  }
+
+  .food-table th,
+  .food-table td {
+    padding: 8px;
+  }
+
+  .food-table th {
+    font-size: 1rem;
+  }
+
+  .food-table td {
+    font-size: 0.9rem;
+  }
+
+  .pagination-controls button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin: 0 8px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-container {
+    padding: 15px;
+  }
+
+  .food-table th,
+  .food-table td {
+    padding: 10px;
+  }
+
+  .pagination-controls button {
+    padding: 9px 18px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .food-table th,
+  .food-table td {
+    padding: 6px;
+  }
+
+  .food-table th {
+    font-size: 0.9rem;
+  }
+
+  .food-table td {
+    font-size: 0.8rem;
+  }
+
+  .pagination-controls button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    margin: 0 6px;
+  }
+}
+
+/* Styling for AddFoodItem Component */
+.add-food-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+  background-color: var(--light-color);
   border-radius: var(--form-border-radius);
   box-shadow: var(--box-shadow);
 }
 
-.add-food-item-container h2 {
+.add-food-item h2 {
   text-align: center;
+  font-size: 2rem;
   color: var(--dark-color);
+  margin-bottom: 20px;
 }
 
-form div {
-  margin-bottom: var(--padding-medium);
-}
-
-form label {
-  font-weight: bold;
-  color: var(--dark-color);
-}
-
-form input,
-form textarea {
-  width: 95%;
-  padding: var(--input-padding);
-  margin-top: var(--padding-small);
-  border-radius: var(--form-border-radius);
-  border: 1px solid var(--form-border-color);
-}
-
-form textarea {
-  resize: vertical;
-}
-
-button {
+.add-food-item .form-group {
+  margin-bottom: 20px;
   width: 100%;
-  padding: var(--button-padding);
+  max-width: 600px; /* Maksimal bredde på skjemaet */
+}
+
+.add-food-item label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.add-food-item input,
+.add-food-item select,
+.add-food-item textarea {
+  width: 100%;
+  padding: 16px; /* Økt padding for større inputfelt */
+  border: 2px solid var(--form-border-color);
+  border-radius: var(--form-border-radius);
+  font-size: 16px; /* Økt fontstørrelse */
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hover-effekt for inputfeltene */
+.add-food-item input:hover,
+.add-food-item select:hover,
+.add-food-item textarea:hover {
+  border-color: var(--primary-color); /* Endrer borderfarge på hover */
+  background-color: #f1f1f1; /* Bakgrunnsfarge ved hover */
+}
+
+/* Fokus på inputfeltene */
+.add-food-item input:focus,
+.add-food-item select:focus,
+.add-food-item textarea:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Fokusborder med primærfarge */
+  background-color: var(--light-color); /* Bakgrunnsfarge ved fokus */
+}
+
+.add-food-item textarea {
+  resize: vertical;
+  height: 120px; /* Økt høyde på tekstområder */
+}
+
+/* Styling for submit-knappen */
+.submit-button {
+  padding: 16px;
   background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: var(--form-border-radius);
+  font-size: 18px; /* Økt fontstørrelse */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 600px; /* Maksimal bredde på knappen */
 }
 
-button:hover {
-  background-color: var(--dark-color);
+/* Hover-effekt på submit-knappen */
+.submit-button:hover {
+  background-color: var(--dark-color); /* Endre bakgrunn ved hover */
 }
 
-.message {
+/* Disabled submit button */
+.submit-button:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+}
+
+/* Error message styling */
+.error-message {
+  color: var(--danger-color);
   text-align: center;
-  margin-bottom: var(--padding-medium);
-  padding: var(--message-padding);
-  border-radius: var(--form-border-radius);
+  margin-top: 10px;
+  font-size: 16px;
 }
 
-.success {
-  background-color: var(--success-color);
-  color: white;
-}
-
-.error {
-  background-color: var(--danger-color);
-  color: white;
-}
-
-/* Responsivt design for AddFoodItem */
+/* Responsiv tilpasning for skjermstørrelser */
 @media (max-width: 768px) {
-  .add-food-item-container {
-    padding: 15px;
-    max-width: 100%;
+  .add-food-item {
+      padding: 15px;
   }
 
-  form input,
-  form textarea,
-  button {
-    padding: 6px;
+  .add-food-item h2 {
+      font-size: 1.5rem;
+  }
+
+  .add-food-item label {
+      font-size: 1rem;
+  }
+
+  .add-food-item input,
+  .add-food-item select,
+  .add-food-item textarea {
+      font-size: 14px; /* Mindre fontstørrelse på små skjermer */
+  }
+
+  .submit-button {
+      font-size: 16px;
+      padding: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .add-food-item {
+      padding: 20px;
+  }
+
+  .add-food-item h2 {
+      font-size: 1.8rem;
+  }
+
+  .add-food-item label {
+      font-size: 1.1rem;
+  }
+
+  .submit-button {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-food-item {
+      padding: 10px;
+  }
+
+  .add-food-item h2 {
+      font-size: 1.4rem;
+  }
+
+  .add-food-item input,
+  .add-food-item select,
+  .add-food-item textarea {
+      font-size: 12px; /* Endret fontstørrelse for små skjermer */
+  }
+
+  .submit-button {
+      font-size: 14px;
+      padding: 12px;
   }
 }
