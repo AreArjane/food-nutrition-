@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import loginImage from '../../assets/images/login-image.jpg';
+
 
 const AuthForm = () => {
   const [activeForm, setActiveForm] = useState('login');
@@ -67,7 +67,7 @@ const AuthForm = () => {
 
   return (
     <div className="auth-form">
-      <div className="auth-image-container" style={{ backgroundImage: `url(${loginImage})` }}></div>
+      <div className="auth-image-container" style={{ backgroundImage: `url(})` }}></div>
       <nav>
         <Link to="#" onClick={() => setActiveForm('login')} className={activeForm === 'login' ? 'active' : ''}>Login</Link>
         <Link to="#" onClick={() => setActiveForm('signup')} className={activeForm === 'signup' ? 'active' : ''}>Sign Up</Link>

@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/FoodRegisterationToolSub1.props" />
-</Project>
